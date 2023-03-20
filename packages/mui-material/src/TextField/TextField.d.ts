@@ -269,6 +269,10 @@ export type TextFieldProps<Variant extends Variants = 'outlined'> = Variant exte
  */
 export default function TextField<V extends Variants>(
   props: {
+    /**
+     * The variant to use.
+     * @default 'outlined'
+     */
     variant?: V;
   } & Omit<TextFieldProps<V>, 'variant'>,
 ): JSX.Element;
