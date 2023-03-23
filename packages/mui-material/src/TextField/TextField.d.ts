@@ -174,7 +174,10 @@ export interface StandardTextFieldProps extends BaseTextFieldProps {
    */
   variant?: 'standard';
   /**
-   * Props applied to the [`Input`](/material-ui/api/input/) component.
+   * Props applied to the Input element.
+   * It will be a [`FilledInput`](/material-ui/api/filled-input/),
+   * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+   * component depending on the `variant` prop value.
    */
   InputProps?: Partial<StandardInputProps>;
 }
@@ -193,7 +196,10 @@ export interface FilledTextFieldProps extends BaseTextFieldProps {
    */
   variant: 'filled';
   /**
-   * Props applied to the [`FilledInput`](/material-ui/api/filled-input/) component.
+   * Props applied to the Input element.
+   * It will be a [`FilledInput`](/material-ui/api/filled-input/),
+   * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+   * component depending on the `variant` prop value.
    */
   InputProps?: Partial<FilledInputProps>;
 }
@@ -212,7 +218,10 @@ export interface OutlinedTextFieldProps extends BaseTextFieldProps {
    */
   variant: 'outlined';
   /**
-   * Props applied to the [`OutlinedInput`](/material-ui/api/outlined-input/) element.
+   * Props applied to the Input element.
+   * It will be a [`FilledInput`](/material-ui/api/filled-input/),
+   * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+   * component depending on the `variant` prop value.
    */
   InputProps?: Partial<OutlinedInputProps>;
 }
