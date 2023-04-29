@@ -6,6 +6,7 @@ import ListItem from '@mui/joy/ListItem';
 import ListItemButton from '@mui/joy/ListItemButton';
 import ListDivider from '@mui/joy/ListDivider';
 import Typography, { typographyClasses } from '@mui/joy/Typography';
+import { ListActionTypes } from '@mui/base/useList';
 
 const MenuButton = React.forwardRef(
   ({ children, menu, open, onOpen, onKeyDown, ...props }, ref) => {
@@ -25,7 +26,11 @@ const MenuButton = React.forwardRef(
         event.preventDefault();
         onOpen(event);
         if (event.key === 'ArrowUp') {
-          menuActions.current?.highlightLastItem();
+          menuActions.current?.dispatch({
+            type: ListActionTypes.keyDown,
+            key: event.key,
+            event,
+          });
         }
       }
       onKeyDown(event);

@@ -5,6 +5,7 @@ import Button from '@mui/joy/Button';
 import Menu from '@mui/joy/Menu';
 import MenuItem from '@mui/joy/MenuItem';
 import ListDivider from '@mui/joy/ListDivider';
+import { ListActionTypes } from '@mui/base/useList';
 
 export default function MenuUsage() {
   const buttonRef = React.useRef(null);
@@ -26,7 +27,11 @@ export default function MenuUsage() {
       event.preventDefault();
       setAnchorEl(event.currentTarget);
       if (event.key === 'ArrowUp') {
-        menuActions.current?.highlightLastItem();
+        menuActions.current?.dispatch({
+          type: ListActionTypes.keyDown,
+          key: event.key,
+          event,
+        });
       }
     }
   };

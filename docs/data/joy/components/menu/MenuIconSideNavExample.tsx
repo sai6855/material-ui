@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Menu, { menuClasses } from '@mui/joy/Menu';
+import Menu, { MenuActions, menuClasses } from '@mui/joy/Menu';
 import MenuItem from '@mui/joy/MenuItem';
 import IconButton from '@mui/joy/IconButton';
 import List from '@mui/joy/List';
@@ -8,6 +8,7 @@ import Sheet from '@mui/joy/Sheet';
 import Apps from '@mui/icons-material/Apps';
 import Settings from '@mui/icons-material/Settings';
 import Person from '@mui/icons-material/Person';
+import { ListActionTypes } from '@mui/base/useList';
 
 // The Menu is built on top of Popper v2, so it accepts `modifiers` prop that will be passed to the Popper.
 // https://popper.js.org/docs/v2/modifiers/offset/
@@ -49,7 +50,7 @@ function MenuButton({
 }: MenuButtonProps) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const isOnButton = React.useRef(false);
-  const menuActions = React.useRef<any>(null);
+  const menuActions = React.useRef<MenuActions>(null);
   const internalOpen = React.useRef(open);
 
   const handleButtonKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -58,7 +59,11 @@ function MenuButton({
       event.preventDefault();
       onOpen(event);
       if (event.key === 'ArrowUp') {
-        menuActions.current?.highlightLastItem();
+        menuActions.current?.dispatch({
+          type: ListActionTypes.keyDown,
+          key: event.key,
+          event,
+        });
       }
     }
   };
