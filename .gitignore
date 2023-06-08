@@ -15,7 +15,7 @@
 /coverage
 /docs/.env.local
 /docs/export
-/docs/pages/playground/
+
 /docs/public/feed/
 /examples/**/.cache
 /packages/mui-codemod/lib
