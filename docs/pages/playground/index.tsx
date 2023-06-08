@@ -6,68 +6,123 @@ import { StyledEngineProvider } from '@mui/styled-engine';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Icon, Typography } from '@mui/material';
 
-export default function BasicMenu() {
-  const [anchorElements, setAnchorElements] = React.useState([null, null, null]);
+const options = [
+  {
+    value: 'a',
+  },
+  {
+    value: 'b',
+    triggerLevel: 1,
+    nestedOptions: [
+      {
+        value: 'e',
+        triggerLevel: 2,
+        nestedOptions: [
+          {
+            value: 'h',
+          },
+          {
+            value: 'i',
+          },
+          {
+            value: 'j',
+          },
+        ],
+      },
+      {
+        value: 'f',
+      },
+      {
+        value: 'g',
+      },
+    ],
+  },
+  {
+    value: 'c',
+  },
+  {
+    value: 'd',
+    triggerLevel: 1,
+    nestedOptions: [
+      {
+        value: 'm',
+      },
+      {
+        value: 'n',
+      },
+      {
+        value: '0',
+      },
+    ],
+  },
+];
 
-  const handleClick = (event, level = 0) => {
-    setAnchorElements((prev) =>
-      prev.map((element, index) => (index === level ? event.currentTarget : element)),
+export default function BasicMenu() {
+  const MENU_LEVELS = 3;
+
+  const [anchorElements, setAnchorElements] = React.useState(new Array(MENU_LEVELS).fill(null));
+
+  const [menuOptions, setMenuOptions] = React.useState(new Array(MENU_LEVELS).fill(null));
+
+  const handleClick = (event, level = 0, nestedOptions = options) => {
+    const target = event.currentTarget;
+    setAnchorElements((prev) => prev.map((element, index) => (index === level ? target : element)));
+
+    setMenuOptions((prev) =>
+      prev.map((element, index) => (index === level ? nestedOptions : element)),
     );
   };
-  const handleClose = (level = 0) => {
+  const handleClose = () => {
     setAnchorElements((prev) => prev.map(() => null));
+    setMenuOptions((prev) => prev.map(() => null));
   };
 
   return (
     <div>
       <StyledEngineProvider injectFirst>
-        <Button onClick={handleClick}>Dashboard</Button>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorElements[0]}
-          open={Boolean(anchorElements[0])}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
+        <Button
+          onClick={(event) => {
+            handleClick(event);
           }}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={(event) => handleClick(event, 1)}>Dashboard</MenuItem>
-        </Menu>
-        <Menu
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          anchorEl={anchorElements[1]}
-          open={Boolean(anchorElements[1])}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
-        >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={(event) => handleClick(event, 2)}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-        </Menu>
+          Dashboard
+        </Button>
 
-        <Menu
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          anchorEl={anchorElements[2]}
-          open={Boolean(anchorElements[2])}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button',
-          }}
-        >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Dashboard</MenuItem>
-        </Menu>
+        {anchorElements.map((anchorElement, index) =>
+          anchorElement ? (
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorElement}
+              open={Boolean(anchorElement)}
+              onClose={handleClose}
+              {...(index > 0
+                ? {
+                    anchorOrigin: {
+                      vertical: 'top',
+                      horizontal: 'right',
+                    },
+                  }
+                : {})}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              {(menuOptions[index] || []).map((option) => (
+                <MenuItem
+                  key={option.value}
+                  onClick={(event) => {
+                    if (option.triggerLevel) {
+                      console.log('snhnshb');
+                      handleClick(event, option.triggerLevel, option.nestedOptions);
+                    } else handleClose();
+                  }}
+                >
+                  {option.value}
+                </MenuItem>
+              ))}
+            </Menu>
+          ) : null,
+        )}
       </StyledEngineProvider>
     </div>
   );
