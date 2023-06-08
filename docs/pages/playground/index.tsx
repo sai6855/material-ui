@@ -6,72 +6,82 @@ import { StyledEngineProvider } from '@mui/styled-engine';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Icon, Typography } from '@mui/material';
 
-function NestedMenu({ handleClose1, anchorEl1, open1 }) {
+function NestedMenuTrigger({ children }) {
+  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
+  const open1 = Boolean(anchorEl1);
+  const handleClick1 = (event: React.MouseEvent<HTMLLIElement>) => {
+    setAnchorEl1(event.currentTarget);
+  };
+  console.log({ anchorEl1 });
+  const handleClose1 = (event) => {
+    // handleClose();
+    console.log('sjisnjns', event);
+    if (event) {
+      event.stopPropagation();
+    }
+    setAnchorEl1(null);
+  };
   return (
-    <Menu
-      id="basic-menu"
-      anchorEl={anchorEl1}
-      open={open1}
-      onClose={handleClose1}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      MenuListProps={{
-        'aria-labelledby': 'basic-button',
-      }}
-    >
+    <>
       <MenuItem
+        onClick={handleClick1}
         onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') {
-            handleClose1();
+          if (event.key === 'ArrowRight') {
+            handleClick1(event);
           }
         }}
-        onClick={handleClose1}
+        sx={{ display: 'flex', justifyContent: 'space-between' }}
       >
-        Profile
+        <Typography>{children}</Typography>
+        <Icon>
+          <ChevronRightIcon />
+        </Icon>
       </MenuItem>
-      <MenuItem
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') {
-            handleClose1();
-          }
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl1}
+        open={open1}
+        onClose={handleClose1}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
         }}
-        onClick={handleClose1}
-      >
-        My account
-      </MenuItem>
-      <MenuItem
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowLeft') {
-            handleClose1();
-          }
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
         }}
-        onClick={handleClose1}
       >
-        Logout
-      </MenuItem>
-    </Menu>
-  );
-}
-
-function NestedMenuTrigger({ onMouseEnter }) {
-  return (
-    <MenuItem
-      onClick={onMouseEnter}
-      onKeyDown={(event) => {
-        if (event.key === 'ArrowRight') {
-          onMouseEnter(event);
-        }
-      }}
-      // onMouseLeave={onMouseLeave}
-      sx={{ display: 'flex', justifyContent: 'space-between' }}
-    >
-      <Typography>Dashboard</Typography>
-      <Icon>
-        <ChevronRightIcon />
-      </Icon>
-    </MenuItem>
+        <MenuItem
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowLeft') {
+              handleClose1();
+            }
+          }}
+          onClick={handleClose1}
+        >
+          Profile
+        </MenuItem>
+        <MenuItem
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowLeft') {
+              handleClose1();
+            }
+          }}
+          onClick={handleClose1}
+        >
+          My account
+        </MenuItem>
+        <MenuItem
+          onKeyDown={(event) => {
+            if (event.key === 'ArrowLeft') {
+              handleClose1();
+            }
+          }}
+          onClick={handleClose1}
+        >
+          Logout
+        </MenuItem>
+      </Menu>
+    </>
   );
 }
 
@@ -83,16 +93,6 @@ export default function BasicMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
-  const open1 = Boolean(anchorEl1);
-  const handleClick1 = (event: React.MouseEvent<HTMLLIElement>) => {
-    setAnchorEl1(event.currentTarget);
-  };
-  const handleClose1 = () => {
-    // handleClose();
-    setAnchorEl1(null);
   };
 
   return (
@@ -118,9 +118,8 @@ export default function BasicMenu() {
         >
           <MenuItem onClick={handleClose}>Profile</MenuItem>
           <MenuItem onClick={handleClose}>My account</MenuItem>
-          <NestedMenuTrigger onMouseEnter={handleClick1} />
+          <NestedMenuTrigger>Dashboard</NestedMenuTrigger>
         </Menu>
-        <NestedMenu handleClose1={handleClose1} open1={open1} anchorEl1={anchorEl1} />
       </StyledEngineProvider>
     </div>
   );
