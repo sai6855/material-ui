@@ -6,111 +6,26 @@ import { StyledEngineProvider } from '@mui/styled-engine';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Icon, Typography } from '@mui/material';
 
-function NestedMenuTrigger({ children }) {
-  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
-  const open1 = Boolean(anchorEl1);
-  const handleClick1 = (event: React.MouseEvent<HTMLLIElement>) => {
-    setAnchorEl1(event.currentTarget);
-  };
-  console.log({ anchorEl1 });
-  const handleClose1 = (event) => {
-    // handleClose();
-    console.log('sjisnjns', event);
-    if (event) {
-      event.stopPropagation();
-    }
-    setAnchorEl1(null);
-  };
-  return (
-    <>
-      <MenuItem
-        onClick={handleClick1}
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowRight') {
-            handleClick1(event);
-          }
-        }}
-        sx={{ display: 'flex', justifyContent: 'space-between' }}
-      >
-        <Typography>{children}</Typography>
-        <Icon>
-          <ChevronRightIcon />
-        </Icon>
-      </MenuItem>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl1}
-        open={open1}
-        onClose={handleClose1}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem
-          onKeyDown={(event) => {
-            if (event.key === 'ArrowLeft') {
-              handleClose1();
-            }
-          }}
-          onClick={handleClose1}
-        >
-          Profile
-        </MenuItem>
-        <MenuItem
-          onKeyDown={(event) => {
-            if (event.key === 'ArrowLeft') {
-              handleClose1();
-            }
-          }}
-          onClick={handleClose1}
-        >
-          My account
-        </MenuItem>
-        <MenuItem
-          onKeyDown={(event) => {
-            if (event.key === 'ArrowLeft') {
-              handleClose1();
-            }
-          }}
-          onClick={handleClose1}
-        >
-          Logout
-        </MenuItem>
-      </Menu>
-    </>
-  );
-}
-
 export default function BasicMenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const [anchorElements, setAnchorElements] = React.useState([null, null, null]);
+
+  const handleClick = (event, level = 0) => {
+    setAnchorElements((prev) =>
+      prev.map((element, index) => (index === level ? event.currentTarget : element)),
+    );
   };
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClose = (level = 0) => {
+    setAnchorElements((prev) => prev.map(() => null));
   };
 
   return (
     <div>
       <StyledEngineProvider injectFirst>
-        <Button
-          id="basic-button"
-          aria-controls={open ? 'basic-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-        >
-          Dashboard
-        </Button>
+        <Button onClick={handleClick}>Dashboard</Button>
         <Menu
           id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
+          anchorEl={anchorElements[0]}
+          open={Boolean(anchorElements[0])}
           onClose={handleClose}
           MenuListProps={{
             'aria-labelledby': 'basic-button',
@@ -118,7 +33,40 @@ export default function BasicMenu() {
         >
           <MenuItem onClick={handleClose}>Profile</MenuItem>
           <MenuItem onClick={handleClose}>My account</MenuItem>
-          <NestedMenuTrigger>Dashboard</NestedMenuTrigger>
+          <MenuItem onClick={(event) => handleClick(event, 1)}>Dashboard</MenuItem>
+        </Menu>
+        <Menu
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          anchorEl={anchorElements[1]}
+          open={Boolean(anchorElements[1])}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={(event) => handleClick(event, 2)}>My account</MenuItem>
+          <MenuItem onClick={handleClose}>Dashboard</MenuItem>
+        </Menu>
+
+        <Menu
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          anchorEl={anchorElements[2]}
+          open={Boolean(anchorElements[2])}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={handleClose}>My account</MenuItem>
+          <MenuItem onClick={handleClose}>Dashboard</MenuItem>
         </Menu>
       </StyledEngineProvider>
     </div>
