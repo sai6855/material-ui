@@ -60,21 +60,26 @@ const options = [
 export default function BasicMenu() {
   const MENU_LEVELS = 3;
 
-  const [anchorElements, setAnchorElements] = React.useState(new Array(MENU_LEVELS).fill(null));
-
-  const [menuOptions, setMenuOptions] = React.useState(new Array(MENU_LEVELS).fill(null));
+  const [anchors, setAnchors] = React.useState({
+    elements: new Array(MENU_LEVELS).fill(null),
+    options: new Array(MENU_LEVELS).fill(null),
+  });
 
   const handleClick = (event, level = 0, nestedOptions = options) => {
     const target = event.currentTarget;
-    setAnchorElements((prev) => prev.map((element, index) => (index === level ? target : element)));
 
-    setMenuOptions((prev) =>
-      prev.map((element, index) => (index === level ? nestedOptions : element)),
-    );
+    setAnchors((prevAnchors) => ({
+      elements: prevAnchors.elements.map((element, index) => (index === level ? target : element)),
+      options: prevAnchors.options.map((element, index) =>
+        index === level ? nestedOptions : element,
+      ),
+    }));
   };
   const handleClose = () => {
-    setAnchorElements((prev) => prev.map(() => null));
-    setMenuOptions((prev) => prev.map(() => null));
+    setAnchors({
+      elements: new Array(MENU_LEVELS).fill(null),
+      options: new Array(MENU_LEVELS).fill(null),
+    });
   };
 
   return (
@@ -88,7 +93,7 @@ export default function BasicMenu() {
           Dashboard
         </Button>
 
-        {anchorElements.map((anchorElement, index) =>
+        {anchors.elements.map((anchorElement, index) =>
           anchorElement ? (
             <Menu
               id="basic-menu"
@@ -107,7 +112,7 @@ export default function BasicMenu() {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              {(menuOptions[index] || []).map((option) => (
+              {(anchors.options[index] || []).map((option) => (
                 <MenuItem
                   key={option.value}
                   onClick={(event) => {
