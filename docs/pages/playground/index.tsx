@@ -9,49 +9,59 @@ import { Box, Icon, Typography } from '@mui/material';
 const options = [
   {
     value: 'a',
+    menuLevel: 0,
   },
   {
     value: 'b',
-    triggerMenulevel: 1,
+    menuLevel: 0,
     nestedOptions: [
       {
         value: 'e',
-        triggerMenulevel: 2,
+        menuLevel: 1,
         nestedOptions: [
           {
             value: 'h',
+            menuLevel: 2,
           },
           {
             value: 'i',
+            menuLevel: 2,
           },
           {
             value: 'j',
+            menuLevel: 2,
           },
         ],
       },
       {
         value: 'f',
+        menuLevel: 1,
       },
       {
         value: 'g',
+        menuLevel: 1,
       },
     ],
   },
   {
     value: 'c',
+    menuLevel: 0,
   },
   {
     value: 'd',
-    triggerMenulevel: 1,
+    menuLevel: 0,
     nestedOptions: [
       {
         value: 'm',
+        menuLevel: 1,
       },
       {
         value: 'n',
+        menuLevel: 1,
       },
       {
         value: '0',
+        menuLevel: 1,
       },
     ],
   },
@@ -76,7 +86,6 @@ export default function BasicMenu() {
     }));
   };
   const handleClose = (level) => {
-    console.log(level);
     setAnchors((prevAnchors) =>
       level !== undefined
         ? {
@@ -126,28 +135,26 @@ export default function BasicMenu() {
                 <MenuItem
                   key={option.value}
                   onClick={(event) => {
-                    if (option.triggerMenulevel) {
-                      handleClick(event, option.triggerMenulevel, option.nestedOptions);
+                    if (option.nestedOptions) {
+                      handleClick(event, option.menuLevel + 1, option.nestedOptions);
                     } else {
                       handleClose();
                     }
                   }}
-                  {...(option.triggerMenulevel
-                    ? {
-                        onKeyDown: (event) => {
-                          if (event.key === 'ArrowRight') {
-                            handleClick(event, option.triggerMenulevel, option.nestedOptions);
-                          }
-                          if (event.key === 'ArrowLeft') {
-                            handleClose(option.triggerMenulevel - 1);
-                          }
-                        },
+                  onKeyDown={(event) => {
+                    if (option.nestedOptions) {
+                      if (event.key === 'ArrowRight') {
+                        handleClick(event, option.menuLevel + 1, option.nestedOptions);
                       }
-                    : {})}
+                    }
+                    if (event.key === 'ArrowLeft' && option.menuLevel > 0) {
+                      handleClose(option.menuLevel);
+                    }
+                  }}
                 >
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                     <Typography>{option.value}</Typography>
-                    {option.triggerMenulevel ? (
+                    {option.nestedOptions ? (
                       <Icon>
                         <ChevronRightIcon />
                       </Icon>
