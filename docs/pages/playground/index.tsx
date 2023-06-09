@@ -12,11 +12,11 @@ const options = [
   },
   {
     value: 'b',
-    triggerLevel: 1,
+    triggerMenulevel: 1,
     nestedOptions: [
       {
         value: 'e',
-        triggerLevel: 2,
+        triggerMenulevel: 2,
         nestedOptions: [
           {
             value: 'h',
@@ -42,7 +42,7 @@ const options = [
   },
   {
     value: 'd',
-    triggerLevel: 1,
+    triggerMenulevel: 1,
     nestedOptions: [
       {
         value: 'm',
@@ -111,10 +111,11 @@ export default function BasicMenu() {
                 <MenuItem
                   key={option.value}
                   onClick={(event) => {
-                    if (option.triggerLevel) {
-                      console.log('snhnshb');
-                      handleClick(event, option.triggerLevel, option.nestedOptions);
-                    } else handleClose();
+                    if (option.triggerMenulevel) {
+                      handleClick(event, option.triggerMenulevel, option.nestedOptions);
+                    } else {
+                      handleClose();
+                    }
                   }}
                 >
                   {option.value}
