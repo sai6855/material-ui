@@ -86,19 +86,10 @@ export default function BasicMenu() {
     }));
   };
   const handleClose = (level) => {
-    setAnchors((prevAnchors) =>
-      level !== undefined
-        ? {
-            elements: prevAnchors.elements.map((element, index) =>
-              index >= level ? null : element,
-            ),
-            options: prevAnchors.options.map((element, index) => (index >= level ? null : element)),
-          }
-        : {
-            elements: new Array(MENU_LEVELS).fill(null),
-            options: new Array(MENU_LEVELS).fill(null),
-          },
-    );
+    setAnchors((prevAnchors) => ({
+      elements: prevAnchors.elements.map((element, index) => (index >= level ? null : element)),
+      options: prevAnchors.options.map((element, index) => (index >= level ? null : element)),
+    }));
   };
 
   return (
@@ -118,7 +109,7 @@ export default function BasicMenu() {
               id="basic-menu"
               anchorEl={anchorElement}
               open={Boolean(anchorElement)}
-              onClose={() => handleClose()}
+              onClose={() => handleClose(0)}
               {...(index > 0
                 ? {
                     anchorOrigin: {
@@ -138,7 +129,7 @@ export default function BasicMenu() {
                     if (option.nestedOptions) {
                       handleClick(event, option.menuLevel + 1, option.nestedOptions);
                     } else {
-                      handleClose();
+                      handleClose(0);
                     }
                   }}
                   onKeyDown={(event) => {
