@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Icon, Typography } from '@mui/material';
+import { Box, Icon, Typography } from '@mui/material';
 
 const options = [
   {
@@ -123,7 +123,14 @@ export default function BasicMenu() {
                     }
                   }}
                 >
-                  {option.value}
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                    <Typography>{option.value}</Typography>
+                    {option.triggerMenulevel ? (
+                      <Icon>
+                        <ChevronRightIcon />
+                      </Icon>
+                    ) : null}
+                  </Box>
                 </MenuItem>
               ))}
             </Menu>
