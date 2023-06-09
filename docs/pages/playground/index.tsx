@@ -122,6 +122,15 @@ export default function BasicMenu() {
                       handleClose();
                     }
                   }}
+                  {...(option.triggerMenulevel
+                    ? {
+                        onKeyDown: (event) => {
+                          if (event.key === 'ArrowRight') {
+                            handleClick(event, option.triggerMenulevel, option.nestedOptions);
+                          }
+                        },
+                      }
+                    : {})}
                 >
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                     <Typography>{option.value}</Typography>
