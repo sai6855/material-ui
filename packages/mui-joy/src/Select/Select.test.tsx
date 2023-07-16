@@ -451,6 +451,86 @@ describe('Joy <Select />', () => {
     });
   });
 
+  describe('theme', () => {
+    it('should pass correct variant and color to the ownerState when disablePortal is true', () => {
+      let props: Record<string, string | undefined> = {};
+
+      render(
+        <ThemeProvider
+          theme={{
+            components: {
+              JoySelect: {
+                styleOverrides: {
+                  listbox: ({ ownerState }) => {
+                    props = {
+                      variant: ownerState.variant,
+                      color: ownerState.color,
+                    };
+                    return {};
+                  },
+                },
+              },
+            },
+          }}
+        >
+          <Select
+            variant="solid"
+            slotProps={{
+              listbox: {
+                disablePortal: true,
+              },
+            }}
+            color="danger"
+          />{' '}
+        </ThemeProvider>,
+      );
+
+      expect(props).to.deep.equal({
+        variant: 'solid',
+        color: 'danger',
+      });
+    });
+
+    it('should pass correct variant and color to the ownerState when disablePortal is false', () => {
+      let props: Record<string, string | undefined> = {};
+
+      render(
+        <ThemeProvider
+          theme={{
+            components: {
+              JoySelect: {
+                styleOverrides: {
+                  listbox: ({ ownerState }) => {
+                    props = {
+                      variant: ownerState.variant,
+                      color: ownerState.color,
+                    };
+                    return {};
+                  },
+                },
+              },
+            },
+          }}
+        >
+          <Select
+            variant="solid"
+            slotProps={{
+              listbox: {
+                disablePortal: false,
+              },
+            }}
+            color="danger"
+          />{' '}
+        </ThemeProvider>,
+      );
+
+      expect(props).to.deep.equal({
+        variant: 'solid',
+        color: 'neutral',
+      });
+    });
+  });
+
   it('should pass onClick prop to Option', () => {
     const onClick = spy();
     const { getAllByRole } = render(
