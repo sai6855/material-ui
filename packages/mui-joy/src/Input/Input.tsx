@@ -6,7 +6,7 @@ import { OverridableComponent } from '@mui/types';
 import { unstable_composeClasses as composeClasses } from '@mui/base/composeClasses';
 import { styled, useThemeProps } from '../styles';
 import useSlot from '../utils/useSlot';
-import { InputTypeMap, InputProps, InputOwnerState } from './InputProps';
+import { InputTypeMap, InputOwnerState } from './InputProps';
 import inputClasses, { getInputUtilityClass } from './inputClasses';
 import useForwardedInput from './useForwardedInput';
 import { INVERTED_COLORS_ATTR } from '../colorInversion/colorInversionUtils';
@@ -266,7 +266,7 @@ const Input = React.forwardRef(function Input(inProps, ref) {
     slots = {},
     slotProps = {},
     ...other
-  } = useForwardedInput<InputProps>(props, inputClasses);
+  } = useForwardedInput(props, inputClasses);
 
   if (process.env.NODE_ENV !== 'production') {
     const registerEffect = formControl?.registerEffect;

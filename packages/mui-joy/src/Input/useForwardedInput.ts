@@ -1,11 +1,13 @@
 'use client';
 import * as React from 'react';
 import { useInput } from '@mui/base/useInput';
-import FormControlContext, { FormControlContextValue } from '../FormControl/FormControlContext';
+import FormControlContext from '../FormControl/FormControlContext';
+import { InputProps } from './InputProps';
+import { InputClasses } from './inputClasses';
 
-export default function useForwardedInput<Output>(
-  props: any,
-  classes: { disabled: string; error: string; focused: string; formControl: string },
+export default function useForwardedInput(
+  props: InputProps,
+  classes: Pick<InputClasses, 'disabled' | 'error' | 'focused' | 'formControl'>,
 ) {
   const formControl = React.useContext(FormControlContext);
   const {
@@ -84,10 +86,5 @@ export default function useForwardedInput<Output>(
     error,
     disabled,
     ...other,
-  } as {
-    propsToForward: Record<string, any>;
-    rootStateClasses: Record<string, any>;
-    inputStateClasses: Record<string, any>;
-  } & ReturnType<typeof useInput> &
-    Output & { formControl: FormControlContextValue };
+  }
 }
