@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ListItem from '@mui/material/ListItem';
-import { styled } from '@mui/material/styles';
+import ListItem from '@mui/material-next/ListItem';
+import { styled } from '@mui/material-next/styles';
 
 // button: boolean
 function BooleanButtonTest() {

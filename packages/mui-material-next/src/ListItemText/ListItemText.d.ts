@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { SxProps } from '@mui/system';
-import { InternalStandardProps as StandardProps, Theme } from '..';
-import { TypographyProps } from '../Typography';
+import { InternalStandardProps as StandardProps, Theme } from '@mui/material';
+/* TODO: change import to @mui/material-next/Typography when Typography is added to material-next */
+import { TypographyProps } from '@mui/material/Typography';
 import { ListItemTextClasses } from './listItemTextClasses';
 
 export interface ListItemTextProps<
