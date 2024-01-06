@@ -4,6 +4,8 @@ import { OverridableComponent, OverrideProps } from '@mui/types';
 import { Theme } from '..';
 import { ListSubheaderClasses } from './listSubheaderClasses';
 
+export interface ListSubheaderOwnerState extends ListSubheaderProps {}
+
 export interface ListSubheaderOwnProps {
   /**
    * The content of the component.

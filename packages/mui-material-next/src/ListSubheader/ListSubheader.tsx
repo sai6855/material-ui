@@ -4,17 +4,24 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { unstable_composeClasses as composeClasses } from '@mui/base/composeClasses';
 import capitalize from '@mui/utils/capitalize';
+import { OverridableComponent } from '@mui/types';
 import styled from '../styles/styled';
 import useThemeProps from '../styles/useThemeProps';
 import { getListSubheaderUtilityClass } from './listSubheaderClasses';
+import {
+  ListSubheaderOwnerState,
+  ListSubheaderProps,
+  ListSubheaderTypeMap,
+} from './ListSubheader.types';
+import { MD3ColorSchemeTokens } from '../styles';
 
-const useUtilityClasses = (ownerState) => {
+const useUtilityClasses = (ownerState: ListSubheaderOwnerState) => {
   const { classes, color, disableGutters, inset, disableSticky } = ownerState;
 
   const slots = {
     root: [
       'root',
-      color !== 'default' && `color${capitalize(color)}`,
+      color !== 'default' && color && `color${capitalize(color)}`,
       !disableGutters && 'gutters',
       inset && 'inset',
       !disableSticky && 'sticky',
@@ -38,7 +45,7 @@ const ListSubheaderRoot = styled('li', {
       !ownerState.disableSticky && styles.sticky,
     ];
   },
-})(({ theme, ownerState }) => {
+})<{ ownerState: ListSubheaderOwnerState }>(({ theme, ownerState }) => {
   const { vars: tokens } = theme;
   return {
     boxSizing: 'border-box',
@@ -65,12 +72,17 @@ const ListSubheaderRoot = styled('li', {
       position: 'sticky',
       top: 0,
       zIndex: 1,
-      backgroundColor: tokens.sys.color[`on${capitalize(ownerState.color || 'primary')}`],
+      backgroundColor:
+        tokens.sys.color[
+          `on${capitalize(ownerState.color ?? 'primary')}` as keyof MD3ColorSchemeTokens
+        ],
     }),
   };
 });
 
-const ListSubheader = React.forwardRef(function ListSubheader(inProps, ref) {
+const ListSubheader = React.forwardRef(function ListSubheader<
+  BaseComponentType extends React.ElementType = ListSubheaderTypeMap['defaultComponent'],
+>(inProps: ListSubheaderProps<BaseComponentType>, ref: React.ForwardedRef<React.ElementRef<'li'>>) {
   const props = useThemeProps({ props: inProps, name: 'MuiListSubheader' });
   const {
     className,
@@ -102,7 +114,9 @@ const ListSubheader = React.forwardRef(function ListSubheader(inProps, ref) {
       {...other}
     />
   );
-});
+}) as OverridableComponent<ListSubheaderTypeMap> & {
+  muiSkipListHighlight?: true;
+};
 
 ListSubheader.muiSkipListHighlight = true;
 
