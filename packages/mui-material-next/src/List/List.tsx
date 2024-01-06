@@ -7,12 +7,14 @@ import styled from '../styles/styled';
 import useThemeProps from '../styles/useThemeProps';
 import ListContext from './ListContext';
 import { getListUtilityClass } from './listClasses';
+import { ListOwnerState, ListProps, ListTypeMap } from './List.types';
+import { OverridableComponent } from '@mui/types';
 
-const useUtilityClasses = (ownerState) => {
+const useUtilityClasses = (ownerState: ListOwnerState) => {
   const { classes, disablePadding, dense, subheader } = ownerState;
 
   const slots = {
-    root: ['root', !disablePadding && 'padding', dense && 'dense', subheader && 'subheader'],
+    root: ['root', !disablePadding && 'padding', dense && 'dense', !!subheader && 'subheader'],
   };
 
   return composeClasses(slots, getListUtilityClass, classes);
@@ -31,7 +33,7 @@ const ListRoot = styled('ul', {
       ownerState.subheader && styles.subheader,
     ];
   },
-})(({ ownerState }) => ({
+})(({ ownerState }: { ownerState: ListOwnerState }) => ({
   listStyle: 'none',
   margin: 0,
   padding: 0,
@@ -45,7 +47,9 @@ const ListRoot = styled('ul', {
   }),
 }));
 
-const List = React.forwardRef(function List(inProps, ref) {
+const List = React.forwardRef(function List<
+  BaseComponentType extends React.ElementType = ListTypeMap['defaultComponent'],
+>(inProps: ListProps<BaseComponentType>, ref: React.ForwardedRef<any>) {
   const props = useThemeProps({ props: inProps, name: 'MuiList' });
   const {
     children,
@@ -82,12 +86,12 @@ const List = React.forwardRef(function List(inProps, ref) {
       </ListRoot>
     </ListContext.Provider>
   );
-});
+}) as OverridableComponent<ListTypeMap>;
 
 List.propTypes /* remove-proptypes */ = {
   // ----------------------------- Warning --------------------------------
   // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // |     To update them edit TypeScript types and run "yarn proptypes"  |
   // ----------------------------------------------------------------------
   /**
    * The content of the component.
@@ -130,6 +134,6 @@ List.propTypes /* remove-proptypes */ = {
     PropTypes.func,
     PropTypes.object,
   ]),
-};
+} as any;
 
 export default List;

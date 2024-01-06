@@ -4,6 +4,8 @@ import { OverridableComponent, OverridableTypeMap, OverrideProps } from '@mui/ty
 import { Theme } from '..';
 import { ListClasses } from './listClasses';
 
+export interface ListOwnerState extends ListProps {}
+
 export interface ListOwnProps {
   /**
    * The content of the component.
