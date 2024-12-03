@@ -1739,8 +1739,8 @@ The component should forward the `ref` prop instead of the `inputRef` prop.
 Rename `marginDense` and `inputMarginDense` classes to `sizeSmall` and `inputSizeSmall` to match the prop.
 
 ```diff
--<Input margin="dense" />
-+<Input size="small" />
+-<TextField margin="dense" />
++<TextField size="small" />
 ```
 
 ### Update InputAdornment position prop
