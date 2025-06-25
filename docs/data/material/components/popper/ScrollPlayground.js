@@ -209,58 +209,171 @@ export default function ScrollPlayground() {
     container.scrollLeft = element.clientWidth / 4;
   };
 
-  const jsx = `<Popper
-  id={id}
-  open={open}
-  anchorEl={anchorRef.current}
-  placement="${placement}"
-  disablePortal={${disablePortal}}
-  modifiers={[
-    {
-      name: 'flip',
-      enabled: ${flip.enabled},
-      options: {
-        altBoundary: ${flip.altBoundary},
-        rootBoundary: '${flip.rootBoundary}',
-        padding: 8,
+  const jsx = `import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Popper from '@mui/material/Popper';
+import Paper from '@mui/material/Paper';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+const StyledPopper = styled(Popper, {
+  shouldForwardProp: (prop) => prop !== 'arrow',
+})(({ theme }) => ({
+  zIndex: 1,
+  '& > div': {
+    position: 'relative',
+  },
+  '&[data-popper-placement*="bottom"]': {
+    '& .MuiPopper-arrow': {
+      top: 0,
+      left: 0,
+      marginTop: '-0.9em',
+      width: '3em',
+      height: '1em',
+      '&::before': {
+        borderWidth: '0 1em 1em 1em',
+        borderColor: \`transparent transparent \${theme.palette.background.paper} transparent\`,
       },
     },
-    {
-      name: 'preventOverflow',
-      enabled: ${preventOverflow.enabled},
-      options: {
-        altAxis: ${preventOverflow.altAxis},
-        altBoundary: ${preventOverflow.altBoundary},
-        tether: ${preventOverflow.tether},
-        rootBoundary: '${preventOverflow.rootBoundary}',
-        padding: 8,
+  },
+  '&[data-popper-placement*="top"]': {
+    '& .MuiPopper-arrow': {
+      bottom: 0,
+      left: 0,
+      marginBottom: '-0.9em',
+      width: '3em',
+      height: '1em',
+      '&::before': {
+        borderWidth: '1em 1em 0 1em',
+        borderColor: \`\${theme.palette.background.paper} transparent transparent transparent\`,
       },
     },
-    {
-      name: 'arrow',
-      enabled: ${arrow},
-      options: {
-        element: arrowRef,
+  },
+  '&[data-popper-placement*="right"]': {
+    '& .MuiPopper-arrow': {
+      left: 0,
+      marginLeft: '-0.9em',
+      height: '3em',
+      width: '1em',
+      '&::before': {
+        borderWidth: '1em 1em 1em 0',
+        borderColor: \`transparent \${theme.palette.background.paper} transparent transparent\`,
       },
     },
-  ]}
->
-  <div>
-    ${arrow ? `<Arrow ref={setArrowRef} className="MuiPopper-arrow" />` : ''}
-    <Paper sx={{ maxWidth: 400, overflow: 'auto' }}>
-      <DialogTitle>{"Use Google's location service?"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          Let Google help apps determine location.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClickButton}>Disagree</Button>
-        <Button onClick={handleClickButton}>Agree</Button>
-      </DialogActions>
-    </Paper>
-  </div>
-</Popper>`;
+  },
+  '&[data-popper-placement*="left"]': {
+    '& .MuiPopper-arrow': {
+      right: 0,
+      marginRight: '-0.9em',
+      height: '3em',
+      width: '1em',
+      '&::before': {
+        borderWidth: '1em 0 1em 1em',
+        borderColor: \`transparent transparent transparent \${theme.palette.background.paper}\`,
+      },
+    },
+  },
+}));
+
+const Arrow = styled('div')({
+  position: 'absolute',
+  fontSize: 7,
+  width: '3em',
+  height: '3em',
+  '&::before': {
+    content: '""',
+    margin: 'auto',
+    display: 'block',
+    width: 0,
+    height: 0,
+    borderStyle: 'solid',
+  },
+});
+
+export default function PopperExample() {
+  const anchorRef = React.useRef(null);
+  const [open, setOpen] = React.useState(false);
+  // arrowRef is used to reference the arrow element for Popper.js positioning
+  const [arrowRef, setArrowRef] = React.useState(null);
+
+  const handleClickButton = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const id = open ? 'popper-example' : null;
+
+  return (
+    <Box>
+      <Button
+        ref={anchorRef}
+        variant="contained"
+        onClick={handleClickButton}
+        aria-describedby={id}
+      >
+        Toggle Popper
+      </Button>
+      <StyledPopper
+        id={id}
+        open={open}
+        anchorEl={anchorRef.current}
+        placement="${placement}"
+        disablePortal={${disablePortal}}
+        arrow={${arrow}}
+        modifiers={[
+          {
+            name: 'flip',
+            enabled: ${flip.enabled},
+            options: {
+              altBoundary: ${flip.altBoundary},
+              rootBoundary: '${flip.rootBoundary}',
+              padding: 8,
+            },
+          },
+          {
+            name: 'preventOverflow',
+            enabled: ${preventOverflow.enabled},
+            options: {
+              altAxis: ${preventOverflow.altAxis},
+              altBoundary: ${preventOverflow.altBoundary},
+              tether: ${preventOverflow.tether},
+              rootBoundary: '${preventOverflow.rootBoundary}',
+              padding: 8,
+            },
+          },
+          {
+            name: 'arrow',
+            enabled: ${arrow},
+            options: {
+              // arrowRef points to the arrow element for positioning
+              element: arrowRef,
+            },
+          },
+        ]}
+      >
+        <div>
+          ${arrow ? `{/* Arrow element - referenced by arrowRef for positioning */}
+          <Arrow ref={setArrowRef} className="MuiPopper-arrow" />` : ''}
+          <Paper sx={{ maxWidth: 400, overflow: 'auto' }}>
+            <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Let Google help apps determine location.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClickButton}>Disagree</Button>
+              <Button onClick={handleClickButton}>Agree</Button>
+            </DialogActions>
+          </Paper>
+        </div>
+      </StyledPopper>
+    </Box>
+  );
+}`;
   const id = open ? 'scroll-playground' : null;
 
   return (
