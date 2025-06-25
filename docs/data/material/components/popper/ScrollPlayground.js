@@ -209,8 +209,10 @@ export default function ScrollPlayground() {
     container.scrollLeft = element.clientWidth / 4;
   };
 
-  const jsx = `
-<Popper
+  const jsx = `<Popper
+  id={id}
+  open={open}
+  anchorEl={anchorRef.current}
   placement="${placement}"
   disablePortal={${disablePortal}}
   modifiers={[
@@ -243,7 +245,22 @@ export default function ScrollPlayground() {
     },
   ]}
 >
-  `;
+  <div>
+    ${arrow ? `<Arrow ref={setArrowRef} className="MuiPopper-arrow" />` : ''}
+    <Paper sx={{ maxWidth: 400, overflow: 'auto' }}>
+      <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          Let Google help apps determine location.
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClickButton}>Disagree</Button>
+        <Button onClick={handleClickButton}>Agree</Button>
+      </DialogActions>
+    </Paper>
+  </div>
+</Popper>`;
   const id = open ? 'scroll-playground' : null;
 
   return (
