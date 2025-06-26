@@ -1,4 +1,4 @@
-export default function withStyles() {
+export default function withStyles(): never {
   throw /* minify-error */ new Error(
     'MUI: withStyles is no longer exported from @mui/material/styles.\n' +
       'You have to import it from @mui/styles.\n' +
