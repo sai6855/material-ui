@@ -88,7 +88,7 @@ export type TablePaginationSlotsAndSlotProps = CreateSlotsAndSlotProps<
   {
     /**
      * Props forwarded to the root slot.
-     * By default, the avaible props are based on the [TableCell](https://mui.com/material-ui/api/table-cell/#props) component.
+     * By default, the available props are based on the [TableCell](https://mui.com/material-ui/api/table-cell/#props) component.
      */
     root: SlotProps<
       React.ElementType<TableCellProps>,
@@ -97,7 +97,7 @@ export type TablePaginationSlotsAndSlotProps = CreateSlotsAndSlotProps<
     >;
     /**
      * Props forwarded to the toolbar slot.
-     * By default, the avaible props are based on the [Toolbar](https://mui.com/material-ui/api/toolbar/#props) component.
+     * By default, the available props are based on the [Toolbar](https://mui.com/material-ui/api/toolbar/#props) component.
      */
     toolbar: SlotProps<
       React.ElementType<ToolbarProps>,
@@ -106,12 +106,12 @@ export type TablePaginationSlotsAndSlotProps = CreateSlotsAndSlotProps<
     >;
     /**
      * Props forwarded to the spacer slot.
-     * By default, the avaible props are based on the div element.
+     * By default, the available props are based on the div element.
      */
     spacer: SlotProps<'div', TablePaginationSpacerSlotPropsOverrides, TablePaginationOwnerState>;
     /**
      * Props forwarded to the selectLabel slot.
-     * By default, the avaible props are based on the paragraph element.
+     * By default, the available props are based on the paragraph element.
      */
     selectLabel: SlotProps<
       'p',
@@ -120,12 +120,12 @@ export type TablePaginationSlotsAndSlotProps = CreateSlotsAndSlotProps<
     >;
     /**
      * Props forwarded to the select slot.
-     * By default, the avaible props are based on the [Select](https://mui.com/material-ui/api/select/#props) component.
+     * By default, the available props are based on the [Select](https://mui.com/material-ui/api/select/#props) component.
      */
     select: Partial<SelectProps> & TablePaginationSelectSlotPropsOverrides;
     /**
      * Props forwarded to the menuItem slot.
-     * By default, the avaible props are based on the [MenuItem](https://mui.com/material-ui/api/menu-item/#props) component.
+     * By default, the available props are based on the [MenuItem](https://mui.com/material-ui/api/menu-item/#props) component.
      */
     menuItem: SlotProps<
       React.ElementType<MenuItemProps>,
@@ -134,7 +134,7 @@ export type TablePaginationSlotsAndSlotProps = CreateSlotsAndSlotProps<
     >;
     /**
      * Props forwarded to the displayedRows slot.
-     * By default, the avaible props are based on the paragraph element.
+     * By default, the available props are based on the paragraph element.
      */
     displayedRows: SlotProps<
       'p',
