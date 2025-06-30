@@ -303,6 +303,76 @@ DocSearchHit.propTypes = {
   hit: PropTypes.object.isRequired,
 };
 
+// Utility function to get scrollbar width
+function getScrollbarWidth() {
+  if (typeof window === 'undefined') return 0;
+  
+  const outer = document.createElement('div');
+  outer.style.visibility = 'hidden';
+  outer.style.overflow = 'scroll';
+  outer.style.msOverflowStyle = 'scrollbar';
+  document.body.appendChild(outer);
+
+  const inner = document.createElement('div');
+  outer.appendChild(inner);
+
+  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+}
+
+// Body scroll lock implementation
+function lockBodyScroll() {
+  if (typeof window === 'undefined') return () => {};
+
+  const body = document.body;
+  const html = document.documentElement;
+  
+  // Check if body is overflowing (has scrollbar)
+  const hasVerticalScrollbar = window.innerHeight < html.scrollHeight;
+  
+  if (!hasVerticalScrollbar) {
+    // No scrollbar, just prevent scrolling
+    body.style.overflow = 'hidden';
+    return () => {
+      body.style.overflow = '';
+    };
+  }
+
+  const scrollbarWidth = getScrollbarWidth();
+  const currentPaddingRight = parseInt(window.getComputedStyle(body).paddingRight, 10) || 0;
+  
+  // Store original values
+  const originalOverflow = body.style.overflow;
+  const originalPaddingRight = body.style.paddingRight;
+  
+  // Apply scroll lock with padding compensation
+  body.style.overflow = 'hidden';
+  body.style.paddingRight = `${currentPaddingRight + scrollbarWidth}px`;
+  
+  // Also handle elements with position: fixed
+  const fixedElements = document.querySelectorAll('.mui-fixed, [data-mui-fixed]');
+  const originalFixedStyles = [];
+  
+  fixedElements.forEach((element, index) => {
+    const currentPaddingRight = parseInt(window.getComputedStyle(element).paddingRight, 10) || 0;
+    originalFixedStyles[index] = element.style.paddingRight;
+    element.style.paddingRight = `${currentPaddingRight + scrollbarWidth}px`;
+  });
+
+  // Return cleanup function
+  return () => {
+    body.style.overflow = originalOverflow;
+    body.style.paddingRight = originalPaddingRight;
+    
+    fixedElements.forEach((element, index) => {
+      element.style.paddingRight = originalFixedStyles[index];
+    });
+  };
+}
+
 export default function AppSearch(props) {
   useLazyCSS(
     'https://cdn.jsdelivr.net/npm/@docsearch/css@3.0.0-alpha.40/dist/style.min.css',
@@ -315,6 +385,7 @@ export default function AppSearch(props) {
   const searchButtonRef = React.useRef(null);
   const [isOpen, setIsOpen] = React.useState(false);
   const [initialQuery, setInitialQuery] = React.useState(undefined);
+  const unlockScrollRef = React.useRef(null);
   const facetFilterLanguage = LANGUAGES_SSR.includes(userLanguage)
     ? `language:${userLanguage}`
     : `language:en`;
@@ -337,6 +408,11 @@ export default function AppSearch(props) {
     if (modal) {
       // fade out transition
       modal.style.opacity = 0;
+    }
+    // Unlock body scroll when modal closes
+    if (unlockScrollRef.current) {
+      unlockScrollRef.current();
+      unlockScrollRef.current = null;
     }
     setIsOpen(false); // DO NOT call setIsOpen inside a timeout (it causes scroll issue).
   }, [setIsOpen]);
@@ -370,6 +446,9 @@ export default function AppSearch(props) {
     };
     // add transition to Modal
     if (isOpen) {
+      // Lock body scroll to prevent layout shift
+      unlockScrollRef.current = lockBodyScroll();
+      
       const modal = document.querySelector('.DocSearch-Container');
       const searchInput = document.querySelector('.DocSearch-Input');
       if (modal) {
@@ -391,6 +470,15 @@ export default function AppSearch(props) {
     }
     return () => {};
   }, [isOpen]);
+
+  // Cleanup effect to ensure scroll is unlocked on unmount
+  React.useEffect(() => {
+    return () => {
+      if (unlockScrollRef.current) {
+        unlockScrollRef.current();
+      }
+    };
+  }, []);
 
   const optionalFilters = [];
   if (pageContext.productId !== 'null') {
@@ -489,6 +577,11 @@ export default function AppSearch(props) {
           },
           body: {
             '.DocSearch-Container': {
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
               transition: `opacity ${FADE_DURATION}ms`,
               opacity: 0,
               zIndex: theme.zIndex.tooltip + 100,
