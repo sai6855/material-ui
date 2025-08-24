@@ -53,11 +53,11 @@ export default function resolveProps<
           }
         }
       } else if (propName === 'className' && mergeClassNameAndStyle && props.className) {
-        output.className = clsx(defaultProps?.className, props?.className);
+        output.className = clsx(defaultProps.className, props.className);
       } else if (propName === 'style' && mergeClassNameAndStyle && props.style) {
         output.style = {
-          ...defaultProps?.style,
-          ...props?.style,
+          ...defaultProps.style,
+          ...props.style,
         };
       } else if (output[propName] === undefined) {
         output[propName] = defaultProps[propName];
