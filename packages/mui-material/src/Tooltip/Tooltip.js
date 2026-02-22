@@ -210,47 +210,16 @@ const TooltipTooltip = styled('div', {
         },
       },
       {
-        props: ({ ownerState }) => !ownerState.isRtl,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: {
-            marginRight: '14px',
-          },
-          [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
-            marginLeft: '14px',
-          },
-        },
-      },
-      {
-        props: ({ ownerState }) => !ownerState.isRtl && ownerState.touch,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: {
-            marginRight: '24px',
-          },
-          [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
-            marginLeft: '24px',
-          },
-        },
-      },
-      {
-        props: ({ ownerState }) => !!ownerState.isRtl,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: {
-            marginLeft: '14px',
-          },
-          [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
-            marginRight: '14px',
-          },
-        },
-      },
-      {
-        props: ({ ownerState }) => !!ownerState.isRtl && ownerState.touch,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: {
-            marginLeft: '24px',
-          },
-          [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
-            marginRight: '24px',
-          },
+        style: ({ ownerState }) => {
+          const margin = ownerState.touch ? '24px' : '14px';
+          return {
+            [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: {
+              [ownerState.isRtl ? 'marginLeft' : 'marginRight']: margin,
+            },
+            [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
+              [ownerState.isRtl ? 'marginRight' : 'marginLeft']: margin,
+            },
+          };
         },
       },
     ],
