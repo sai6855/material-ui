@@ -201,6 +201,12 @@ const TooltipTooltip = styled('div', {
           fontSize: theme.typography.pxToRem(14),
           lineHeight: `${round(16 / 14)}em`,
           fontWeight: theme.typography.fontWeightRegular,
+          [`.${tooltipClasses.popper}[data-popper-placement*="top"] &`]: {
+            marginBottom: '24px',
+          },
+          [`.${tooltipClasses.popper}[data-popper-placement*="bottom"] &`]: {
+            marginTop: '24px',
+          },
         },
       },
       {
@@ -244,22 +250,6 @@ const TooltipTooltip = styled('div', {
           },
           [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: {
             marginRight: '24px',
-          },
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.touch,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="top"] &`]: {
-            marginBottom: '24px',
-          },
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.touch,
-        style: {
-          [`.${tooltipClasses.popper}[data-popper-placement*="bottom"] &`]: {
-            marginTop: '24px',
           },
         },
       },
