@@ -141,32 +141,17 @@ const TabRoot = styled(ButtonBase, {
         },
       },
       {
-        props: {
-          textColor: 'primary',
-        },
-        style: {
+        props: ({ ownerState }) =>
+          ownerState.textColor === 'primary' || ownerState.textColor === 'secondary',
+        style: ({ theme, ownerState }) => ({
           color: (theme.vars || theme).palette.text.secondary,
           [`&.${tabClasses.selected}`]: {
-            color: (theme.vars || theme).palette.primary.main,
+            color: (theme.vars || theme).palette[ownerState.textColor].main,
           },
           [`&.${tabClasses.disabled}`]: {
             color: (theme.vars || theme).palette.text.disabled,
           },
-        },
-      },
-      {
-        props: {
-          textColor: 'secondary',
-        },
-        style: {
-          color: (theme.vars || theme).palette.text.secondary,
-          [`&.${tabClasses.selected}`]: {
-            color: (theme.vars || theme).palette.secondary.main,
-          },
-          [`&.${tabClasses.disabled}`]: {
-            color: (theme.vars || theme).palette.text.disabled,
-          },
-        },
+        }),
       },
       {
         props: ({ ownerState }) => ownerState.fullWidth,
