@@ -90,39 +90,25 @@ const TabRoot = styled(ButtonBase, {
         },
       },
       {
-        props: ({ ownerState, iconPosition }) =>
-          ownerState.icon && ownerState.label && iconPosition === 'top',
-        style: {
-          [`& > .${tabClasses.icon}`]: {
-            marginBottom: 6,
-          },
-        },
-      },
-      {
-        props: ({ ownerState, iconPosition }) =>
-          ownerState.icon && ownerState.label && iconPosition === 'bottom',
-        style: {
-          [`& > .${tabClasses.icon}`]: {
-            marginTop: 6,
-          },
-        },
-      },
-      {
-        props: ({ ownerState, iconPosition }) =>
-          ownerState.icon && ownerState.label && iconPosition === 'start',
-        style: {
-          [`& > .${tabClasses.icon}`]: {
-            marginRight: theme.spacing(1),
-          },
-        },
-      },
-      {
-        props: ({ ownerState, iconPosition }) =>
-          ownerState.icon && ownerState.label && iconPosition === 'end',
-        style: {
-          [`& > .${tabClasses.icon}`]: {
-            marginLeft: theme.spacing(1),
-          },
+        props: ({ ownerState }) => ownerState.icon && ownerState.label,
+        style: ({ ownerState }) => {
+          const sideLookUp = {
+            top: {
+              marginBottom: 6,
+            },
+            bottom: {
+              marginTop: 6,
+            },
+            start: {
+              marginRight: theme.spacing(1),
+            },
+            end: {
+              marginLeft: theme.spacing(1),
+            },
+          };
+          return {
+            [`& > .${tabClasses.icon}`]: sideLookUp[ownerState.iconPosition],
+          };
         },
       },
       {
