@@ -83,16 +83,8 @@ const TabRoot = styled(ButtonBase, {
       },
       {
         props: ({ ownerState }) => ownerState.icon && ownerState.label,
-        style: {
-          minHeight: 72,
-          paddingTop: 9,
-          paddingBottom: 9,
-        },
-      },
-      {
-        props: ({ ownerState }) => ownerState.icon && ownerState.label,
         style: ({ ownerState }) => {
-          const sideLookUp = {
+          const styleLookup = {
             top: {
               marginBottom: 6,
             },
@@ -107,7 +99,10 @@ const TabRoot = styled(ButtonBase, {
             },
           };
           return {
-            [`& > .${tabClasses.icon}`]: sideLookUp[ownerState.iconPosition],
+            minHeight: 72,
+            paddingTop: 9,
+            paddingBottom: 9,
+            [`& > .${tabClasses.icon}`]: styleLookup[ownerState.iconPosition],
           };
         },
       },
