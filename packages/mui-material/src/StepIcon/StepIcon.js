@@ -32,8 +32,11 @@ const StepIconRoot = styled(SvgIcon, {
       duration: theme.transitions.duration.shortest,
     }),
     color: (theme.vars || theme).palette.text.disabled,
-    [`&.${stepIconClasses.completed}, &.${stepIconClasses.active}, &.${stepIconClasses.error}`]: {
+    [`&.${stepIconClasses.completed}, &.${stepIconClasses.active}`]: {
       color: (theme.vars || theme).palette.primary.main,
+    },
+    [`&.${stepIconClasses.error}`]: {
+      color: (theme.vars || theme).palette.error.main,
     },
   })),
 );
