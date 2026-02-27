@@ -88,19 +88,22 @@ const styleKeys = {
   ],
 };
 
+const createEntries = (keys, value) =>
+  keys.reduce((acc, key) => {
+    acc[key] = value;
+    return acc;
+  }, {});
+
 const defaultSxConfig = {
   // borders
-  ...Object.fromEntries(
-    styleKeys.borderSide.map((key) => ({
-      [key]: { themeKey: 'borders', transform: borderTransform },
-    })),
-  ),
+  ...createEntries(styleKeys.borderSide, {
+    themeKey: 'borders',
+    transform: borderTransform,
+  }),
 
-  ...Object.fromEntries(
-    styleKeys.borderColor.map((key) => ({
-      [key]: { themeKey: 'palette' },
-    })),
-  ),
+  ...createEntries(styleKeys.borderColor, {
+    themeKey: 'palette',
+  }),
 
   borderRadius: {
     themeKey: 'shape.borderRadius',
@@ -124,17 +127,13 @@ const defaultSxConfig = {
 
   // spacing
 
-  ...Object.fromEntries(
-    styleKeys.padding.map((key) => ({
-      [key]: { style: padding },
-    })),
-  ),
+  ...createEntries(styleKeys.padding, {
+    style: padding,
+  }),
 
-  ...Object.fromEntries(
-    styleKeys.margin.map((key) => ({
-      [key]: { style: margin },
-    })),
-  ),
+  ...createEntries(styleKeys.margin, {
+    style: margin,
+  }),
 
   // display
   displayPrint: {
@@ -145,14 +144,10 @@ const defaultSxConfig = {
       },
     }),
   },
-  ...styleKeys.display.map((key) => ({
-    [key]: {},
-  })),
+  ...createEntries(styleKeys.display, {}),
 
   // flexbox
-  ...styleKeys.flexBox.map((key) => ({
-    [key]: {},
-  })),
+  ...createEntries(styleKeys.flexBox, {}),
 
   // grid
   gap: {
@@ -164,9 +159,7 @@ const defaultSxConfig = {
   columnGap: {
     style: columnGap,
   },
-  ...styleKeys.grid.map((key) => ({
-    [key]: {},
-  })),
+  ...createEntries(styleKeys.grid, {}),
 
   // positions
   position: {},
