@@ -1,64 +1,102 @@
-import { padding, margin } from '../spacing';
+import spacing, { padding, margin } from '../spacing';
 import { borderRadius, borderTransform } from '../borders';
 import { gap, rowGap, columnGap } from '../cssGrid';
 import { paletteTransform } from '../palette';
 import { maxWidth, sizingTransform } from '../sizing';
 
+const styleKeys = {
+  borderSide: ['border', 'borderTop', 'borderRight', 'borderBottom', 'borderLeft', 'outline'],
+  borderColor: [
+    'borderColor',
+    'borderTopColor',
+    'borderRightColor',
+    'borderBottomColor',
+    'borderLeftColor',
+    'outlineColor',
+  ],
+  margin: [
+    'm',
+    'mt',
+    'mr',
+    'mb',
+    'ml',
+    'mx',
+    'my',
+    'margin',
+    'marginTop',
+    'marginRight',
+    'marginBottom',
+    'marginLeft',
+    'marginX',
+    'marginY',
+    'marginInline',
+    'marginInlineStart',
+    'marginInlineEnd',
+    'marginBlock',
+    'marginBlockStart',
+    'marginBlockEnd',
+  ],
+  padding: [
+    'p',
+    'pt',
+    'pr',
+    'pb',
+    'pl',
+    'px',
+    'py',
+    'padding',
+    'paddingTop',
+    'paddingRight',
+    'paddingBottom',
+    'paddingLeft',
+    'paddingX',
+    'paddingY',
+    'paddingInline',
+    'paddingInlineStart',
+    'paddingInlineEnd',
+    'paddingBlock',
+    'paddingBlockStart',
+    'paddingBlockEnd',
+  ],
+
+  display: ['display', 'overflow', 'textOverflow', 'viibility', 'whitespace'],
+  flexBox: [
+    'flexBasis',
+    'flexDirection',
+    'flexWrap',
+    'justifyContent',
+    'alignItems',
+    'alignContent',
+    'order',
+    'flex',
+    'flexGrow',
+    'flexShrink',
+    'alignSelf',
+    'justifyItems',
+    'justifySelf',
+  ],
+  grid: [
+    'gridColumn',
+    'gridRow',
+    'gridAutoFlow',
+    'gridAutoColumns',
+    'gridAutoRows',
+    'gridTemplateColumns',
+    'gridTemplateRows',
+    'gridTemplateAreas',
+    'gridArea',
+  ],
+};
+
 const defaultSxConfig = {
   // borders
-  border: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
+  ...styleKeys.borderSide.map((key) => ({
+    [key]: { themeKey: 'borders', transform: borderTransform },
+  })),
 
-  borderTop: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
-
-  borderRight: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
-
-  borderBottom: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
-
-  borderLeft: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
-
-  borderColor: {
-    themeKey: 'palette',
-  },
-
-  borderTopColor: {
-    themeKey: 'palette',
-  },
-
-  borderRightColor: {
-    themeKey: 'palette',
-  },
-
-  borderBottomColor: {
-    themeKey: 'palette',
-  },
-
-  borderLeftColor: {
-    themeKey: 'palette',
-  },
-
-  outline: {
-    themeKey: 'borders',
-    transform: borderTransform,
-  },
-
-  outlineColor: {
-    themeKey: 'palette',
-  },
+  ...styleKeys.borderColor.map((key) => ({
+    [key]: { themeKey: 'palatte' },
+  })),
 
   borderRadius: {
     themeKey: 'shape.borderRadius',
@@ -81,127 +119,14 @@ const defaultSxConfig = {
   },
 
   // spacing
-  p: {
-    style: padding,
-  },
-  pt: {
-    style: padding,
-  },
-  pr: {
-    style: padding,
-  },
-  pb: {
-    style: padding,
-  },
-  pl: {
-    style: padding,
-  },
-  px: {
-    style: padding,
-  },
-  py: {
-    style: padding,
-  },
-  padding: {
-    style: padding,
-  },
-  paddingTop: {
-    style: padding,
-  },
-  paddingRight: {
-    style: padding,
-  },
-  paddingBottom: {
-    style: padding,
-  },
-  paddingLeft: {
-    style: padding,
-  },
-  paddingX: {
-    style: padding,
-  },
-  paddingY: {
-    style: padding,
-  },
-  paddingInline: {
-    style: padding,
-  },
-  paddingInlineStart: {
-    style: padding,
-  },
-  paddingInlineEnd: {
-    style: padding,
-  },
-  paddingBlock: {
-    style: padding,
-  },
-  paddingBlockStart: {
-    style: padding,
-  },
-  paddingBlockEnd: {
-    style: padding,
-  },
 
-  m: {
-    style: margin,
-  },
-  mt: {
-    style: margin,
-  },
-  mr: {
-    style: margin,
-  },
-  mb: {
-    style: margin,
-  },
-  ml: {
-    style: margin,
-  },
-  mx: {
-    style: margin,
-  },
-  my: {
-    style: margin,
-  },
-  margin: {
-    style: margin,
-  },
-  marginTop: {
-    style: margin,
-  },
-  marginRight: {
-    style: margin,
-  },
-  marginBottom: {
-    style: margin,
-  },
-  marginLeft: {
-    style: margin,
-  },
-  marginX: {
-    style: margin,
-  },
-  marginY: {
-    style: margin,
-  },
-  marginInline: {
-    style: margin,
-  },
-  marginInlineStart: {
-    style: margin,
-  },
-  marginInlineEnd: {
-    style: margin,
-  },
-  marginBlock: {
-    style: margin,
-  },
-  marginBlockStart: {
-    style: margin,
-  },
-  marginBlockEnd: {
-    style: margin,
-  },
+  ...styleKeys.padding.map((key) => ({
+    [key]: { style: padding },
+  })),
+
+  ...styleKeys.margin.map((key) => ({
+    [key]: { style: margin },
+  })),
 
   // display
   displayPrint: {
@@ -212,26 +137,14 @@ const defaultSxConfig = {
       },
     }),
   },
-  display: {},
-  overflow: {},
-  textOverflow: {},
-  visibility: {},
-  whiteSpace: {},
+  ...styleKeys.display.map((key) => ({
+    [key]: {},
+  })),
 
   // flexbox
-  flexBasis: {},
-  flexDirection: {},
-  flexWrap: {},
-  justifyContent: {},
-  alignItems: {},
-  alignContent: {},
-  order: {},
-  flex: {},
-  flexGrow: {},
-  flexShrink: {},
-  alignSelf: {},
-  justifyItems: {},
-  justifySelf: {},
+  ...styleKeys.flexBox.map((key) => ({
+    [key]: {},
+  })),
 
   // grid
   gap: {
@@ -243,15 +156,9 @@ const defaultSxConfig = {
   columnGap: {
     style: columnGap,
   },
-  gridColumn: {},
-  gridRow: {},
-  gridAutoFlow: {},
-  gridAutoColumns: {},
-  gridAutoRows: {},
-  gridTemplateColumns: {},
-  gridTemplateRows: {},
-  gridTemplateAreas: {},
-  gridArea: {},
+  ...styleKeys.grid.map((key) => ({
+    [key]: {},
+  })),
 
   // positions
   position: {},
