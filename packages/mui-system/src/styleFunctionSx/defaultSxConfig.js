@@ -1,4 +1,4 @@
-import spacing, { padding, margin } from '../spacing';
+import { padding, margin } from '../spacing';
 import { borderRadius, borderTransform } from '../borders';
 import { gap, rowGap, columnGap } from '../cssGrid';
 import { paletteTransform } from '../palette';
@@ -59,7 +59,7 @@ const styleKeys = {
     'paddingBlockEnd',
   ],
 
-  display: ['display', 'overflow', 'textOverflow', 'viibility', 'whitespace'],
+  display: ['display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'],
   flexBox: [
     'flexBasis',
     'flexDirection',
@@ -90,13 +90,17 @@ const styleKeys = {
 
 const defaultSxConfig = {
   // borders
-  ...styleKeys.borderSide.map((key) => ({
-    [key]: { themeKey: 'borders', transform: borderTransform },
-  })),
+  ...Object.fromEntries(
+    styleKeys.borderSide.map((key) => ({
+      [key]: { themeKey: 'borders', transform: borderTransform },
+    })),
+  ),
 
-  ...styleKeys.borderColor.map((key) => ({
-    [key]: { themeKey: 'palatte' },
-  })),
+  ...Object.fromEntries(
+    styleKeys.borderColor.map((key) => ({
+      [key]: { themeKey: 'palette' },
+    })),
+  ),
 
   borderRadius: {
     themeKey: 'shape.borderRadius',
@@ -120,13 +124,17 @@ const defaultSxConfig = {
 
   // spacing
 
-  ...styleKeys.padding.map((key) => ({
-    [key]: { style: padding },
-  })),
+  ...Object.fromEntries(
+    styleKeys.padding.map((key) => ({
+      [key]: { style: padding },
+    })),
+  ),
 
-  ...styleKeys.margin.map((key) => ({
-    [key]: { style: margin },
-  })),
+  ...Object.fromEntries(
+    styleKeys.margin.map((key) => ({
+      [key]: { style: margin },
+    })),
+  ),
 
   // display
   displayPrint: {
