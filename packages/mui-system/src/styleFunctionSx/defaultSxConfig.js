@@ -115,12 +115,14 @@ const defaultSxConfig = {
   },
 
   ...Object.fromEntries(
-    ['display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'].map((prop) => [prop, {}]),
-  ),
-
-  // flexbox
-  ...Object.fromEntries(
     [
+      // display
+      'display',
+      'overflow',
+      'textOverflow',
+      'visibility',
+      'whiteSpace',
+      // flexbox
       'flexBasis',
       'flexDirection',
       'flexWrap',
@@ -134,12 +136,7 @@ const defaultSxConfig = {
       'alignSelf',
       'justifyItems',
       'justifySelf',
-    ].map((prop) => [prop, {}]),
-  ),
-
-  // grid
-  ...Object.fromEntries(
-    [
+      // grid
       'gridColumn',
       'gridRow',
       'gridAutoFlow',
@@ -149,6 +146,12 @@ const defaultSxConfig = {
       'gridTemplateRows',
       'gridTemplateAreas',
       'gridArea',
+      // positions
+      'position',
+      'top',
+      'right',
+      'bottom',
+      'left',
     ].map((prop) => [prop, {}]),
   ),
 
@@ -162,8 +165,6 @@ const defaultSxConfig = {
     style: columnGap,
   },
 
-  // positions
-  ...Object.fromEntries(['position', 'top', 'right', 'bottom', 'left'].map((prop) => [prop, {}])),
   zIndex: {
     themeKey: 'zIndex',
   },
