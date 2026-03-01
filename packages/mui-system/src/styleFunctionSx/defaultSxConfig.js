@@ -4,91 +4,36 @@ import { gap, rowGap, columnGap } from '../cssGrid';
 import { paletteTransform } from '../palette';
 import { maxWidth, sizingTransform } from '../sizing';
 
-const styleKeys = {
-  borderSide: ['border', 'borderTop', 'borderRight', 'borderBottom', 'borderLeft', 'outline'],
-  borderColor: [
+const defaultSxConfig = {
+  // borders
+
+  ...Object.fromEntries([
+    'border',
+    'borderTop',
+    'borderRight',
+    'borderBottom',
+    'borderLeft',
+    'outline',
+  ]).map((prop) => [
+    prop,
+    {
+      themeKey: 'borders',
+      transform: borderTransform,
+    },
+  ]),
+  ...Object.fromEntries([
     'borderColor',
     'borderTopColor',
     'borderRightColor',
     'borderBottomColor',
     'borderLeftColor',
     'outlineColor',
-  ],
-  margin: [
-    'm',
-    'mt',
-    'mr',
-    'mb',
-    'ml',
-    'mx',
-    'my',
-    'margin',
-    'marginTop',
-    'marginRight',
-    'marginBottom',
-    'marginLeft',
-    'marginX',
-    'marginY',
-    'marginInline',
-    'marginInlineStart',
-    'marginInlineEnd',
-    'marginBlock',
-    'marginBlockStart',
-    'marginBlockEnd',
-  ],
-  padding: [
-    'p',
-    'pt',
-    'pr',
-    'pb',
-    'pl',
-    'px',
-    'py',
-    'padding',
-    'paddingTop',
-    'paddingRight',
-    'paddingBottom',
-    'paddingLeft',
-    'paddingX',
-    'paddingY',
-    'paddingInline',
-    'paddingInlineStart',
-    'paddingInlineEnd',
-    'paddingBlock',
-    'paddingBlockStart',
-    'paddingBlockEnd',
-  ],
-
-  display: ['display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'],
-  grid: [
-    'gridColumn',
-    'gridRow',
-    'gridAutoFlow',
-    'gridAutoColumns',
-    'gridAutoRows',
-    'gridTemplateColumns',
-    'gridTemplateRows',
-    'gridTemplateAreas',
-    'gridArea',
-  ],
-};
-
-const createEntries = (keys, value) =>
-  keys.reduce((acc, key) => {
-    acc[key] = value;
-    return acc;
-  }, {});
-
-const defaultSxConfig = {
-  // borders
-  ...createEntries(styleKeys.borderSide, {
-    themeKey: 'borders',
-    transform: borderTransform,
-  }),
-
-  ...createEntries(styleKeys.borderColor, {
-    themeKey: 'palette',
-  }),
+  ]).map((prop) => [
+    prop,
+    {
+      themeKey: 'palette',
+    },
+  ]),
 
   borderRadius: {
     themeKey: 'shape.borderRadius',
@@ -112,13 +57,55 @@ const defaultSxConfig = {
 
   // spacing
 
-  ...createEntries(styleKeys.padding, {
-    style: padding,
-  }),
+  ...Object.fromEntries(
+    [
+      'p',
+      'pt',
+      'pr',
+      'pb',
+      'pl',
+      'px',
+      'py',
+      'padding',
+      'paddingTop',
+      'paddingRight',
+      'paddingBottom',
+      'paddingLeft',
+      'paddingX',
+      'paddingY',
+      'paddingInline',
+      'paddingInlineStart',
+      'paddingInlineEnd',
+      'paddingBlock',
+      'paddingBlockStart',
+      'paddingBlockEnd',
+    ].map((prop) => [prop, { style: padding }]),
+  ),
 
-  ...createEntries(styleKeys.margin, {
-    style: margin,
-  }),
+  ...Object.fromEntries(
+    [
+      'm',
+      'mt',
+      'mr',
+      'mb',
+      'ml',
+      'mx',
+      'my',
+      'margin',
+      'marginTop',
+      'marginRight',
+      'marginBottom',
+      'marginLeft',
+      'marginX',
+      'marginY',
+      'marginInline',
+      'marginInlineStart',
+      'marginInlineEnd',
+      'marginBlock',
+      'marginBlockStart',
+      'marginBlockEnd',
+    ].map((prop) => [prop, { style: margin }]),
+  ),
 
   // display
   displayPrint: {
@@ -129,7 +116,12 @@ const defaultSxConfig = {
       },
     }),
   },
-  ...createEntries(styleKeys.display, {}),
+
+  ...Object.fromEntries(
+    ['displayPrint', 'display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'].map(
+      (prop) => [prop, {}],
+    ),
+  ),
 
   // flexbox
   ...Object.fromEntries(
@@ -151,6 +143,18 @@ const defaultSxConfig = {
   ),
 
   // grid
+  ...Object.fromEntries([
+    'gridColumn',
+    'gridRow',
+    'gridAutoFlow',
+    'gridAutoColumns',
+    'gridAutoRows',
+    'gridTemplateColumns',
+    'gridTemplateRows',
+    'gridTemplateAreas',
+    'gridArea',
+  ]).map((prop) => [prop, {}]),
+
   gap: {
     style: gap,
   },
@@ -160,17 +164,12 @@ const defaultSxConfig = {
   columnGap: {
     style: columnGap,
   },
-  ...createEntries(styleKeys.grid, {}),
 
   // positions
-  position: {},
+  ...Object.fromEntries(['position', 'top', 'right', 'bottom', 'left']).map((prop) => [prop, {}]),
   zIndex: {
     themeKey: 'zIndex',
   },
-  top: {},
-  right: {},
-  bottom: {},
-  left: {},
 
   // shadows
   boxShadow: {
@@ -178,23 +177,15 @@ const defaultSxConfig = {
   },
 
   // sizing
-  width: {
-    transform: sizingTransform,
-  },
+  ...Object.fromEntries(['width', 'minWidth', 'height', 'maxHeight', 'minHeight']).map((prop) => [
+    prop,
+    {
+      transform: sizingTransform,
+    },
+  ]),
+
   maxWidth: {
     style: maxWidth,
-  },
-  minWidth: {
-    transform: sizingTransform,
-  },
-  height: {
-    transform: sizingTransform,
-  },
-  maxHeight: {
-    transform: sizingTransform,
-  },
-  minHeight: {
-    transform: sizingTransform,
   },
   boxSizing: {},
 
