@@ -152,6 +152,11 @@ const defaultSxConfig = {
       'right',
       'bottom',
       'left',
+      // typography
+      'letterSpacing',
+      'textTransform',
+      'lineHeight',
+      'textAlign',
     ].map((prop) => [prop, {}]),
   ),
 
@@ -205,10 +210,6 @@ const defaultSxConfig = {
   fontWeight: {
     themeKey: 'typography',
   },
-  letterSpacing: {},
-  textTransform: {},
-  lineHeight: {},
-  textAlign: {},
   typography: {
     cssProperty: false,
     themeKey: 'typography',
