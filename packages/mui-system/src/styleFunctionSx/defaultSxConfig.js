@@ -60,21 +60,6 @@ const styleKeys = {
   ],
 
   display: ['display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'],
-  flexBox: [
-    'flexBasis',
-    'flexDirection',
-    'flexWrap',
-    'justifyContent',
-    'alignItems',
-    'alignContent',
-    'order',
-    'flex',
-    'flexGrow',
-    'flexShrink',
-    'alignSelf',
-    'justifyItems',
-    'justifySelf',
-  ],
   grid: [
     'gridColumn',
     'gridRow',
@@ -147,7 +132,23 @@ const defaultSxConfig = {
   ...createEntries(styleKeys.display, {}),
 
   // flexbox
-  ...Object.fromEntries(styleKeys.flexBox.map((prop) => [prop, {}])),
+  ...Object.fromEntries(
+    [
+      'flexBasis',
+      'flexDirection',
+      'flexWrap',
+      'justifyContent',
+      'alignItems',
+      'alignContent',
+      'order',
+      'flex',
+      'flexGrow',
+      'flexShrink',
+      'alignSelf',
+      'justifyItems',
+      'justifySelf',
+    ].map((prop) => [prop, {}]),
+  ),
 
   // grid
   gap: {
