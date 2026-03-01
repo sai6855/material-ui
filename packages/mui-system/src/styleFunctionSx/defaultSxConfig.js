@@ -7,33 +7,30 @@ import { maxWidth, sizingTransform } from '../sizing';
 const defaultSxConfig = {
   // borders
 
-  ...Object.fromEntries([
-    'border',
-    'borderTop',
-    'borderRight',
-    'borderBottom',
-    'borderLeft',
-    'outline',
-  ]).map((prop) => [
-    prop,
-    {
-      themeKey: 'borders',
-      transform: borderTransform,
-    },
-  ]),
-  ...Object.fromEntries([
-    'borderColor',
-    'borderTopColor',
-    'borderRightColor',
-    'borderBottomColor',
-    'borderLeftColor',
-    'outlineColor',
-  ]).map((prop) => [
-    prop,
-    {
-      themeKey: 'palette',
-    },
-  ]),
+  ...Object.fromEntries(
+    ['border', 'borderTop', 'borderRight', 'borderBottom', 'borderLeft', 'outline'].map((prop) => [
+      prop,
+      {
+        themeKey: 'borders',
+        transform: borderTransform,
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    [
+      'borderColor',
+      'borderTopColor',
+      'borderRightColor',
+      'borderBottomColor',
+      'borderLeftColor',
+      'outlineColor',
+    ].map((prop) => [
+      prop,
+      {
+        themeKey: 'palette',
+      },
+    ]),
+  ),
 
   borderRadius: {
     themeKey: 'shape.borderRadius',
@@ -141,17 +138,19 @@ const defaultSxConfig = {
   ),
 
   // grid
-  ...Object.fromEntries([
-    'gridColumn',
-    'gridRow',
-    'gridAutoFlow',
-    'gridAutoColumns',
-    'gridAutoRows',
-    'gridTemplateColumns',
-    'gridTemplateRows',
-    'gridTemplateAreas',
-    'gridArea',
-  ]).map((prop) => [prop, {}]),
+  ...Object.fromEntries(
+    [
+      'gridColumn',
+      'gridRow',
+      'gridAutoFlow',
+      'gridAutoColumns',
+      'gridAutoRows',
+      'gridTemplateColumns',
+      'gridTemplateRows',
+      'gridTemplateAreas',
+      'gridArea',
+    ].map((prop) => [prop, {}]),
+  ),
 
   gap: {
     style: gap,
@@ -164,7 +163,7 @@ const defaultSxConfig = {
   },
 
   // positions
-  ...Object.fromEntries(['position', 'top', 'right', 'bottom', 'left']).map((prop) => [prop, {}]),
+  ...Object.fromEntries(['position', 'top', 'right', 'bottom', 'left'].map((prop) => [prop, {}])),
   zIndex: {
     themeKey: 'zIndex',
   },
@@ -175,12 +174,14 @@ const defaultSxConfig = {
   },
 
   // sizing
-  ...Object.fromEntries(['width', 'minWidth', 'height', 'maxHeight', 'minHeight']).map((prop) => [
-    prop,
-    {
-      transform: sizingTransform,
-    },
-  ]),
+  ...Object.fromEntries(
+    ['width', 'minWidth', 'height', 'maxHeight', 'minHeight'].map((prop) => [
+      prop,
+      {
+        transform: sizingTransform,
+      },
+    ]),
+  ),
 
   maxWidth: {
     style: maxWidth,
