@@ -118,9 +118,7 @@ const defaultSxConfig = {
   },
 
   ...Object.fromEntries(
-    ['displayPrint', 'display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'].map(
-      (prop) => [prop, {}],
-    ),
+    ['display', 'overflow', 'textOverflow', 'visibility', 'whiteSpace'].map((prop) => [prop, {}]),
   ),
 
   // flexbox
