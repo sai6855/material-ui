@@ -159,7 +159,7 @@ const defaultSxConfig = {
       'textAlign',
     ].map((prop) => [prop, {}]),
   ),
-
+  // grid
   gap: {
     style: gap,
   },
@@ -169,7 +169,7 @@ const defaultSxConfig = {
   columnGap: {
     style: columnGap,
   },
-
+  // positions
   zIndex: {
     themeKey: 'zIndex',
   },
