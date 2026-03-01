@@ -147,7 +147,7 @@ const defaultSxConfig = {
   ...createEntries(styleKeys.display, {}),
 
   // flexbox
-  ...createEntries(styleKeys.flexBox, {}),
+  ...Object.fromEntries(styleKeys.flexBox.map((prop) => [prop, {}])),
 
   // grid
   gap: {
