@@ -160,10 +160,7 @@ const LinearProgressRoot = styled('span', {
           '&::before': {
             content: '""',
             position: 'absolute',
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
+            inset: 0,
             backgroundColor: 'currentColor',
             opacity: 0.3,
           },

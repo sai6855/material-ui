@@ -56,10 +56,7 @@ export const TouchRippleRoot = styled('span', {
   pointerEvents: 'none',
   position: 'absolute',
   zIndex: 0,
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
+  inset: 0,
   borderRadius: 'inherit',
 });
 
