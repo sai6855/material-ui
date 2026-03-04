@@ -44,50 +44,32 @@ const getCssProperties = memoize((prop) => {
   return Array.isArray(direction) ? direction.map((dir) => property + dir) : [property + direction];
 });
 
-export const marginKeys = [
-  'm',
-  'mt',
-  'mr',
-  'mb',
-  'ml',
-  'mx',
-  'my',
-  'margin',
-  'marginTop',
-  'marginRight',
-  'marginBottom',
-  'marginLeft',
-  'marginX',
-  'marginY',
-  'marginInline',
-  'marginInlineStart',
-  'marginInlineEnd',
-  'marginBlock',
-  'marginBlockStart',
-  'marginBlockEnd',
+const LONG_SUFFIXES = [
+  'Top',
+  'Right',
+  'Bottom',
+  'Left',
+  'X',
+  'Y',
+  'Inline',
+  'InlineStart',
+  'InlineEnd',
+  'Block',
+  'BlockStart',
+  'BlockEnd',
 ];
 
+export const marginKeys = [
+  'm',
+  ...Object.keys(directions).map((s) => `m${s}`),
+  properties.m,
+  ...LONG_SUFFIXES.map((s) => `${properties.m}${s}`),
+];
 export const paddingKeys = [
   'p',
-  'pt',
-  'pr',
-  'pb',
-  'pl',
-  'px',
-  'py',
-  'padding',
-  'paddingTop',
-  'paddingRight',
-  'paddingBottom',
-  'paddingLeft',
-  'paddingX',
-  'paddingY',
-  'paddingInline',
-  'paddingInlineStart',
-  'paddingInlineEnd',
-  'paddingBlock',
-  'paddingBlockStart',
-  'paddingBlockEnd',
+  ...Object.keys(directions).map((s) => `p${s}`),
+  properties.p,
+  ...LONG_SUFFIXES.map((s) => `${properties.p}${s}`),
 ];
 
 const spacingKeys = [...marginKeys, ...paddingKeys];
