@@ -72,3 +72,18 @@ local JSON file is blocked by CORS under `file://`, which would break opening th
 
 To add a question, append an object to the array in `questions.js`. The counts in the header
 and sidebar update automatically.
+
+## Publishing as a single file
+
+`build-artifact.js` inlines the CSS, the question bank, and the app into one
+self-contained page — no external requests, so it works anywhere including a
+sandboxed iframe:
+
+```sh
+node interview-prep/build-artifact.js   # -> interview-prep/dist/frontend-interview-prep.html
+```
+
+Two behaviours exist for that environment. `window.confirm()` is unavailable in
+a sandboxed iframe — it returns `false` without asking — so Reset confirms
+through an in-page dialog instead. And when `localStorage` is blocked, answers
+still work for the session; they just don't survive a reload.

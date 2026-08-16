@@ -417,7 +417,10 @@
     return header + lines.join('\n') + '\n' + judge + '\n';
   }
 
-  function showModal(title, text, payload) {
+  /* One modal for both jobs: the manual-copy fallback and confirmations.
+     window.confirm() is unavailable in a sandboxed iframe — it returns false
+     without ever asking — so confirmations have to be in-page. */
+  function showModal(title, text, payload, onConfirm) {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-text').textContent = text;
 
@@ -429,7 +432,27 @@
       box.hidden = true;
     }
 
+    var confirmBtn = document.getElementById('modal-confirm');
+    var fresh = confirmBtn.cloneNode(true);
+    confirmBtn.parentNode.replaceChild(fresh, confirmBtn);
+
+    if (onConfirm) {
+      fresh.hidden = false;
+      fresh.addEventListener('click', function () {
+        closeModal();
+        onConfirm();
+      });
+      document.getElementById('modal-close').textContent = 'Cancel';
+    } else {
+      fresh.hidden = true;
+      document.getElementById('modal-close').textContent = 'Close';
+    }
+
     document.getElementById('modal').hidden = false;
+  }
+
+  function closeModal() {
+    document.getElementById('modal').hidden = true;
   }
 
   function showToast(message) {
@@ -481,7 +504,11 @@
         showToast('Copied ' + QUESTIONS.length + ' questions + your answers. ' + note);
       })
       .catch(function () {
-        showModal('Copy it manually', 'Clipboard access was blocked. ' + note, payload);
+        showModal(
+          'Copy it manually',
+          'Clipboard access was blocked here. Click into the box below and select all, then copy. ' + note,
+          payload,
+        );
         document.getElementById('modal-payload').select();
       });
   }
@@ -507,26 +534,31 @@
     document.getElementById('evaluate-btn').addEventListener('click', evaluate);
 
     document.getElementById('reset-btn').addEventListener('click', function () {
-      if (!window.confirm('Clear all your answers? This cannot be undone.')) return;
-      answers = {};
-      save();
-      render();
-      applyFilter(activeArea);
-      showToast('Answers cleared.');
+      showModal('Clear all answers?', 'Every answer you have written will be deleted. This cannot be undone.', null, function () {
+        answers = {};
+        save();
+        render();
+        applyFilter(activeArea);
+        showToast('Answers cleared.');
+      });
     });
 
-    document.getElementById('modal-close').addEventListener('click', function () {
-      document.getElementById('modal').hidden = true;
-    });
+    document.getElementById('modal-close').addEventListener('click', closeModal);
 
     document.getElementById('modal').addEventListener('click', function (event) {
-      if (event.target.id === 'modal') document.getElementById('modal').hidden = true;
+      if (event.target.id === 'modal') closeModal();
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') document.getElementById('modal').hidden = true;
+      if (event.key === 'Escape') closeModal();
     });
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  /* Scripts may run after the document is already parsed (inlined build), so
+     don't wait for an event that has come and gone. */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
