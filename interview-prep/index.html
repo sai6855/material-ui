@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frontend Interview Prep — React, JavaScript, HTML, CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1>Frontend Interview Prep</h1>
+        <p class="tagline">100 questions · React · JavaScript · HTML · CSS · targeted at ~5 years experience</p>
+      </div>
+      <div class="topbar-right">
+        <div class="progress" aria-live="polite">
+          <span id="progress-count">0</span><span class="progress-total">/100 answered</span>
+          <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+        </div>
+        <button type="button" class="btn btn-ghost" id="reset-btn">Reset</button>
+        <button type="button" class="btn btn-primary" id="evaluate-btn">Evaluate</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="filters" aria-label="Filter by area">
+          <button type="button" class="chip is-active" data-area="all">All <span class="chip-count" id="count-all">0</span></button>
+          <button type="button" class="chip" data-area="react">React <span class="chip-count" id="count-react">0</span></button>
+          <button type="button" class="chip" data-area="javascript">JavaScript <span class="chip-count" id="count-javascript">0</span></button>
+          <button type="button" class="chip" data-area="html">HTML <span class="chip-count" id="count-html">0</span></button>
+          <button type="button" class="chip" data-area="css">CSS <span class="chip-count" id="count-css">0</span></button>
+        </nav>
+        <div class="jump" aria-label="Jump to question">
+          <h2 class="sidebar-heading">Questions</h2>
+          <div class="jump-grid" id="jump-grid"></div>
+        </div>
+      </aside>
+
+      <main class="questions" id="questions"></main>
+    </div>
+
+    <div class="modal-backdrop" id="modal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <h2 id="modal-title">Copied to clipboard</h2>
+        <p id="modal-text" class="modal-text"></p>
+        <textarea id="modal-payload" class="modal-payload" readonly hidden></textarea>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="modal-close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
