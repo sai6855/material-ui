@@ -389,12 +389,10 @@
       lines.push('');
     });
 
-    var header = [
+    var header =
       'You are grading a frontend engineering interview. Below are ' +
-        QUESTIONS.length +
-        " questions and a candidate's answers.",
-      '',
-    ].join('\n');
+      QUESTIONS.length +
+      " questions and a candidate's answers.\n\n";
 
     var judge = [
       '---',
