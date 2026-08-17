@@ -4,6 +4,11 @@ A self-contained practice test for frontend engineers with roughly 5 years of ex
 100 questions: 40 React, 40 JavaScript, 10 HTML, 10 CSS — one question per topic, chosen so
 that answering it correctly is real evidence you understand that topic.
 
+Four kinds of question: 30 multiple choice, 35 find-the-bug, 28 write-code, and 7 feature
+builds. The feature builds are machine-coding briefs — a feature statement plus the
+behavioural requirements a working solution has to satisfy — and take a sitting each rather
+than a few minutes, so they carry their own badge and a taller answer box.
+
 ## Running it
 
 No build step, no dependencies. Open `index.html` in a browser:
@@ -60,7 +65,7 @@ local JSON file is blocked by CORS under `file://`, which would break opening th
 {
   area: 'react',              // react | javascript | html | css
   topic: 'useEffect cleanup', // the single topic this question proves
-  type: 'debug',              // mcq | debug | write
+  type: 'debug',              // mcq | debug | write | build
   difficulty: 'senior',       // mid | senior | hard
   prompt: 'This search box…',
   code: 'function Search…',   // optional snippet shown above the answer box
@@ -71,7 +76,12 @@ local JSON file is blocked by CORS under `file://`, which would break opening th
 ```
 
 To add a question, append an object to the array in `questions.js`. The counts in the header
-and sidebar update automatically.
+and sidebar update automatically. A `build` question puts its requirements in the prompt as
+lines starting with `- `, and leaves `code` empty unless a starting snippet genuinely helps.
+
+The bank deliberately does not test accessibility, and only one question uses a timer as its
+scenario — correct markup and the occasional `setTimeout` still appear inside snippets where
+real code would have them, they are just never the thing being graded.
 
 ## Publishing as a single file
 

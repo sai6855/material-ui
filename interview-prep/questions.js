@@ -1,6 +1,6 @@
 /* Question bank — 100 questions.
    react 40 · javascript 40 · html 10 · css 10
-   30 multiple choice · 35 find-the-bug · 35 write-code · 0 feature-build
+   30 multiple choice · 35 find-the-bug · 28 write-code · 7 feature-build
    Generated file — correct answers deliberately excluded; the Evaluate flow is graded by an LLM. */
 
 window.QUESTIONS = [
@@ -67,11 +67,11 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Race conditions and cancellation in effect-based fetching",
-    "type": "write",
-    "difficulty": "hard",
-    "prompt": "A previous author already added the `ignore` flag and the AbortController, and switching tickets fast still shows ticket A's header with ticket B's assignees. Rewrite the effect so nothing from a superseded run reaches state or ticketStore, then say why the store write is harder to make cancel-safe than a setState.",
-    "code": "function TicketDrawer({ ticketId }) {\n  const [ticket, setTicket] = useState(null);\n  const [assignees, setAssignees] = useState([]);\n\n  useEffect(() => {\n    let ignore = false;\n    const controller = new AbortController();\n    async function load() {\n      const t = await getJSON(`/api/tickets/${ticketId}`, controller.signal);\n      ticketStore.set(ticketId, t); // module-level store the whole app reads\n      const a = await getJSON(`/api/groups/${t.groupId}/assignees`);\n      if (!ignore) {\n        setTicket(t);\n        setAssignees(a);\n      }\n    }\n    load().catch((err) => setError(err));\n    return () => { ignore = true; controller.abort(); };\n  }, [ticketId]);\n\n  return <Drawer ticket={ticket} assignees={assignees} />;\n}",
+    "topic": "Feature build: search typeahead with cancellation",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a typeahead search box over an injected async suggestion source (stub it locally) as the user types.\n- Rendered suggestions must always belong to the current input: a slow earlier request resolving after a newer one must never overwrite it.\n- Debounce keystrokes, skip queries under 2 characters, and cancel superseded requests rather than only ignoring their results.\n- Model idle, loading, no-matches and error as four distinct states, not booleans over an empty array.\n- Arrow keys move the highlight, Enter commits, Escape and an outside click close the list without committing.\n- Cache results per query so re-typing an earlier query renders from cache with no new request.",
+    "code": "",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -116,7 +116,7 @@ window.QUESTIONS = [
     "type": "debug",
     "difficulty": "senior",
     "prompt": "The Profiler shows all 500 memoized rows re-rendering when one checkbox is ticked (React Compiler is off; toggleId returns a new Set). Wrapping the handler in useCallback does not help. Why does the bail-out still fail, and what do you change so only the changed row re-renders?",
-    "code": "const MemberRow = React.memo(function MemberRow({ member, permissions, isSelected, onToggle }) {\n  return (\n    <li>\n      <input type=\"checkbox\" checked={isSelected} onChange={onToggle} />\n      <span>{member.name}</span>\n      {permissions.canRemove && <RemoveButton memberId={member.id} />}\n    </li>\n  );\n});\n\nfunction MemberList({ members, currentUser }) {\n  const [selected, setSelected] = useState(() => new Set());\n  const permissions = { canRemove: currentUser.role === 'admin' };\n\n  return (\n    <ul>\n      {members.map((m) => (\n        <MemberRow key={m.id} member={m} permissions={permissions}\n          isSelected={selected.has(m.id)}\n          onToggle={() => setSelected(toggleId(selected, m.id))} />\n      ))}\n    </ul>\n  );\n}",
+    "code": "const MemberRow = React.memo(({ member, permissions, isSelected, onToggle }) => (\n  <li>\n    <input type=\"checkbox\" checked={isSelected} onChange={onToggle} />\n    <span>{member.name}</span>\n    {permissions.canRemove && <RemoveButton memberId={member.id} />}\n  </li>\n));\n\nfunction MemberList({ members, currentUser }) {\n  const [selected, setSelected] = useState(() => new Set());\n  const permissions = { canRemove: currentUser.role === 'admin' };\n  return (\n    <ul>\n      {members.map((m) => (\n        <MemberRow key={m.id} member={m} permissions={permissions} isSelected={selected.has(m.id)}\n          onToggle={() => setSelected(toggleId(selected, m.id))} />\n      ))}\n    </ul>\n  );\n}",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -184,10 +184,10 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Form submission and validation architecture",
-    "type": "write",
+    "topic": "Feature build: multi-step checkout wizard",
+    "type": "build",
     "difficulty": "senior",
-    "prompt": "Write the state shape, submit path, and one field component for an 8-field checkout address form — no form library, ~25 lines. A field's error appears only once it has been blurred or a submit has failed; the server may reject with per-field messages that must clear when that field is edited but survive edits to other fields. What in your design keeps typing in one field from re-rendering the other seven?",
+    "prompt": "Build a 4-step checkout wizard — Address, Shipping, Payment, Review — with no form library, and with the step list held as data so a fifth step is one more entry.\n- Next advances only if the current step validates; errors appear after a failed Next or a blur, never on a pristine field\n- Back preserves everything entered, and returning to a step shows those values again\n- The indicator may jump to any completed step, never forward past an unvalidated one\n- Review reads the accumulated data and Submit sends one payload to a stubbed async endpoint\n- A rejection carrying per-field messages lands the user on the step owning the first failing field",
     "code": "",
     "language": "",
     "options": [],
@@ -199,7 +199,7 @@ window.QUESTIONS = [
     "type": "mcq",
     "difficulty": "senior",
     "prompt": "Select all that apply. inviteMember is a plain async function that resolves with { ok } and never throws on its own. Which statements are true of this component exactly as written?",
-    "code": "function InviteForm({ teamId }) {\n  const [state, submitAction, isPending] = useActionState(\n    async (prev, formData) => {\n      const email = formData.get('email');\n      if (!email.includes('@')) return { error: 'Enter a valid email' };\n      const res = await inviteMember(teamId, email);\n      if (!res.ok) throw new Error('Invite failed');\n      return { sent: [...prev.sent, email] };\n    },\n    { sent: [] }\n  );\n\n  return (\n    <form action={submitAction}>\n      <input name=\"email\" defaultValue=\"\" />\n      <button disabled={isPending}>Invite</button>\n      {state.error && <p role=\"alert\">{state.error}</p>}\n      <p>{state.sent.length} invited</p>\n    </form>\n  );\n}",
+    "code": "function InviteForm({ teamId }) {\n  const [state, submitAction, isPending] = useActionState(\n    async (prev, formData) => {\n      const email = formData.get('email');\n      if (!email.includes('@')) return { error: 'Enter a valid email' };\n      const res = await inviteMember(teamId, email);\n      if (!res.ok) throw new Error('Invite failed');\n      return { sent: [...prev.sent, email] };\n    },\n    { sent: [] }\n  );\n  return (\n    <form action={submitAction}>\n      <input name=\"email\" defaultValue=\"\" />\n      <button disabled={isPending}>Invite</button>\n      {state.error && <p role=\"alert\">{state.error}</p>}\n      <p>{state.sent.length} invited</p>\n    </form>\n  );\n}",
     "language": "jsx",
     "options": [
       "A throw inside the action hits the nearest error boundary instead of becoming state.error.",
@@ -283,7 +283,7 @@ window.QUESTIONS = [
     "type": "debug",
     "difficulty": "senior",
     "prompt": "`Toolbar` sits under a parent that re-renders constantly. `selection_changed` fires on every one of those renders, even when `selected` is byte-for-byte identical. Why? Fix the hook so it stops — and so that `React.memo(SelectionChips)` can actually bail out.",
-    "code": "function useSelectionSync(boardId) {\n  const [selected, setSelected] = useState([]);\n\n  useEffect(() => {\n    const sub = presence.subscribe(boardId, setSelected);\n    return () => sub.unsubscribe();\n  }, [boardId]);\n\n  return {\n    selected,\n    clear: () => setSelected([]),\n    toggle: (id) => setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id])),\n  };\n}\n\nfunction Toolbar({ boardId }) {\n  const selection = useSelectionSync(boardId);\n\n  useEffect(() => {\n    analytics.track('selection_changed', { count: selection.selected.length });\n  }, [selection]);\n\n  return <SelectionChips items={selection.selected} onClear={selection.clear} />;\n}",
+    "code": "function useSelectionSync(boardId) {\n  const [selected, setSelected] = useState([]);\n  useEffect(() => {\n    const sub = presence.subscribe(boardId, setSelected);\n    return () => sub.unsubscribe();\n  }, [boardId]);\n  return {\n    selected,\n    clear: () => setSelected([]),\n    toggle: (id) => setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id])),\n  };\n}\n\nfunction Toolbar({ boardId }) {\n  const selection = useSelectionSync(boardId);\n  useEffect(() => {\n    analytics.track('selection_changed', { count: selection.selected.length });\n  }, [selection]);\n  return <SelectionChips items={selection.selected} onClear={selection.clear} />;\n}",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -357,11 +357,11 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Composition over configuration: children, slots, compound components",
-    "type": "write",
-    "difficulty": "mid",
-    "prompt": "`DataPanel` has fourteen props and each feature request adds another boolean. Redesign it as a compound component: write the new call site for exactly this usage, plus the container and `Body`, with collapsed state reaching the parts without passing through the call site or being lifted into the consumer.",
-    "code": "<DataPanel\n  title=\"Failed payments\"\n  subtitle=\"Last 24 hours\"\n  showHeaderDivider\n  headerAction={<Button onClick={retryAll}>Retry all</Button>}\n  showFilters\n  filterOptions={statusOptions}\n  onFilterChange={setStatus}\n  collapsible\n  defaultCollapsed={false}\n  footerText=\"Updated 2 minutes ago\"\n  showFooterBorder\n  emptyState={<EmptyPayments />}\n  rows={rows}\n  renderRow={(row) => <PaymentRow payment={row} />}\n/>",
+    "topic": "Feature build: data table with sorting, filtering and pagination",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a reusable `<DataTable>` that renders any row shape from caller-supplied column definitions, over a fixed in-memory array of ~200 records.\n- The caller declares the columns — header, value accessor, sortable, cell renderer — and nothing about this data's shape is hardcoded in the table.\n- A text filter, single-column sort (asc / desc / off) and pagination stay correct in any combination.\n- The source array is never mutated: clearing the filter and the sort restores the original order.\n- Sorting handles numbers, strings, dates and missing values without throwing or scattering blanks.\n- Filtering or changing rows-per-page never strands the user on an empty page past the end.",
+    "code": "",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -383,7 +383,7 @@ window.QUESTIONS = [
     "type": "debug",
     "difficulty": "mid",
     "prompt": "QA: 'the popover flashes in the top-left corner for an instant, then snaps under the button.' Obvious on their old laptop, nearly impossible to catch on the developer's machine. Explain what the browser paints, and fix it. This page is server-rendered — what does your fix do during SSR?",
-    "code": "function Popover({ anchorRef, open, children }) {\n  const ref = useRef(null);\n  const [pos, setPos] = useState({ top: 0, left: 0 });\n\n  useEffect(() => {\n    if (!open || !ref.current || !anchorRef.current) return;\n    const anchor = anchorRef.current.getBoundingClientRect();\n    const self = ref.current.getBoundingClientRect();\n    setPos({\n      top: anchor.bottom + 8,\n      left: anchor.left + anchor.width / 2 - self.width / 2,\n    });\n  }, [open, anchorRef]);\n\n  if (!open) return null;\n\n  return createPortal(\n    <div ref={ref} className=\"popover\" style={{ position: 'fixed', ...pos }}>{children}</div>,\n    document.body\n  );\n}",
+    "code": "function Popover({ anchorRef, open, children }) {\n  const ref = useRef(null);\n  const [pos, setPos] = useState({ top: 0, left: 0 });\n\n  useEffect(() => {\n    if (!open || !ref.current || !anchorRef.current) return;\n    const anchor = anchorRef.current.getBoundingClientRect();\n    const self = ref.current.getBoundingClientRect();\n    setPos({\n      top: anchor.bottom + 8,\n      left: anchor.left + anchor.width / 2 - self.width / 2,\n    });\n  }, [open, anchorRef]);\n  if (!open) return null;\n  return createPortal(\n    <div ref={ref} className=\"popover\" style={{ position: 'fixed', ...pos }}>{children}</div>,\n    document.body\n  );\n}",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -479,12 +479,12 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Accessibility and focus management in components",
-    "type": "write",
+    "topic": "Feature build: threaded comment tree",
+    "type": "build",
     "difficulty": "senior",
-    "prompt": "Write `<ConfirmDeleteProject>` in plain JSX — no native `<dialog>`, no headless library. On open, focus lands on its input and the rest of the page is unreachable by Tab and by screen readers; on close, focus returns to the toolbar button. The app mounts at `#root`; say where the dialog's own DOM node lives and why.",
+    "prompt": "Build a threaded comment tree over a seed array held in memory — replies nest to any depth, no backend.\n- Posting a reply inserts it under its parent at any depth and leaves every unrelated branch untouched.\n- Any comment collapses to hide its subtree, and that collapsed state stays with the comment when siblings are added or deleted.\n- At most one reply box is open at a time; cancelling discards the draft without touching committed state.\n- Deleting a comment that has replies keeps the thread intact instead of orphaning the children.\n- Indentation is capped at a fixed depth for layout only — the model must still know each comment's true parent.",
     "code": "",
-    "language": "",
+    "language": "jsx",
     "options": [],
     "multi": false
   },
@@ -507,10 +507,10 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Virtualizing large lists",
-    "type": "write",
-    "difficulty": "senior",
-    "prompt": "Write the windowed version of a 20,000-entry activity feed (`@tanstack/react-virtual` or equivalent): variable row heights measured dynamically, and a deep link `/feed?focus=event-9184` that must land on that entry on first load. Then say in one sentence why the first `scrollToIndex` usually lands in the wrong place.",
+    "topic": "Feature build: windowed infinite-scroll feed",
+    "type": "build",
+    "difficulty": "hard",
+    "prompt": "Build an activity feed that pages in events from a stubbed async page loader as the user scrolls, keeping the DOM small once 20,000 rows are loaded.\n- Reaching the end of the loaded rows fetches the next page exactly once, however fast the user scrolls, and paging stops at the end of the data.\n- Only rows near the viewport are in the DOM, while the scrollbar reflects the full loaded list; row heights vary and are measured, not assumed.\n- A page that fails offers a retry that resumes at that page without duplicating or skipping rows.\n- Per-row expanded state follows the row it belongs to, not the screen position, as the feed scrolls.\n- Scroll observation is torn down on unmount.",
     "code": "",
     "language": "",
     "options": [],
@@ -577,18 +577,18 @@ window.QUESTIONS = [
     "topic": "Closures over live bindings and stale captures",
     "type": "debug",
     "difficulty": "mid",
-    "prompt": "The caller does `const status = createSessionMonitor(socket)` and renders `status.idleSeconds`. Users get `idle-timeout` five minutes after load no matter how active the socket is, and `status.idleSeconds` is always 0 - yet the activity handler does update `lastActivity`. Why do both bugs happen, and how do you fix them without changing the caller's API?",
-    "code": "export function createSessionMonitor(socket) {\n  let lastActivity = Date.now();\n  let idleSeconds = 0;\n\n  socket.on('activity', () => {\n    lastActivity = Date.now();\n  });\n\n  const status = { lastActivity, idleSeconds };\n\n  setInterval(() => {\n    idleSeconds = Math.round((Date.now() - status.lastActivity) / 1000);\n    if (idleSeconds >= 300) socket.emit('idle-timeout', status);\n  }, 1000);\n\n  return status;\n}",
+    "prompt": "Clicking any row acts on the last row, and after `unmountRows` the handlers keep firing, so listeners accumulate on every re-render. A reviewer also insists `currentFilter` is \"captured wrong\". Which of these are real defects, and how do you fix them?",
+    "code": "let currentFilter = 'all';\n\nexport function mountRows(rows) {\n  for (var i = 0; i < rows.length; i++) {\n    rows[i].addEventListener('click', () => select(i, currentFilter), { capture: true });\n  }\n}\n\nexport function unmountRows(rows) {\n  for (var i = 0; i < rows.length; i++) {\n    rows[i].removeEventListener('click', () => select(i, currentFilter));\n  }\n}\n\nexport function setFilter(next) {\n  currentFilter = next;\n}",
     "language": "js",
     "options": [],
     "multi": false
   },
   {
     "area": "javascript",
-    "topic": "Race conditions and cancellation with AbortController",
-    "type": "write",
-    "difficulty": "hard",
-    "prompt": "Search-as-you-type keeps showing results for a query the user already typed past, because a slow earlier request resolves after a newer one. Write `createSearchRunner(fetchResults)` exposing `run(query)`, where `fetchResults(query, signal)` forwards the signal: each run aborts the previous, gives up after 5000ms, and never delivers a superseded response. Why is aborting alone not enough for that last requirement?",
+    "topic": "Feature build: undo/redo history for an editable list",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build an editable list — add, rename, delete, reorder — in vanilla JS with undo and redo. No framework, no libraries.\n- Ctrl+Z and Ctrl+Shift+Z walk backwards and forwards through every edit, reorders included.\n- Making a fresh edit after undoing discards the redo branch.\n- A run of single-character renames on one item coalesces into one undoable step.\n- The DOM renders from current state only; history is never read to draw the list.\n- History is bounded, and what that costs the oldest edits is handled rather than ignored.",
     "code": "",
     "language": "js",
     "options": [],
@@ -738,8 +738,8 @@ window.QUESTIONS = [
     "topic": "Memory leaks and garbage-collection intuition",
     "type": "debug",
     "difficulty": "senior",
-    "prompt": "Users who watch several tickers in one session see the tab pass a gigabyte, even though the returned teardown runs on every navigation. Which retained object grows without bound, and what should the teardown actually be?",
-    "code": "const chartsBySymbol = new Map();\n\nexport function mountLiveChart(container, symbol) {\n  const canvas = document.createElement('canvas');\n  container.appendChild(canvas);\n  const chart = new Chart(canvas);\n  const history = [];\n\n  const socket = openSocket(symbol);\n  socket.on('tick', (tick) => {\n    history.push(tick);\n    chart.render(history);\n  });\n\n  window.addEventListener('resize', () => chart.resize(canvas.clientWidth));\n  const timer = setInterval(() => chart.pulse(), 1000);\n  chartsBySymbol.set(symbol, { chart, canvas, history });\n\n  return () => container.removeChild(canvas);\n}",
+    "prompt": "Users who scroll a long list in one session see the tab pass a gigabyte, even though the returned teardown runs on every row unmount. Which retained object grows without bound, and what should the teardown actually be?",
+    "code": "const rowStateById = new Map();\n\nexport function mountRow(container, row) {\n  const el = document.createElement('div');\n  el.textContent = row.label;\n  container.appendChild(el);\n\n  const impressions = [];\n  const observer = new IntersectionObserver((entries) => {\n    impressions.push({ ratio: entries[0].intersectionRatio, row });\n    analytics.report(impressions);\n  });\n  observer.observe(el);\n\n  analytics.on('flush', () => observer.takeRecords());\n  rowStateById.set(row.id, { el, row, impressions });\n\n  return () => container.removeChild(el);\n}",
     "language": "js",
     "options": [],
     "multi": false
@@ -891,11 +891,11 @@ window.QUESTIONS = [
   },
   {
     "area": "javascript",
-    "topic": "Timers, scheduling, and main-thread responsiveness",
-    "type": "write",
+    "topic": "Feature build: drag-and-drop kanban board (vanilla JS)",
+    "type": "build",
     "difficulty": "senior",
-    "prompt": "This poller duplicates messages, occasionally jumps backwards on slow connections, and cross-talks once a second thread is open. Rewrite it as `startInboxPolling(threadId, render, { intervalMs = 3000 } = {})` returning a stop function that also cancels an in-flight request. No libraries.",
-    "code": "// the version that shipped\nlet lastSeen = 0;\n\nexport function startInboxPolling(threadId, render) {\n  const timer = setInterval(async () => {\n    const res = await fetch(`/api/threads/${threadId}/messages?since=${lastSeen}`);\n    const { messages, cursor } = await res.json();\n    lastSeen = cursor;\n    messages.forEach((m) => render(m));\n  }, 3000);\n\n  return () => clearInterval(timer);\n}",
+    "prompt": "Build a kanban board in vanilla JS — three columns of cards, moved within and between columns using native HTML5 drag and drop.\n- A dropped card lands at the position it was released over, not appended to the end of the column\n- Dropping onto an empty column works; releasing outside any column leaves the board unchanged\n- The board renders from one state object — the DOM is never the source of truth for card order\n- Card order survives a page reload\n- No libraries or frameworks, and listeners are delegated on the board rather than bound per card",
+    "code": "",
     "language": "js",
     "options": [],
     "multi": false
@@ -944,8 +944,8 @@ window.QUESTIONS = [
     "topic": "Property descriptors, accessors, and freezing",
     "type": "debug",
     "difficulty": "senior",
-    "prompt": "After fifteen minutes every request 401s - the interval never refreshes. Logging shows session.isExpired is true while ctx.isExpired is false, and ctx.isExpired has been false since the very first tick. Why? Then show the fix.",
-    "code": "export function createSession(rawToken, user) {\n  const createdAt = Date.now();\n  return Object.freeze({\n    user,\n    token: rawToken,\n    get isExpired() {\n      return Date.now() - createdAt > 15 * 60 * 1000;\n    },\n  });\n}\n\nexport function withHeaders(session, headers) {\n  return { ...session, headers: { ...headers, Authorization: `Bearer ${session.token}` } };\n}\n\nconst ctx = withHeaders(createSession(await login(), currentUser), baseHeaders);\nsetInterval(() => { if (ctx.isExpired) refreshToken(); }, 30_000);",
+    "prompt": "Region overrides silently do nothing. forRegion('eu') returns an object whose apiBase is the EU host, but every URL read off eu.endpoints still points at prod. Why? Then show the fix.",
+    "code": "// config.js\nexport const config = Object.freeze({\n  apiBase: 'https://api.prod.example.com',\n  featureFlags: { beta: false },\n  get endpoints() {\n    return { orders: `${this.apiBase}/orders`, users: `${this.apiBase}/users` };\n  },\n});\n\n// client.js\nexport function forRegion(region) {\n  return { ...config, apiBase: `https://api.${region}.example.com` };\n}\n\nconst eu = forRegion('eu');\nfetch(eu.endpoints.orders); // https://api.prod.example.com/orders",
     "language": "js",
     "options": [],
     "multi": false
@@ -1030,11 +1030,11 @@ window.QUESTIONS = [
   },
   {
     "area": "html",
-    "topic": "Semantic structure, landmarks & heading hierarchy",
+    "topic": "File inputs, drag-and-drop and object URL lifetime",
     "type": "debug",
-    "difficulty": "mid",
-    "prompt": "axe-core with only the WCAG A/AA rule tags enabled reports zero violations here, yet a screen-reader user says the landmark menu is ambiguous and the heading list is useless for skimming. Which parts of this markup are not doing what the author assumed, and what would you change?",
-    "code": "<div className=\"app\">\n  <header>\n    <h1>Acme</h1>\n    <nav><a href=\"/projects\">Projects</a><a href=\"/billing\">Billing</a></nav>\n  </header>\n  <aside>\n    <nav><a href=\"/p/active\">Active</a><a href=\"/p/archived\">Archived</a></nav>\n  </aside>\n  <main>\n    <section className=\"filters\"><h3>Filters</h3><FilterForm /></section>\n    <section className=\"results\">\n      <h3>Results</h3>\n      {projects.map((p) => (\n        <div className=\"card\" key={p.id}>\n          <h1>{p.name}</h1>\n          <a href={`/p/${p.id}`}>Open</a>\n        </div>\n      ))}\n    </section>\n  </main>\n  <footer><small>(c) Acme</small></footer>\n</div>",
+    "difficulty": "senior",
+    "prompt": "Dropping a file on the zone makes the browser open that file instead of uploading it, and picking files with the button throws before any preview renders. QA also sees the tab past 1 GB after an hour of adding images. Explain the causes and give the corrected code.",
+    "code": "function DropZone({ onFiles }) {\n  const [previews, setPreviews] = useState([]);\n  const handleDrop = (e) => {\n    e.stopPropagation();\n    const files = e.dataTransfer.files;\n    setPreviews(files.map((f) => URL.createObjectURL(f)));\n    onFiles(files);\n  };\n  return (\n    <div className=\"zone\" onDrop={handleDrop}>\n      <input\n        type=\"file\"\n        accept=\"image/png\"\n        multiple\n        onChange={(e) => setPreviews(e.target.files.map(URL.createObjectURL))}\n      />\n      {previews.map((src) => <img key={src} src={src} width={80} height={80} />)}\n    </div>\n  );\n}",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -1050,18 +1050,18 @@ window.QUESTIONS = [
     "options": [
       "Settings fires on neither Enter nor Space until a key handler is written by hand.",
       "With no href, middle-click, Cmd-click and 'Open in new tab' are unavailable.",
-      "It changes the address, so it should be announced as a link, not role=\"button\".",
-      "role plus tabIndex restores the role, the tab stop and default activation.",
+      "It changes the address, so it has to be a real <a href>, not a div.",
+      "Settings can be disabled with the disabled attribute, exactly as Delete can.",
       "Delete has no type, so it defaults to type=\"button\" and is safe inside a <form>."
     ],
     "multi": true
   },
   {
     "area": "html",
-    "topic": "Labeling, grouping and error wiring for form controls in the accessibility tree",
+    "topic": "Constraint validation: custom errors and validity state",
     "type": "write",
-    "difficulty": "senior",
-    "prompt": "Write the plain HTML for one text field: visible label 'Workspace name', visible hint 'Shown to everyone in your organization', and a server error 'That name is already taken' that appears only after submit and must actually be announced by a screen reader. No placeholder-as-label, no aria-label. Say which attribute produces the accessible name and which the description.",
+    "difficulty": "mid",
+    "prompt": "Write the markup, the minimal JS and the one CSS rule so that 'Confirm password' blocks submission with the native message 'Passwords do not match' while it differs from 'Password', stops blocking the instant it matches, and is not styled red before the user has typed anything.",
     "code": "",
     "language": "html",
     "options": [],
@@ -1080,11 +1080,11 @@ window.QUESTIONS = [
   },
   {
     "area": "html",
-    "topic": "Focus management for dynamic UI and client-side routing",
+    "topic": "Sandboxing untrusted iframes",
     "type": "debug",
-    "difficulty": "mid",
-    "prompt": "After activating a link in the header, keyboard users have to Tab from the very top of the page again, and screen-reader users are told nothing changed even though the URL and content did. Why doesn't this effect help, and what is the fix?",
-    "code": "function AppLayout() {\n  const { pathname } = useLocation();\n  useEffect(() => {\n    window.scrollTo(0, 0);\n  }, [pathname]);\n  return (\n    <>\n      <SiteHeader />\n      <main id=\"main\">\n        <Outlet />\n      </main>\n    </>\n  );\n}",
+    "difficulty": "senior",
+    "prompt": "Users paste HTML/CSS/JS into an editor and see it rendered in this preview pane. Security review pasted a snippet that read the app's auth token out of localStorage and posted it offsite — despite the sandbox. Explain how it got out, and give the corrected embed.",
+    "code": "function Preview({ userHtml }) {\n  return (\n    <iframe\n      title=\"Preview\"\n      sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups\"\n      srcDoc={userHtml}\n      className=\"preview-frame\"\n    />\n  );\n}",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -1102,18 +1102,18 @@ window.QUESTIONS = [
   },
   {
     "area": "html",
-    "topic": "ARIA used only where native HTML falls short",
+    "topic": "Declarative shadow DOM and template inertness",
     "type": "mcq",
-    "difficulty": "mid",
-    "prompt": "Five review comments were left on this collapsible panel and toast outlet. Exactly one identifies a real defect in the code as written. Which?",
-    "code": "<button aria-selected={open} aria-controls=\"shipping-panel\" onClick={() => setOpen(!open)}>\n  Shipping options\n</button>\n\n<div id=\"shipping-panel\" role=\"region\" aria-label=\"Shipping options\" hidden={!open}>\n  <ShippingFields />\n</div>\n\n<div className=\"toast\" role=\"status\" aria-live=\"assertive\" aria-atomic=\"true\">\n  {toast}\n</div>",
-    "language": "jsx",
+    "difficulty": "hard",
+    "prompt": "This block is server-rendered and `host` is the div; the client later re-renders the identical markup through innerHTML. Which single statement about it is true?",
+    "code": "<div id=\"host\">\n  <template shadowrootmode=\"open\">\n    <style>p { color: red; }</style>\n    <slot name=\"title\"></slot>\n    <img src=\"/chart.png\" width=\"600\" height=\"200\">\n  </template>\n  <h2 slot=\"title\">Q3 results</h2>\n  <p>Revenue is up.</p>\n</div>\n\n<script>\n  host.innerHTML = MARKUP; // same string the server sent\n</script>",
+    "language": "html",
     "options": [
-      "aria-selected is unsupported on a plain button; this needs aria-expanded on the trigger.",
-      "The trigger and panel should carry role=\"tab\" and role=\"tabpanel\" instead.",
-      "Without aria-controls the collapsed state could never be announced.",
-      "role=\"status\" is polite, so the assertive value conflicts and nothing is announced.",
-      "hidden leaves the panel exposed to AT, so aria-hidden=\"true\" is needed alongside it."
+      "The innerHTML pass leaves an inert <template> child and no shadow root at all.",
+      "The <img> stays inert and is only fetched once the template is cloned.",
+      "The shadow <style> reddens the light-DOM <p>, since shadow styles apply downward.",
+      "Slotting moves the <h2> out of the light DOM and into the shadow tree.",
+      "The unslotted <p> renders after the <h2>, in light-DOM source order."
     ],
     "multi": false
   },
@@ -1151,7 +1151,7 @@ window.QUESTIONS = [
       "main.js is deferred by default; consent-banner.js blocks the parser at its position.",
       "The async analytics tag is the main parser blocker, since async blocks during download.",
       "The stylesheet is declared first, so the classic script's position costs nothing extra.",
-      "user-scalable=no is ignored by every current mobile browser, so it cannot fail WCAG.",
+      "user-scalable=no is ignored by every current mobile browser, so it has no effect.",
       "preconnect must precede the stylesheet or the preload scanner discards it."
     ],
     "multi": false
@@ -1253,10 +1253,10 @@ window.QUESTIONS = [
   },
   {
     "area": "css",
-    "topic": "Fluid sizing: clamp(), relative units, and accessible/mobile viewport math",
+    "topic": "Fluid sizing: clamp(), relative units, and viewport vs container math",
     "type": "write",
     "difficulty": "mid",
-    "prompt": "Write one fluid `font-size` for an h1: exactly 28px at a 320px viewport, exactly 56px at 1440px, linear between, clamped at both ends — show the arithmetic. Then: a teammate's `clamp(28px, 20px + 2.5vw, 56px)` computes to the identical pixel value at every window width, yet is wrong. For whom, and why is it invisible in testing?",
+    "prompt": "Write one fluid `font-size` for an h1: exactly 28px at a 320px viewport, exactly 56px at 1440px, linear between, clamped at both ends — show the arithmetic. Then: the same h1 inside a 360px sidebar on a 1440px screen still renders 56px. Why, and what is the minimal fix?",
     "code": "",
     "language": "",
     "options": [],
