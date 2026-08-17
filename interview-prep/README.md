@@ -4,10 +4,15 @@ A self-contained practice test for frontend engineers with roughly 5 years of ex
 100 questions: 40 React, 40 JavaScript, 10 HTML, 10 CSS — one question per topic, chosen so
 that answering it correctly is real evidence you understand that topic.
 
-Four kinds of question: 30 multiple choice, 35 find-the-bug, 28 write-code, and 7 feature
-builds. The feature builds are machine-coding briefs — a feature statement plus the
+Four kinds of question: 7 feature builds, 30 multiple choice, 35 find-the-bug and 28
+write-code. The feature builds are machine-coding briefs — a feature statement plus the
 behavioural requirements a working solution has to satisfy — and take a sitting each rather
 than a few minutes, so they carry their own badge and a taller answer box.
+
+**The machine-coding round comes first.** The 7 builds are Q1–Q7 in their own section above
+the four areas, and they have their own filter, so the numbering matches the order you sit
+them in. They keep their React or JavaScript badge; they are just listed separately from the
+area sections.
 
 ## Running it
 
@@ -30,8 +35,8 @@ npx http-server interview-prep -p 8080
   questions use a code box (Tab inserts two spaces instead of moving focus).
 - **Persistence** — answers are saved to `localStorage` as you type, so you can close the
   tab and come back. **Reset** clears them.
-- **Filtering** — the sidebar filters by area, and the numbered grid jumps to any question.
-  Answered questions turn green.
+- **Filtering** — the sidebar filters by section: Machine coding, then each area. The
+  numbered grid jumps to any question, with the builds marked. Answered questions turn green.
 - **Evaluate** — copies every question together with your answers and a grading prompt to
   your clipboard. Paste that into any LLM and it replies with one line per question:
 

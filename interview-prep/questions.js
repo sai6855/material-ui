@@ -1,9 +1,87 @@
 /* Question bank — 100 questions.
    react 40 · javascript 40 · html 10 · css 10
-   30 multiple choice · 35 find-the-bug · 28 write-code · 7 feature-build
+   7 feature-build · 30 multiple choice · 35 find-the-bug · 28 write-code
+   Feature builds come first, so question numbers match the order you sit them in.
    Generated file — correct answers deliberately excluded; the Evaluate flow is graded by an LLM. */
 
 window.QUESTIONS = [
+  {
+    "area": "react",
+    "topic": "Feature build: search typeahead with cancellation",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a typeahead search box over an injected async suggestion source (stub it locally) as the user types.\n- Rendered suggestions must always belong to the current input: a slow earlier request resolving after a newer one must never overwrite it.\n- Debounce keystrokes, skip queries under 2 characters, and cancel superseded requests rather than only ignoring their results.\n- Model idle, loading, no-matches and error as four distinct states, not booleans over an empty array.\n- Arrow keys move the highlight, Enter commits, Escape and an outside click close the list without committing.\n- Cache results per query so re-typing an earlier query renders from cache with no new request.",
+    "code": "",
+    "language": "jsx",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "react",
+    "topic": "Feature build: multi-step checkout wizard",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a 4-step checkout wizard — Address, Shipping, Payment, Review — with no form library, and with the step list held as data so a fifth step is one more entry.\n- Next advances only if the current step validates; errors appear after a failed Next or a blur, never on a pristine field\n- Back preserves everything entered, and returning to a step shows those values again\n- The indicator may jump to any completed step, never forward past an unvalidated one\n- Review reads the accumulated data and Submit sends one payload to a stubbed async endpoint\n- A rejection carrying per-field messages lands the user on the step owning the first failing field",
+    "code": "",
+    "language": "",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "react",
+    "topic": "Feature build: data table with sorting, filtering and pagination",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a reusable `<DataTable>` that renders any row shape from caller-supplied column definitions, over a fixed in-memory array of ~200 records.\n- The caller declares the columns — header, value accessor, sortable, cell renderer — and nothing about this data's shape is hardcoded in the table.\n- A text filter, single-column sort (asc / desc / off) and pagination stay correct in any combination.\n- The source array is never mutated: clearing the filter and the sort restores the original order.\n- Sorting handles numbers, strings, dates and missing values without throwing or scattering blanks.\n- Filtering or changing rows-per-page never strands the user on an empty page past the end.",
+    "code": "",
+    "language": "jsx",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "react",
+    "topic": "Feature build: threaded comment tree",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a threaded comment tree over a seed array held in memory — replies nest to any depth, no backend.\n- Posting a reply inserts it under its parent at any depth and leaves every unrelated branch untouched.\n- Any comment collapses to hide its subtree, and that collapsed state stays with the comment when siblings are added or deleted.\n- At most one reply box is open at a time; cancelling discards the draft without touching committed state.\n- Deleting a comment that has replies keeps the thread intact instead of orphaning the children.\n- Indentation is capped at a fixed depth for layout only — the model must still know each comment's true parent.",
+    "code": "",
+    "language": "jsx",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "react",
+    "topic": "Feature build: windowed infinite-scroll feed",
+    "type": "build",
+    "difficulty": "hard",
+    "prompt": "Build an activity feed that pages in events from a stubbed async page loader as the user scrolls, keeping the DOM small once 20,000 rows are loaded.\n- Reaching the end of the loaded rows fetches the next page exactly once, however fast the user scrolls, and paging stops at the end of the data.\n- Only rows near the viewport are in the DOM, while the scrollbar reflects the full loaded list; row heights vary and are measured, not assumed.\n- A page that fails offers a retry that resumes at that page without duplicating or skipping rows.\n- Per-row expanded state follows the row it belongs to, not the screen position, as the feed scrolls.\n- Scroll observation is torn down on unmount.",
+    "code": "",
+    "language": "",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "javascript",
+    "topic": "Feature build: undo/redo history for an editable list",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build an editable list — add, rename, delete, reorder — in vanilla JS with undo and redo. No framework, no libraries.\n- Ctrl+Z and Ctrl+Shift+Z walk backwards and forwards through every edit, reorders included.\n- Making a fresh edit after undoing discards the redo branch.\n- A run of single-character renames on one item coalesces into one undoable step.\n- The DOM renders from current state only; history is never read to draw the list.\n- History is bounded, and what that costs the oldest edits is handled rather than ignored.",
+    "code": "",
+    "language": "js",
+    "options": [],
+    "multi": false
+  },
+  {
+    "area": "javascript",
+    "topic": "Feature build: drag-and-drop kanban board (vanilla JS)",
+    "type": "build",
+    "difficulty": "senior",
+    "prompt": "Build a kanban board in vanilla JS — three columns of cards, moved within and between columns using native HTML5 drag and drop.\n- A dropped card lands at the position it was released over, not appended to the end of the column\n- Dropping onto an empty column works; releasing outside any column leaves the board unchanged\n- The board renders from one state object — the DOM is never the source of truth for card order\n- Card order survives a page reload\n- No libraries or frameworks, and listeners are delegated on the board rather than bound per card",
+    "code": "",
+    "language": "js",
+    "options": [],
+    "multi": false
+  },
   {
     "area": "react",
     "topic": "useEffect dependencies & stale closures",
@@ -61,17 +139,6 @@ window.QUESTIONS = [
     "difficulty": "senior",
     "prompt": "Moving between rooms (the component stays mounted, only roomId changes) empties the presence list and it never repopulates until a page reload. The didInit ref came from a commit titled 'stop double connecting in dev'. What does that ref actually do here, and what should replace it?",
     "code": "function PresenceIndicator({ roomId }) {\n  const [peers, setPeers] = useState([]);\n  const didInit = useRef(false);\n\n  useEffect(() => {\n    if (didInit.current) return;\n    didInit.current = true;\n\n    const socket = new RoomSocket(roomId);\n    socket.on('peers', (list) => setPeers(list));\n    socket.connect();\n\n    return () => socket.close();\n  }, [roomId]);\n\n  return <AvatarStack users={peers} />;\n}",
-    "language": "jsx",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "react",
-    "topic": "Feature build: search typeahead with cancellation",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build a typeahead search box over an injected async suggestion source (stub it locally) as the user types.\n- Rendered suggestions must always belong to the current input: a slow earlier request resolving after a newer one must never overwrite it.\n- Debounce keystrokes, skip queries under 2 characters, and cancel superseded requests rather than only ignoring their results.\n- Model idle, loading, no-matches and error as four distinct states, not booleans over an empty array.\n- Arrow keys move the highlight, Enter commits, Escape and an outside click close the list without committing.\n- Cache results per query so re-typing an earlier query renders from cache with no new request.",
-    "code": "",
     "language": "jsx",
     "options": [],
     "multi": false
@@ -179,17 +246,6 @@ window.QUESTIONS = [
     "prompt": "Put the caret immediately after a dash and press Backspace: nothing happens — the dash is instantly back, and `digits` never changes, so no state update occurs. Why does the character come back? Then show the fix.",
     "code": "function PhoneField({ digits, onChange }) {\n  return (\n    <input\n      type=\"tel\"\n      value={format(digits)}\n      onChange={(e) => onChange(e.target.value.replace(/\\D/g, '').slice(0, 10))}\n    />\n  );\n}\n\nfunction format(d) {\n  if (d.length < 4) return d;\n  if (d.length < 7) return `${d.slice(0, 3)}-${d.slice(3)}`;\n  return `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;\n}\n\n// parent: const [digits, setDigits] = useState('');\n//         <PhoneField digits={digits} onChange={setDigits} />",
     "language": "jsx",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "react",
-    "topic": "Feature build: multi-step checkout wizard",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build a 4-step checkout wizard — Address, Shipping, Payment, Review — with no form library, and with the step list held as data so a fifth step is one more entry.\n- Next advances only if the current step validates; errors appear after a failed Next or a blur, never on a pristine field\n- Back preserves everything entered, and returning to a step shows those values again\n- The indicator may jump to any completed step, never forward past an unvalidated one\n- Review reads the accumulated data and Submit sends one payload to a stubbed async endpoint\n- A rejection carrying per-field messages lands the user on the step owning the first failing field",
-    "code": "",
-    "language": "",
     "options": [],
     "multi": false
   },
@@ -357,17 +413,6 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Feature build: data table with sorting, filtering and pagination",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build a reusable `<DataTable>` that renders any row shape from caller-supplied column definitions, over a fixed in-memory array of ~200 records.\n- The caller declares the columns — header, value accessor, sortable, cell renderer — and nothing about this data's shape is hardcoded in the table.\n- A text filter, single-column sort (asc / desc / off) and pagination stay correct in any combination.\n- The source array is never mutated: clearing the filter and the sort restores the original order.\n- Sorting handles numbers, strings, dates and missing values without throwing or scattering blanks.\n- Filtering or changing rows-per-page never strands the user on an empty page past the end.",
-    "code": "",
-    "language": "jsx",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "react",
     "topic": "TypeScript prop typing patterns for components",
     "type": "write",
     "difficulty": "hard",
@@ -479,17 +524,6 @@ window.QUESTIONS = [
   },
   {
     "area": "react",
-    "topic": "Feature build: threaded comment tree",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build a threaded comment tree over a seed array held in memory — replies nest to any depth, no backend.\n- Posting a reply inserts it under its parent at any depth and leaves every unrelated branch untouched.\n- Any comment collapses to hide its subtree, and that collapsed state stays with the comment when siblings are added or deleted.\n- At most one reply box is open at a time; cancelling discards the draft without touching committed state.\n- Deleting a comment that has replies keeps the thread intact instead of orphaning the children.\n- Indentation is capped at a fixed depth for layout only — the model must still know each comment's true parent.",
-    "code": "",
-    "language": "jsx",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "react",
     "topic": "Portals: rendering outside the tree",
     "type": "mcq",
     "difficulty": "mid",
@@ -503,17 +537,6 @@ window.QUESTIONS = [
       "The document-level click listener never fires for clicks inside the menu.",
       "overflow: hidden still clips the menu unless the <ul> is also position: fixed."
     ],
-    "multi": false
-  },
-  {
-    "area": "react",
-    "topic": "Feature build: windowed infinite-scroll feed",
-    "type": "build",
-    "difficulty": "hard",
-    "prompt": "Build an activity feed that pages in events from a stubbed async page loader as the user scrolls, keeping the DOM small once 20,000 rows are loaded.\n- Reaching the end of the loaded rows fetches the next page exactly once, however fast the user scrolls, and paging stops at the end of the data.\n- Only rows near the viewport are in the DOM, while the scrollbar reflects the full loaded list; row heights vary and are measured, not assumed.\n- A page that fails offers a retry that resumes at that page without duplicating or skipping rows.\n- Per-row expanded state follows the row it belongs to, not the screen position, as the feed scrolls.\n- Scroll observation is torn down on unmount.",
-    "code": "",
-    "language": "",
-    "options": [],
     "multi": false
   },
   {
@@ -579,17 +602,6 @@ window.QUESTIONS = [
     "difficulty": "mid",
     "prompt": "Clicking any row acts on the last row, and after `unmountRows` the handlers keep firing, so listeners accumulate on every re-render. A reviewer also insists `currentFilter` is \"captured wrong\". Which of these are real defects, and how do you fix them?",
     "code": "let currentFilter = 'all';\n\nexport function mountRows(rows) {\n  for (var i = 0; i < rows.length; i++) {\n    rows[i].addEventListener('click', () => select(i, currentFilter), { capture: true });\n  }\n}\n\nexport function unmountRows(rows) {\n  for (var i = 0; i < rows.length; i++) {\n    rows[i].removeEventListener('click', () => select(i, currentFilter));\n  }\n}\n\nexport function setFilter(next) {\n  currentFilter = next;\n}",
-    "language": "js",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "javascript",
-    "topic": "Feature build: undo/redo history for an editable list",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build an editable list — add, rename, delete, reorder — in vanilla JS with undo and redo. No framework, no libraries.\n- Ctrl+Z and Ctrl+Shift+Z walk backwards and forwards through every edit, reorders included.\n- Making a fresh edit after undoing discards the redo branch.\n- A run of single-character renames on one item coalesces into one undoable step.\n- The DOM renders from current state only; history is never read to draw the list.\n- History is bounded, and what that costs the oldest edits is handled rather than ignored.",
-    "code": "",
     "language": "js",
     "options": [],
     "multi": false
@@ -885,17 +897,6 @@ window.QUESTIONS = [
     "difficulty": "mid",
     "prompt": "Users on a locked plan (fetchProfile rejects with a 403) get the generic error screen instead of the upgrade prompt — while an unrelated org occasionally gets the upgrade prompt for no reason. Explain both, then rewrite the throw site and the catch site.",
     "code": "async function loadDashboard(orgId) {\n  try {\n    const profile = await fetchProfile(orgId);\n    const metrics = await fetchMetrics(orgId);\n    return { profile, metrics };\n  } catch (err) {\n    throw new Error(`Failed to load dashboard for ${orgId}: ${err.message}`);\n  }\n}\n// route component\ntry {\n  data = await loadDashboard(orgId);\n} catch (err) {\n  if (err.message.includes('403') || err.message.includes('Forbidden')) {\n    showUpgradePrompt();\n  } else {\n    tracker.captureException(err);\n    showGenericError();\n  }\n}",
-    "language": "js",
-    "options": [],
-    "multi": false
-  },
-  {
-    "area": "javascript",
-    "topic": "Feature build: drag-and-drop kanban board (vanilla JS)",
-    "type": "build",
-    "difficulty": "senior",
-    "prompt": "Build a kanban board in vanilla JS — three columns of cards, moved within and between columns using native HTML5 drag and drop.\n- A dropped card lands at the position it was released over, not appended to the end of the column\n- Dropping onto an empty column works; releasing outside any column leaves the board unchanged\n- The board renders from one state object — the DOM is never the source of truth for card order\n- Card order survives a page reload\n- No libraries or frameworks, and listeners are delegated on the board rather than bound per card",
-    "code": "",
     "language": "js",
     "options": [],
     "multi": false

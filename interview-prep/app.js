@@ -22,8 +22,22 @@
     build: 'build a feature',
   };
 
+  /* Feature builds are pulled out of their area and listed first: they are the
+     machine-coding round, and you sit down to them separately from the rest. */
+  var SECTIONS = [
+    { key: 'build', label: 'Machine coding', note: 'build a feature end to end — a sitting each' },
+    { key: 'react', label: 'React' },
+    { key: 'javascript', label: 'JavaScript' },
+    { key: 'html', label: 'HTML' },
+    { key: 'css', label: 'CSS' },
+  ];
+
+  function sectionOf(q) {
+    return q.type === 'build' ? 'build' : q.area;
+  }
+
   var answers = load();
-  var activeArea = 'all';
+  var activeSection = 'all';
 
   /* ---------- storage ---------- */
 
@@ -136,6 +150,7 @@
     var card = el('article', 'card');
     card.id = 'q' + num;
     card.dataset.area = q.area;
+    card.dataset.section = sectionOf(q);
     card.dataset.num = String(num);
 
     var head = el('div', 'card-head');
@@ -247,24 +262,25 @@
     var container = document.getElementById('questions');
     container.textContent = '';
 
-    var order = ['react', 'javascript', 'html', 'css'];
     var seen = {};
 
     QUESTIONS.forEach(function (q, i) {
-      if (!seen[q.area]) {
-        seen[q.area] = [];
+      var key = sectionOf(q);
+      if (!seen[key]) {
+        seen[key] = [];
       }
-      seen[q.area].push({ q: q, i: i });
+      seen[key].push({ q: q, i: i });
     });
 
-    order.forEach(function (area) {
-      var group = seen[area];
+    SECTIONS.forEach(function (section) {
+      var group = seen[section.key];
       if (!group || !group.length) return;
 
       var header = el('div', 'area-header');
-      header.dataset.area = area;
-      header.appendChild(el('h2', null, AREA_LABELS[area] || area));
+      header.dataset.section = section.key;
+      header.appendChild(el('h2', null, section.label));
       header.appendChild(el('span', 'area-sub', group.length + ' questions'));
+      if (section.note) header.appendChild(el('span', 'area-note', section.note));
       container.appendChild(header);
 
       group.forEach(function (entry) {
@@ -285,7 +301,7 @@
       var cell = el('button', 'jump-cell', String(num));
       cell.type = 'button';
       cell.dataset.num = String(num);
-      cell.dataset.area = q.area;
+      cell.dataset.section = sectionOf(q);
       cell.title = AREA_LABELS[q.area] + ' — ' + q.topic;
       cell.addEventListener('click', function () {
         var target = document.getElementById('q' + num);
@@ -311,7 +327,7 @@
       var cell = document.querySelector('.jump-cell[data-num="' + num + '"]');
       if (cell) {
         cell.classList.toggle('is-answered', done);
-        cell.classList.toggle('is-hidden', activeArea !== 'all' && q.area !== activeArea);
+        cell.classList.toggle('is-hidden', activeSection !== 'all' && sectionOf(q) !== activeSection);
       }
     });
 
@@ -320,11 +336,15 @@
     document.getElementById('progress-bar').style.width =
       (QUESTIONS.length ? (answered / QUESTIONS.length) * 100 : 0) + '%';
 
-    var counts = { all: 0, react: 0, javascript: 0, html: 0, css: 0 };
+    var counts = { all: 0 };
+    SECTIONS.forEach(function (section) {
+      counts[section.key] = 0;
+    });
     QUESTIONS.forEach(function (q, i) {
       if (!isAnswered(i + 1)) return;
       counts.all += 1;
-      if (counts[q.area] !== undefined) counts[q.area] += 1;
+      var key = sectionOf(q);
+      if (counts[key] !== undefined) counts[key] += 1;
     });
     Object.keys(counts).forEach(function (key) {
       var node = document.getElementById('count-' + key);
@@ -332,19 +352,19 @@
     });
   }
 
-  function applyFilter(area) {
-    activeArea = area;
+  function applyFilter(section) {
+    activeSection = section;
 
     document.querySelectorAll('.chip').forEach(function (chip) {
-      chip.classList.toggle('is-active', chip.dataset.area === area);
+      chip.classList.toggle('is-active', chip.dataset.section === section);
     });
 
     document.querySelectorAll('.card').forEach(function (card) {
-      card.hidden = area !== 'all' && card.dataset.area !== area;
+      card.hidden = section !== 'all' && card.dataset.section !== section;
     });
 
     document.querySelectorAll('.area-header').forEach(function (header) {
-      header.hidden = area !== 'all' && header.dataset.area !== area;
+      header.hidden = section !== 'all' && header.dataset.section !== section;
     });
 
     refreshState();
@@ -535,7 +555,7 @@
 
     document.querySelectorAll('.chip').forEach(function (chip) {
       chip.addEventListener('click', function () {
-        applyFilter(chip.dataset.area);
+        applyFilter(chip.dataset.section);
       });
     });
 
@@ -546,7 +566,7 @@
         answers = {};
         save();
         render();
-        applyFilter(activeArea);
+        applyFilter(activeSection);
         showToast('Answers cleared.');
       });
     });
