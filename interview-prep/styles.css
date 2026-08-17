@@ -339,6 +339,18 @@ body {
   background: var(--bg-elev-2);
 }
 
+/* Feature builds are a different kind of sitting — an hour, not five minutes —
+   so they get their own colour and a roomier answer box. */
+.badge-type[data-type="build"] {
+  color: #ffa657;
+  border-color: rgba(255, 166, 87, 0.4);
+  background: rgba(255, 166, 87, 0.08);
+}
+
+textarea.answer-build {
+  min-height: 260px;
+}
+
 .topic {
   margin-left: auto;
   font-size: 12px;

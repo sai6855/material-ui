@@ -1,6 +1,6 @@
 /* Question bank — 100 questions.
    react 40 · javascript 40 · html 10 · css 10
-   30 multiple choice · 35 find-the-bug · 35 write-code
+   30 multiple choice · 35 find-the-bug · 35 write-code · 0 feature-build
    Generated file — correct answers deliberately excluded; the Evaluate flow is graded by an LLM. */
 
 window.QUESTIONS = [

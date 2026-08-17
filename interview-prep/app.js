@@ -19,6 +19,7 @@
     mcq: 'choose',
     debug: 'find the bug',
     write: 'write code',
+    build: 'build a feature',
   };
 
   var answers = load();
@@ -143,7 +144,9 @@
     var areaBadge = el('span', 'badge badge-area', AREA_LABELS[q.area] || q.area);
     areaBadge.dataset.area = q.area;
     head.appendChild(areaBadge);
-    head.appendChild(el('span', 'badge badge-type', TYPE_LABELS[q.type] || q.type));
+    var typeBadge = el('span', 'badge badge-type', TYPE_LABELS[q.type] || q.type);
+    typeBadge.dataset.type = q.type;
+    head.appendChild(typeBadge);
     head.appendChild(el('span', 'topic', q.topic));
     card.appendChild(head);
 
@@ -209,7 +212,12 @@
   function renderTextarea(q, num) {
     var ta = el('textarea', 'answer');
     ta.placeholder =
-      q.type === 'write' ? 'Write your code here…' : 'Explain what is wrong, why it happens, and how you would fix it…';
+      q.type === 'build'
+        ? 'Build it here — component code, state shape, and how you handle the edge cases…'
+        : q.type === 'write'
+          ? 'Write your code here…'
+          : 'Explain what is wrong, why it happens, and how you would fix it…';
+    if (q.type === 'build') ta.classList.add('answer-build');
     ta.value = answers[num] || '';
     ta.spellcheck = false;
 
