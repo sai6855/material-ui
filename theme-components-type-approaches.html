@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three approaches to typing MUI theme.components</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #172033;
+        --muted: #59657a;
+        --line: #d9e0eb;
+        --paper: #ffffff;
+        --canvas: #f4f7fb;
+        --blue: #1769e0;
+        --blue-soft: #eaf2ff;
+        --green: #087f5b;
+        --green-soft: #e8f8f2;
+        --amber: #9a6700;
+        --amber-soft: #fff6db;
+        --red: #b42318;
+        --code: #111827;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        width: min(1080px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 64px 0 80px;
+      }
+
+      header,
+      section {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(23, 32, 51, 0.06);
+      }
+
+      header {
+        padding: 40px;
+        margin-bottom: 24px;
+      }
+
+      section {
+        padding: 32px;
+        margin-top: 24px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 14px;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        margin-bottom: 8px;
+        font-size: clamp(1.45rem, 3vw, 2rem);
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .lede {
+        max-width: 800px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 750;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+        padding: 6px 10px;
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .badge {
+        margin-bottom: 14px;
+        padding: 5px 9px;
+      }
+
+      .strict {
+        background: var(--amber-soft);
+        color: var(--amber);
+      }
+
+      .global {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .local {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+
+      .summary-grid,
+      .code-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .summary-grid {
+        margin-top: 22px;
+      }
+
+      .summary-card,
+      .result {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      .summary-card p,
+      .result p {
+        color: var(--muted);
+      }
+
+      .code-grid {
+        margin-top: 22px;
+      }
+
+      .code-panel {
+        min-width: 0;
+      }
+
+      .filename {
+        margin: 0 0 7px;
+        color: var(--muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      pre {
+        min-height: 100%;
+        margin: 0;
+        overflow-x: auto;
+        border-radius: 12px;
+        background: var(--code);
+        color: #e5edf8;
+        padding: 20px;
+        font:
+          0.88rem/1.62 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          monospace;
+        tab-size: 2;
+      }
+
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      :not(pre) > code {
+        border-radius: 5px;
+        background: #eef2f7;
+        padding: 0.14em 0.35em;
+        font-size: 0.9em;
+      }
+
+      .comment {
+        color: #93a4ba;
+      }
+
+      .error {
+        color: #ff9b92;
+      }
+
+      .result {
+        margin-top: 20px;
+        border-left: 4px solid var(--blue);
+      }
+
+      .result strong {
+        color: var(--ink);
+      }
+
+      .flow {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-weight: 650;
+      }
+
+      .flow span {
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        background: #f8fafc;
+        padding: 7px 10px;
+      }
+
+      .flow b {
+        color: var(--blue);
+      }
+
+      .comparison {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        font-size: 0.94rem;
+      }
+
+      .comparison th,
+      .comparison td {
+        border-bottom: 1px solid var(--line);
+        padding: 14px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .comparison th {
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .comparison tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .note {
+        margin-top: 22px;
+        border-radius: 12px;
+        background: var(--amber-soft);
+        color: #654600;
+        padding: 16px 18px;
+      }
+
+      .note strong {
+        color: #4e3600;
+      }
+
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 20px, 1080px);
+          padding: 24px 0 48px;
+        }
+
+        header,
+        section {
+          border-radius: 14px;
+          padding: 22px;
+        }
+
+        .summary-grid,
+        .code-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .table-wrap {
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="eyebrow">MUI · TypeScript performance</div>
+        <h1>Three ways to type <code>theme.components</code></h1>
+        <p class="lede">
+          Each approach catches component configuration mistakes differently. The examples below use
+          the same deliberate typo—<code>variant: 'contains'</code>—so the trade-off is easy to see.
+        </p>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>The useful check</h3>
+            <p>
+              For <code>MuiButton</code>, TypeScript should accept <code>'contained'</code> and
+              reject <code>'contains'</code>.
+            </p>
+          </div>
+          <div class="summary-card">
+            <h3>The performance problem</h3>
+            <p>
+              Today, asking for the Button type can instantiate the type machinery for the complete
+              <code>Components&lt;Theme&gt;</code> catalog.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <section id="approach-1">
+        <div class="badge strict">Approach 1 · Current strict behavior</div>
+        <h2>Automatically type every component</h2>
+        <p>
+          No extra declaration file is needed. <code>createTheme</code> expects its
+          <code>components</code> property to match the full
+          <code>Components&lt;Theme&gt;</code> type.
+        </p>
+
+        <div class="code-grid">
+          <div class="code-panel">
+            <p class="filename">theme.ts</p>
+            <pre><code>import { createTheme } from '@mui/material/styles';
+
+export const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contains',
+        <span class="error">// ^ TypeScript error</span>
+      },
+    },
+  },
+});</code></pre>
+          </div>
+          <div class="code-panel">
+            <p class="filename">Conceptual expected type</p>
+            <pre><code>components?: Components&lt;Theme&gt;;
+
+<span class="comment">// The catalog contains:</span>
+<span class="comment">// MuiButton</span>
+<span class="comment">// MuiCard</span>
+<span class="comment">// MuiDialog</span>
+<span class="comment">// ...every other Mui* component</span></code></pre>
+          </div>
+        </div>
+
+        <div class="flow" aria-label="Current strict behavior flow">
+          <span>Prepare the full catalog</span><b>→</b><span>Find MuiButton</span><b>→</b
+          ><span>Reject <code>'contains'</code></span>
+        </div>
+
+        <div class="result">
+          <strong>Result:</strong> excellent automatic type safety, but potentially expensive type
+          instantiation even when the theme customizes only one component.
+        </div>
+      </section>
+
+      <section id="approach-2">
+        <div class="badge global">Approach 2 · Current PR proposal</div>
+        <h2>Enable optimization globally, then restore selected types globally</h2>
+        <p>
+          The feature flag makes <code>theme.components</code> loose. The same module augmentation
+          then restores strict checking for <code>MuiButton</code> across the entire TypeScript
+          program.
+        </p>
+
+        <div class="code-grid">
+          <div class="code-panel">
+            <p class="filename">mui-types.d.ts</p>
+            <pre><code>import type {
+  Components,
+  Theme,
+} from '@mui/material/styles';
+
+declare module '@mui/material/styles' {
+  interface TypeFeatures {
+    optimizedTheme: true;
+  }
+
+  interface ThemeComponents
+    extends Pick&lt;
+      Components&lt;Theme&gt;,
+      'MuiButton'
+    &gt; {}
+}</code></pre>
+          </div>
+          <div class="code-panel">
+            <p class="filename">theme.ts</p>
+            <pre><code>import { createTheme } from '@mui/material/styles';
+
+export const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contains',
+        <span class="error">// ^ TypeScript error</span>
+      },
+    },
+  },
+});</code></pre>
+          </div>
+        </div>
+
+        <div class="flow" aria-label="PR proposal flow">
+          <span>Use the loose catalog</span><b>→</b><span>Globally add MuiButton's type</span
+          ><b>→</b><span>Reject <code>'contains'</code></span>
+        </div>
+
+        <div class="result">
+          <strong>Result:</strong> only selected component types are intended to be instantiated.
+          The selection applies to every theme in the program because module augmentation is global.
+        </div>
+      </section>
+
+      <section id="approach-3">
+        <div class="badge local">Approach 3 · Jan's suggestion</div>
+        <h2>Enable optimization globally, but validate each theme locally</h2>
+        <p>
+          Only the performance flag is augmented globally. The <code>satisfies</code> expression
+          beside the theme asks TypeScript to validate exactly the components customized there.
+        </p>
+
+        <div class="code-grid">
+          <div class="code-panel">
+            <p class="filename">mui-types.d.ts</p>
+            <pre><code>import type {} from '@mui/material/styles';
+
+declare module '@mui/material/styles' {
+  interface TypeFeatures {
+    optimizedTheme: true;
+  }
+}</code></pre>
+          </div>
+          <div class="code-panel">
+            <p class="filename">theme.ts</p>
+            <pre><code>import {
+  createTheme,
+  type Components,
+  type Theme,
+} from '@mui/material/styles';
+
+export const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contains',
+        <span class="error">// ^ TypeScript error</span>
+      },
+    },
+  } satisfies Pick&lt;
+    Components&lt;Theme&gt;,
+    'MuiButton'
+  &gt;,
+});</code></pre>
+          </div>
+        </div>
+
+        <div class="flow" aria-label="Jan's suggestion flow">
+          <span>Use the loose catalog</span><b>→</b><span>Locally request MuiButton</span><b>→</b
+          ><span>Reject <code>'contains'</code></span>
+        </div>
+
+        <div class="result">
+          <strong>Result:</strong> the selected component list stays next to this theme, and the
+          object keeps its precise inferred type. The PR still needs measurements proving that this
+          form avoids the full instantiation cost.
+        </div>
+      </section>
+
+      <section id="comparison">
+        <div class="eyebrow">Comparison</div>
+        <h2>What changes between the approaches?</h2>
+
+        <div class="table-wrap">
+          <table class="comparison">
+            <thead>
+              <tr>
+                <th>Approach</th>
+                <th>Component selection</th>
+                <th>Type safety</th>
+                <th>Expected cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Current strict</strong></td>
+                <td>Automatic: all components</td>
+                <td>All component configurations</td>
+                <td>Highest; full catalog may be instantiated</td>
+              </tr>
+              <tr>
+                <td><strong>2. PR augmentation</strong></td>
+                <td>Explicit and global</td>
+                <td>Only selected components</td>
+                <td>Low in the PR's measurements</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>3. Jan's <code>satisfies</code></strong>
+                </td>
+                <td>Explicit and local to each theme</td>
+                <td>Only selected components</td>
+                <td>Not yet established; benchmark requested</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <strong>Status:</strong> the optimization API is proposed in an open PR. Approaches 2 and
+          3 require those proposed types and are not examples for the currently released package.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
