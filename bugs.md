@@ -2,7 +2,7 @@
 
 ## TypeScript performance
 
-The original measurements below use TypeScript 6.0.2 against the built Material UI declarations.
+The original measurements below use TypeScript 6.0.2 against the built Material UI declarations.
 Newer entries identify measurements made with TypeScript 7.0.2. An instantiation is one application
 of a generic type to type arguments. The numbers are totals for isolated minimal compilations, not
 runtime measurements or the cost of a single source line.
@@ -157,7 +157,7 @@ runtime measurements or the cost of a single source line.
   - `packages/mui-material/src/Alert/Alert.d.ts:68`
   - `packages/mui-material/src/Alert/Alert.d.ts:89`
   - `packages/mui-material/src/Alert/Alert.d.ts:98`
-- Exposure: `React.ElementType<Props>` appears 74 times across 34 Material UI declaration files on
+- Exposure: `React.ElementType<Props>` appears 74 times across 34 Material UI declaration files on
   this branch.
 - Finding: `React.ElementType<Props>` compares the supplied component props against every HTML and
   SVG intrinsic element to construct a compatible-element union. `SlotProps` then processes that
@@ -172,7 +172,7 @@ runtime measurements or the cost of a single source line.
 ### Empty OverridableStringUnion overrides run the complete transformation
 
 - Location: `packages/mui-types/src/index.ts:54`
-- Exposure: 79 uses across 41 Material UI and MUI System files.
+- Exposure: 79 uses across 41 component and system package files.
 - Finding: most override interfaces are empty, but the default `OverridableStringUnion<T>` path
   still creates a record, applies `Overwrite` and `DistributiveOmit`, maps all resulting keys, and
   extracts the string keys. The result of this work is the original literal union `T`.
@@ -187,8 +187,8 @@ runtime measurements or the cost of a single source line.
 - Locations:
   - `packages/mui-utils/src/mergeSlotProps/mergeSlotProps.ts:51`
   - `packages/mui-utils/src/appendOwnerState/appendOwnerState.ts:17`
-- Exposure: `mergeSlotProps` and `appendOwnerState` have 39 call sites across the inspected Material
-  UI, MUI System, and MUI Utils sources.
+- Exposure: `mergeSlotProps` and `appendOwnerState` have 39 call sites across the inspected
+  component, system, and utility packages.
 - Finding: their return types apply `Simplify` to intersections containing the slot's props.
   `Simplify` eagerly reconstructs every property, so using an intrinsic slot can map hundreds of
   React DOM properties solely to flatten the displayed type.
