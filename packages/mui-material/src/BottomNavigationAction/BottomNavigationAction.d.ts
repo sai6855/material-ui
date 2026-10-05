@@ -59,6 +59,12 @@ export interface BottomNavigationActionOwnProps extends BottomNavigationActionSl
    */
   label?: React.ReactNode;
   /**
+   * If `true`, the component appears selected.
+   *
+   * `BottomNavigation` sets this on each child from its own `value`.
+   */
+  selected?: boolean | undefined;
+  /**
    * If `true`, the `BottomNavigationAction` will show its label.
    * By default, only the selected `BottomNavigationAction`
    * inside `BottomNavigation` will show its label.
@@ -88,12 +94,12 @@ export type BottomNavigationActionTypeMap<
  *
  * Demos:
  *
- * - [Bottom Navigation](https://mui.com/material-ui/react-bottom-navigation/)
+ * - [Bottom Navigation](https://next.mui.com/material-ui/react-bottom-navigation/)
  *
  * API:
  *
- * - [BottomNavigationAction API](https://mui.com/material-ui/api/bottom-navigation-action/)
- * - inherits [ButtonBase API](https://mui.com/material-ui/api/button-base/)
+ * - [BottomNavigationAction API](https://next.mui.com/material-ui/api/bottom-navigation-action/)
+ * - inherits [ButtonBase API](https://next.mui.com/material-ui/api/button-base/)
  */
 declare const BottomNavigationAction: ExtendButtonBase<
   BottomNavigationActionTypeMap<{}, ButtonBaseTypeMap['defaultComponent']>
