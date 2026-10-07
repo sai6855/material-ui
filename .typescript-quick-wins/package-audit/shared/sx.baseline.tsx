@@ -1,0 +1,1 @@
+import {SxProps,Theme} from '@mui/system';const x:SxProps<Theme>={m:2,display:'flex',color:'red','&:hover':{p:1}};

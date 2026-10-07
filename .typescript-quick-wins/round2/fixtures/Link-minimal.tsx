@@ -1,0 +1,1 @@
+import Link from "@mui/material/Link"; export const example=<Link href="#">Home</Link>;

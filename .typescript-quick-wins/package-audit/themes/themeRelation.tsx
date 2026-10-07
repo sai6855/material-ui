@@ -1,0 +1,1 @@
+import {Theme,CssVarsTheme} from '@mui/material/styles'; declare const t:Theme;export const vars:CssVarsTheme['vars']|undefined=t.vars;

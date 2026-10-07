@@ -1,0 +1,1 @@
+import {Theme,CssVarsTheme,ThemeVars} from '@mui/material/styles';type Original = Partial<Pick<CssVarsTheme,'vars'>>;type Actual = Pick<Theme,'vars'>;declare const a:Original;declare const b:Actual;export const first:Actual=a;export const second:Original=b;declare const vars:ThemeVars;export const ok:Actual={vars};export const absent:Actual={};

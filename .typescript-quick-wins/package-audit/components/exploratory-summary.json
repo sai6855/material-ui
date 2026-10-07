@@ -1,0 +1,6 @@
+{
+  "excluded": "Superseded exploratory diagnostics removed. The first family compatibility fixture assumed ToggleButton href event HTMLAnchorElement, whereas its own onClick intentionally retains HTMLElement. An augmentation fixture initially matched Tab inside TableSortLabel; corrected fixture passed both variants. Complete Button spec remains blocked by unreadable react-router declarations. Original combined candidate diagnostics are excluded from independent candidate speed claims.",
+  "canonicalFamilyValidation": "family-validation.jsonl",
+  "canonicalBadgeValidation": "badge-validation.jsonl",
+  "canonicalNativeMeasurements": "native-measurements.jsonl"
+}

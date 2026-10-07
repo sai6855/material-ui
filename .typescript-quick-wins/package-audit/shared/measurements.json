@@ -1,0 +1,98 @@
+[
+  {
+    "fixture": "button",
+    "variant": "baseline",
+    "compiler": "6.0.3",
+    "instantiations": 16330,
+    "changedFiles": 0,
+    "diagnostics": []
+  },
+  {
+    "fixture": "button",
+    "variant": "candidate1",
+    "compiler": "6.0.3",
+    "instantiations": 16298,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "button",
+    "variant": "candidate2",
+    "compiler": "6.0.3",
+    "instantiations": 16330,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "system",
+    "variant": "baseline",
+    "compiler": "6.0.3",
+    "instantiations": 14265,
+    "changedFiles": 0,
+    "diagnostics": []
+  },
+  {
+    "fixture": "system",
+    "variant": "candidate1",
+    "compiler": "6.0.3",
+    "instantiations": 14245,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "system",
+    "variant": "candidate2",
+    "compiler": "6.0.3",
+    "instantiations": 14265,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "styles",
+    "variant": "baseline",
+    "compiler": "6.0.3",
+    "instantiations": 245,
+    "changedFiles": 0,
+    "diagnostics": []
+  },
+  {
+    "fixture": "styles",
+    "variant": "candidate1",
+    "compiler": "6.0.3",
+    "instantiations": 245,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "styles",
+    "variant": "candidate2",
+    "compiler": "6.0.3",
+    "instantiations": 191,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "sx",
+    "variant": "baseline",
+    "compiler": "6.0.3",
+    "instantiations": 2847,
+    "changedFiles": 0,
+    "diagnostics": []
+  },
+  {
+    "fixture": "sx",
+    "variant": "candidate1",
+    "compiler": "6.0.3",
+    "instantiations": 2847,
+    "changedFiles": 1,
+    "diagnostics": []
+  },
+  {
+    "fixture": "sx",
+    "variant": "candidate2",
+    "compiler": "6.0.3",
+    "instantiations": 2847,
+    "changedFiles": 1,
+    "diagnostics": []
+  }
+]

@@ -1,0 +1,8 @@
+{"compiler":"6.0.3","scenario":"compat","experiment":"baseline","skipLibCheck":false,"instantiations":23370,"types":11007,"errors":[],"totalMs":6239}
+{"compiler":"6.0.3","scenario":"compat","experiment":"probe","skipLibCheck":false,"instantiations":26864,"types":11523,"errors":[],"totalMs":12502}
+{"compiler":"6.0.3","scenario":"augment","experiment":"baseline","skipLibCheck":false,"exactOptionalPropertyTypes":false,"instantiations":23133,"types":11335,"errors":[],"totalMs":23703}
+{"compiler":"6.0.3","scenario":"augment","experiment":"probe","skipLibCheck":false,"exactOptionalPropertyTypes":false,"instantiations":20367,"types":4931,"errors":[],"totalMs":19232}
+{"compiler":"6.0.3","scenario":"compat","experiment":"baseline","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":28051,"types":12011,"errors":[],"totalMs":22213}
+{"compiler":"6.0.3","scenario":"compat","experiment":"probe","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":29694,"types":12038,"errors":[],"totalMs":18658}
+{"compiler":"6.0.3","scenario":"augment","experiment":"baseline","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":26227,"types":11861,"errors":[],"totalMs":19982}
+{"compiler":"6.0.3","scenario":"augment","experiment":"probe","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":23461,"types":5457,"errors":[],"totalMs":14430}

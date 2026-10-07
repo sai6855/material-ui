@@ -1,0 +1,2 @@
+{"compiler":"6.0.3","scenario":"family-combined","experiment":"baseline","skipLibCheck":true,"exactOptionalPropertyTypes":false,"instantiations":45891,"types":10567,"errors":[],"totalMs":2346}
+{"compiler":"6.0.3","scenario":"family-combined","experiment":"probe","skipLibCheck":true,"exactOptionalPropertyTypes":false,"instantiations":39152,"types":4734,"errors":[],"totalMs":4597}

@@ -1,0 +1,1 @@
+import * as React from 'react';import C from '@mui/material/Fab';const Custom=React.forwardRef<HTMLDivElement,{required:string}>((p,r)=><div ref={r}/>);export const a=<C onClick={e=>e.currentTarget.tagName}/>;export const b=<C href='/' target='_blank'/>;export const c=<C component={Custom} required='yes' ref={React.createRef<HTMLDivElement>()}/>;

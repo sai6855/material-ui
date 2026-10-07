@@ -1,0 +1,1 @@
+import {OverridableStringUnion} from '@mui/types';type Props = {size?:OverridableStringUnion<'small'|'medium'|'large'>; color?:OverridableStringUnion<'primary'|'secondary'|'success'|'error'|'info'|'warning'>};export function Consumer(props:Props) { const size: Props['size']=props.size;return size; }

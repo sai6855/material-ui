@@ -1,0 +1,44 @@
+{"name":"Link","variant":"baseline","compiler":"6.0.3","instantiations":11987,"checkMs":276,"errors":[]}
+{"name":"Link","variant":"experiment","compiler":"6.0.3","instantiations":11962,"checkMs":178,"errors":[]}
+{"name":"Backdrop","variant":"baseline","compiler":"6.0.3","instantiations":13466,"checkMs":143,"errors":[]}
+{"name":"Backdrop","variant":"experiment","compiler":"6.0.3","instantiations":13444,"checkMs":134,"errors":[]}
+{"name":"SpeedDial","variant":"baseline","compiler":"6.0.3","instantiations":3564,"checkMs":103,"errors":[]}
+{"name":"SpeedDial","variant":"experiment","compiler":"6.0.3","instantiations":3543,"checkMs":107,"errors":[]}
+{"name":"ButtonBase","variant":"baseline","compiler":"6.0.3","instantiations":16755,"checkMs":228,"errors":[]}
+{"name":"ButtonBase","variant":"experiment","compiler":"6.0.3","instantiations":16743,"checkMs":207,"errors":[]}
+{"name":"TablePaginationActions","variant":"baseline","compiler":"6.0.3","instantiations":4355,"checkMs":136,"errors":[]}
+{"name":"TablePaginationActions","variant":"experiment","compiler":"6.0.3","instantiations":4322,"checkMs":128,"errors":[]}
+{"name":"Autocomplete-optional","variant":"baseline","compiler":"6.0.3","instantiations":43960,"checkMs":382,"errors":[]}
+{"name":"Autocomplete-optional","variant":"experiment","compiler":"6.0.3","instantiations":41090,"checkMs":432,"errors":[]}
+{"name":"TransitionProps","variant":"baseline","compiler":"6.0.3","instantiations":1917,"checkMs":109,"errors":[]}
+{"name":"TransitionProps","variant":"experiment","compiler":"6.0.3","instantiations":1902,"checkMs":111,"errors":[]}
+{"name":"Select-absent","variant":"baseline","compiler":"6.0.3","instantiations":39747,"checkMs":323,"errors":[]}
+{"name":"Select-absent","variant":"experiment","compiler":"6.0.3","instantiations":39747,"checkMs":307,"errors":[]}
+{"name":"mergeSlotProps","variant":"baseline","compiler":"6.0.3","instantiations":6205,"checkMs":237,"errors":[]}
+{"name":"mergeSlotProps","variant":"experiment","compiler":"6.0.3","instantiations":737,"checkMs":94,"errors":[]}
+{"name":"mergeSlotProps-Tooltip","variant":"baseline","compiler":"6.0.3","instantiations":124690,"checkMs":498,"errors":[]}
+{"name":"mergeSlotProps-Tooltip","variant":"experiment","compiler":"6.0.3","instantiations":120596,"checkMs":368,"errors":[]}
+{"name":"sx-theme-relation","variant":"baseline","compiler":"6.0.3","instantiations":46098,"checkMs":306,"errors":[]}
+{"name":"sx-theme-relation","variant":"experiment","compiler":"6.0.3","instantiations":2975,"checkMs":92,"errors":[]}
+{"name":"sx-same-theme","variant":"baseline","compiler":"6.0.3","instantiations":14658,"checkMs":128,"errors":[]}
+{"name":"sx-same-theme","variant":"experiment","compiler":"6.0.3","instantiations":14658,"checkMs":151,"errors":[]}
+{"name":"Link","variant":"baseline","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":5842,"checkMs":231,"errors":[]}
+{"name":"Link","variant":"baseline","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":5848,"checkMs":144,"errors":[]}
+{"name":"Link","variant":"experiment","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":5882,"checkMs":132,"errors":[]}
+{"name":"Link","variant":"experiment","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":5896,"checkMs":114,"errors":[]}
+{"name":"Backdrop","variant":"baseline","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":405330,"checkMs":996,"errors":[]}
+{"name":"Backdrop","variant":"baseline","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":405333,"checkMs":865,"errors":[]}
+{"name":"Backdrop","variant":"experiment","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":409110,"checkMs":909,"errors":[]}
+{"name":"Backdrop","variant":"experiment","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":409084,"checkMs":1005,"errors":["Type 'false' does not satisfy the constraint 'true'."]}
+{"name":"SpeedDial","variant":"baseline","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":215939,"checkMs":528,"errors":[]}
+{"name":"SpeedDial","variant":"baseline","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":215939,"checkMs":537,"errors":[]}
+{"name":"SpeedDial","variant":"experiment","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":219959,"checkMs":529,"errors":[]}
+{"name":"SpeedDial","variant":"experiment","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":221301,"checkMs":553,"errors":["Type 'false' does not satisfy the constraint 'true'."]}
+{"name":"TablePaginationActions","variant":"baseline","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":5754,"checkMs":125,"errors":[]}
+{"name":"TablePaginationActions","variant":"baseline","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":5754,"checkMs":122,"errors":[]}
+{"name":"TablePaginationActions","variant":"experiment","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":18539,"checkMs":152,"errors":[]}
+{"name":"TablePaginationActions","variant":"experiment","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":18544,"checkMs":133,"errors":["Type 'false' does not satisfy the constraint 'true'."]}
+{"name":"Autocomplete-optional","variant":"baseline","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":109208,"checkMs":732,"errors":[]}
+{"name":"Autocomplete-optional","variant":"baseline","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":109211,"checkMs":728,"errors":[]}
+{"name":"Autocomplete-optional","variant":"experiment","augmented":false,"validation":true,"compiler":"6.0.3","instantiations":191962,"checkMs":712,"errors":[]}
+{"name":"Autocomplete-optional","variant":"experiment","augmented":true,"validation":true,"compiler":"6.0.3","instantiations":198962,"checkMs":710,"errors":["Type 'false' does not satisfy the constraint 'true'.","Type 'false' does not satisfy the constraint 'true'."]}

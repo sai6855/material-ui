@@ -1,0 +1,1 @@
+import * as React from 'react';import Badge,{BadgeOwnerState,BadgeProps} from '@mui/material/Badge';export const a=<Badge badgeContent={1} slotProps={{root:s=>({title:s.max.toFixed()}),badge:s=>({title:s.displayValue?.toString()})}}/>;export function wrapper<P extends BadgeProps>(p:P){return <Badge {...p}/>};declare const state:BadgeOwnerState;const max:number=state.max;

@@ -1,0 +1,1 @@
+import * as React from 'react';import Button from '@mui/material/Button';export const a=<Button variant='contained' href='/a' target='_blank'>Go</Button>; export const b=<Button component='a' href='/b' disabled/>;export const c=<Button onClick={e=>{const b:HTMLButtonElement=e.currentTarget;}}/>;

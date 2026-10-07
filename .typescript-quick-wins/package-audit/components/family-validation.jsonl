@@ -1,0 +1,8 @@
+{"compiler":"6.0.3","scenario":"family-compat","experiment":"baseline","exactOptionalPropertyTypes":false,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-compat","experiment":"probe","exactOptionalPropertyTypes":false,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-compat","experiment":"baseline","exactOptionalPropertyTypes":true,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-compat","experiment":"probe","exactOptionalPropertyTypes":true,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-augment-corrected","experiment":"baseline","exactOptionalPropertyTypes":false,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-augment-corrected","experiment":"probe","exactOptionalPropertyTypes":false,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-augment-corrected","experiment":"baseline","exactOptionalPropertyTypes":true,"skipLibCheck":false,"errors":[]}
+{"compiler":"6.0.3","scenario":"family-augment-corrected","experiment":"probe","exactOptionalPropertyTypes":true,"skipLibCheck":false,"errors":[]}

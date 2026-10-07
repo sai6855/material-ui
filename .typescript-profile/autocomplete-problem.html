@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autocomplete: understand the type-check cost</title>
+  <style>
+    :root { color-scheme: light dark; --bg: light-dark(#f8fafc, #10151e); --fg: light-dark(#182231, #e4ecf6); --surface: light-dark(#ffffff, #192230); --line: light-dark(#d7e0ed, #344458); --muted: light-dark(#465873, #adbed4); --accent: light-dark(#174dc0, #93bbff); }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 28px 20px 52px; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 860px; margin: auto; }
+    h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.2; margin: 10px 0; }
+    h2 { font-size: 21px; line-height: 1.35; margin: 0 0 12px; }
+    h3 { font-size: 17px; margin: 12px 0 6px; }
+    p { margin: 8px 0 14px; }
+    section { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .eyebrow, .note { color: var(--muted); }
+    .eyebrow { font-size: 13px; letter-spacing: .07em; text-transform: uppercase; }
+    .note { font-size: 14px; }
+    code { font-family: ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+    pre { padding: 18px; margin: 12px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.6; }
+    .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: center; margin: 20px 0; }
+    .flow div { text-align: center; min-width: 0; }
+    .flow code { display: block; color: var(--accent); font-size: 14px; }
+    .flow small { display: block; color: var(--muted); margin-top: 8px; font-size: 14px; }
+    .arrow { color: var(--muted); font-size: 24px; }
+    .takeaway { padding-left: 16px; border-left: 4px solid var(--accent); margin: 18px 0; }
+    a { color: var(--accent); }
+    details { margin: 15px 0; }
+    summary { cursor: pointer; color: var(--accent); }
+    @media (max-width: 620px) { .flow { grid-template-columns: 1fr; } .arrow { text-align: center; transform: rotate(90deg); } body { padding: 20px 16px 36px; } pre { padding: 12px; } }
+    @media print { body { background: white; color: black; } pre { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Problem only · no fix</div>
+    <h1>Autocomplete has props. Why turn them into component types?</h1>
+    <p>The costly path is <strong>props → component types → props</strong>, inside a generic type comparison. This is compile-time work, not rendering work.</p>
+  </header>
+
+  <section aria-labelledby="names">
+    <h2 id="names">1. Chip and ChipComponent are not the same thing</h2>
+    <p><code>Chip</code> is the MUI component. <code>ChipComponent</code> is its root component type, which defaults to <code>'div'</code>.</p>
+    <pre><code data-tsx>import * as React from 'react';
+import type { ChipProps } from '@mui/material/Chip';
+
+type ChipComponent = 'div';
+type DivProps = React.ComponentPropsWithRef&lt;ChipComponent&gt;;
+type MuiChipProps = ChipProps&lt;ChipComponent&gt;;
+
+const divProps: DivProps = { id: 'fruit' };
+const chipProps: MuiChipProps = { id: 'fruit', size: 'small' };
+
+// @ts-expect-error A div does not have MUI Chip's size prop.
+const wrongDivProps: DivProps = { size: 'small' };</code></pre>
+    <p class="takeaway"><code>ChipProps&lt;'div'&gt;</code> includes Chip-specific props and root div props. Props of <code>'div'</code> alone do not include Chip-specific props.</p>
+  </section>
+
+  <section aria-labelledby="comparison">
+    <h2 id="comparison">2. What comparison starts the work?</h2>
+    <pre><code data-tsx>import Autocomplete, {
+  type AutocompleteProps,
+} from '@mui/material/Autocomplete';
+
+function MyAutocomplete&lt;Value&gt;(
+  props: AutocompleteProps&lt;Value, false, false, false&gt;,
+) {
+  return &lt;Autocomplete {...props} /&gt;;
+}</code></pre>
+    <p>At <code>&lt;Autocomplete {...props} /&gt;</code>, TypeScript checks whether the wrapper's props can be passed to Autocomplete. <code>Value</code> is still generic.</p>
+    <pre aria-label="The two sides of the type comparison">Wrapper's props type
+         ↕ compare
+Autocomplete call's expected props type
+         ↓ can reach
+Their optional slotProps types</pre>
+    <p><strong>No user-written slot-props object is needed.</strong> The spread can contain <code>slotProps</code>, so the comparison can reach its type definitions.</p>
+    <p class="note">This smaller wrapper illustrates the trigger. It is not the full profiling fixture.</p>
+  </section>
+
+  <section aria-labelledby="roundtrip">
+    <h2 id="roundtrip">3. Follow the chip slot's existing type path</h2>
+    <p>The library passes this expression into <code>SlotProps</code>:</p>
+    <pre><code>React.ElementType&lt;Partial&lt;ChipProps&lt;ChipComponent&gt;&gt;&gt;</code></pre>
+    <p>Inside the slot helper, <code>React.ComponentPropsWithRef</code> extracts props from that component-type union. Here is the middle of that path, exposed as small aliases:</p>
+    <pre><code data-tsx>import * as React from 'react';
+import type { ChipProps } from '@mui/material/Chip';
+
+// Start with an existing props type.
+type KnownProps = Partial&lt;ChipProps&lt;'div'&gt;&gt;;
+
+// Find compatible HTML/SVG tags and custom component types.
+type Candidates = React.ElementType&lt;KnownProps&gt;;
+
+// Extract props from those component types again.
+type ExtractedProps = React.ComponentPropsWithRef&lt;Candidates&gt;;</code></pre>
+    <div class="flow" aria-label="Known props, then compatible component types, then extracted props">
+      <div><code>KnownProps</code><small>We already have the Chip props.</small></div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div><code>ElementType&lt;KnownProps&gt;</code><small>Find compatible tags and components.</small></div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div><code>ComponentPropsWithRef</code><small>Recover props from that union.</small></div>
+    </div>
+    <p>The slot helper then makes the extracted props optional and adds its slot-specific types.</p>
+    <p class="takeaway">When generic props types are compared, TypeScript can expand and relate these large nested unions. The round trip is a costly part of that work—not a second validation of the same user object.</p>
+    <p class="note">The extracted union is not guaranteed to equal the starting props type. It can include intrinsic-element and class-ref branches. These arrows describe type relationships, not eager execution on every keystroke.</p>
+    <details>
+      <summary>Same idea, with a real-life metaphor</summary>
+      <p>You already have a job's requirements. You search a directory for suitable workers, then collect their qualifications to build another requirements list. The directory search and rebuilding are the detour.</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="attempt">
+    <h2 id="attempt">4. Why your ChipComponent-only attempt loses information</h2>
+    <pre><code data-tsx>import type { ChipProps } from '@mui/material/Chip';
+import type { SlotProps } from '@mui/material/utils';
+import * as React from 'react';
+
+type CurrentChipSlot = SlotProps&lt;
+  React.ElementType&lt;Partial&lt;ChipProps&lt;'div'&gt;&gt;&gt;, {}, {}
+&gt;;
+const current: CurrentChipSlot = { size: 'small' };
+
+type RootOnlySlot = SlotProps&lt;'div', {}, {}&gt;;
+
+// @ts-expect-error This describes div props, not Chip props.
+const rootOnly: RootOnlySlot = { size: 'small' };</code></pre>
+    <p>Passing <code>ChipComponent</code> directly replaces the Chip-compatible component union with its root type. With the default root, the helper extracts <strong>div props</strong> and loses <code>size</code>.</p>
+    <p class="note">The empty override and owner-state types above keep this example focused. The actual declaration supplies Autocomplete's owner state. That callback parameter does not restore missing Chip props.</p>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">Where to read the current code</h2>
+    <ol>
+      <li><a href="../packages/mui-material/src/Autocomplete/Autocomplete.d.ts">Autocomplete.d.ts</a>: lines 171–175, the chip slot.</li>
+      <li><a href="../packages/mui-material/src/utils/types.ts">Material utils/types.ts</a>: line 20, <code>SlotProps</code> delegates to <code>SlotComponentProps</code>.</li>
+      <li><a href="../packages/mui-utils/src/types/index.ts">Utils types/index.ts</a>: line 18, <code>ComponentPropsWithRef</code> extracts props.</li>
+      <li><a href="../packages/mui-material/src/Chip/Chip.d.ts">Chip.d.ts</a>: lines 136–141, the default root is <code>'div'</code>.</li>
+    </ol>
+    <p class="takeaway"><strong>The problem:</strong> generic Autocomplete prop comparisons reach a large props → components → props type path. <strong>Your attempted shortcut:</strong> loses Chip props. This page contains no replacement implementation.</p>
+  </section>
+</main>
+</body>
+</html>

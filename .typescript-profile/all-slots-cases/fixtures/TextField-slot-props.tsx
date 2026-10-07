@@ -1,0 +1,13 @@
+import * as React from 'react';
+import Component from '@mui/material/TextField';
+
+export type Props = React.ComponentProps<typeof Component>;
+declare const props: Props;
+export const usage = <Component {...props} slotProps={{
+  root: (ownerState) => ({className: 'probe'}),
+  input: (ownerState) => ({className: 'probe'}),
+  inputLabel: (ownerState) => ({className: 'probe'}),
+  htmlInput: (ownerState) => ({className: 'probe'}),
+  formHelperText: (ownerState) => ({className: 'probe'}),
+  select: (ownerState) => ({className: 'probe'})
+}} />;

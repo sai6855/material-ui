@@ -1,0 +1,1 @@
+import * as React from 'react';import Grid from '@mui/system/Grid';import Stack from '@mui/system/Stack';import Container from '@mui/system/Container';const x=<Container maxWidth="md"><Stack direction="row" spacing={2}><Grid size={{xs:12,md:6}} /></Stack></Container>;

@@ -1,0 +1,74 @@
+[
+  {
+    "component": "Button",
+    "file": "packages/mui-material/src/Button/Button.d.ts",
+    "publicLine": 146,
+    "inheritanceLine": 109
+  },
+  {
+    "component": "AccordionSummary",
+    "file": "packages/mui-material/src/AccordionSummary/AccordionSummary.d.ts",
+    "publicLine": 103,
+    "inheritanceLine": 82
+  },
+  {
+    "component": "BottomNavigationAction",
+    "file": "packages/mui-material/src/BottomNavigationAction/BottomNavigationAction.d.ts",
+    "publicLine": 104,
+    "inheritanceLine": 88
+  },
+  {
+    "component": "CardActionArea",
+    "file": "packages/mui-material/src/CardActionArea/CardActionArea.d.ts",
+    "publicLine": 79,
+    "inheritanceLine": 63
+  },
+  {
+    "component": "Fab",
+    "file": "packages/mui-material/src/Fab/Fab.d.ts",
+    "publicLine": 91,
+    "inheritanceLine": 75
+  },
+  {
+    "component": "ListItemButton",
+    "file": "packages/mui-material/src/ListItemButton/ListItemButton.d.ts",
+    "publicLine": 86,
+    "inheritanceLine": 69
+  },
+  {
+    "component": "IconButton",
+    "file": "packages/mui-material/src/IconButton/IconButton.d.ts",
+    "publicLine": 100,
+    "inheritanceLine": 81
+  },
+  {
+    "component": "MenuItem",
+    "file": "packages/mui-material/src/MenuItem/MenuItem.d.ts",
+    "publicLine": 71,
+    "inheritanceLine": 55
+  },
+  {
+    "component": "Tab",
+    "file": "packages/mui-material/src/Tab/Tab.d.ts",
+    "publicLine": 76,
+    "inheritanceLine": 60
+  },
+  {
+    "component": "ToggleButton",
+    "file": "packages/mui-material/src/ToggleButton/ToggleButton.d.ts",
+    "publicLine": 105,
+    "inheritanceLine": 89
+  },
+  {
+    "component": "TableSortLabel",
+    "file": "packages/mui-material/src/TableSortLabel/TableSortLabel.d.ts",
+    "publicLine": 109,
+    "inheritanceLine": 92
+  },
+  {
+    "component": "StepButton",
+    "file": "packages/mui-material/src/StepButton/StepButton.d.ts",
+    "publicLine": 52,
+    "inheritanceLine": 34
+  }
+]

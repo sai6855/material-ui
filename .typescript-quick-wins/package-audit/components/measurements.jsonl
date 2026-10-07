@@ -1,0 +1,4 @@
+{"compiler":"6.0.3","scenario":"button","experiment":"baseline","instantiations":17039,"types":8562,"errors":[],"changed":[],"totalMs":5622}
+{"compiler":"6.0.3","scenario":"button","experiment":"probe","instantiations":13478,"types":2743,"errors":[],"changed":["packages/mui-material/src/Button/Button.d.ts"],"totalMs":5342}
+{"compiler":"6.0.3","scenario":"badge","experiment":"baseline","instantiations":12462,"types":2624,"errors":[],"changed":[],"totalMs":5152}
+{"compiler":"6.0.3","scenario":"badge","experiment":"probe","instantiations":12127,"types":2528,"errors":[],"changed":["packages/mui-material/src/Badge/Badge.d.ts"],"totalMs":3922}

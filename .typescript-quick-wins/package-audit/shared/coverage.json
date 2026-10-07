@@ -1,0 +1,3355 @@
+{
+  "compiler": "6.0.3",
+  "files": [
+    {
+      "file": "packages/mui-system/src/Box/Box.spec.tsx",
+      "bytes": 2658,
+      "sha256": "22d14a5f73c0ddd9d2f728e936ad918c5298e5ed6217c87d15f41b07de10a56b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Box/Box.test.js",
+      "bytes": 9146,
+      "sha256": "04fca05308e92ccb0cb192c5b73bdff318ce88e6dbe3c9562e8576c8cde66181",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Box/Box.tsx",
+      "bytes": 4202,
+      "sha256": "c1b9f13c70d467b1dbde7571999947878cb9b9e2d977d826e1ddcddcb0408dbd",
+      "generic": 7,
+      "mapped": 1,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Box/boxClasses.ts",
+      "bytes": 315,
+      "sha256": "67d5c4d4e948fb76801789ebe8a07bb15b019ff6b50fff71aadefecd04ed07c9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Box/index.ts",
+      "bytes": 141,
+      "sha256": "9a2e75d1d72d7463cb3a0d4a01c5648bdb4f54866acaffb0360da91234c0df8c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Container/Container.test.js",
+      "bytes": 1080,
+      "sha256": "618514845de6ced3b594ef398272de785a01e774297ed4634b3973d41312dd6d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Container/Container.tsx",
+      "bytes": 2385,
+      "sha256": "44af250660f2dfba4c271a1650d0cf38014c3c8bbbe9f86165953df64ef6960f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Container/ContainerProps.ts",
+      "bytes": 1642,
+      "sha256": "84ca2a2dfbc85f29fa9ddb7c0e896045359c63ca9feb69ee9efec9b124b5df4c",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/Container/containerClasses.ts",
+      "bytes": 1270,
+      "sha256": "22cbeb1757b7c103d1903dfa69e885f9548389205689651665ecb2973e7b5447",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Container/createContainer.tsx",
+      "bytes": 6387,
+      "sha256": "bb2ebf12b88330b087efe73d985b40b59ec944463f6ebbc30c26ff4fdd5ce0e0",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Container/index.ts",
+      "bytes": 181,
+      "sha256": "3df7ad964f9ca23c961a0e6e906351f9a4e1d5ccfe735adc116134913042741c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/DefaultPropsProvider/DefaultPropsProvider.tsx",
+      "bytes": 2328,
+      "sha256": "e87d60918768f6193d50049e501b8b8e4cc8eb22dfe13d62e5603b396fb6f177",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/DefaultPropsProvider/index.ts",
+      "bytes": 67,
+      "sha256": "73a18aec9d2bea80b45dea1791042cf3e16aa5be55f3c02e630efaaae7fdfd29",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/GlobalStyles/GlobalStyles.test.tsx",
+      "bytes": 337,
+      "sha256": "4b40b99bfe623d0e6bbe12caabb9bff3a598f97404f5149563bc7e990b3da041",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/GlobalStyles/GlobalStyles.tsx",
+      "bytes": 2665,
+      "sha256": "4852201c9bf28f815cba52aa6e9b145f98232f54b7b578a02076283e000fb73b",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/GlobalStyles/index.ts",
+      "bytes": 74,
+      "sha256": "9e7c4846057815d55e1eaf27214286ec0768a1b463a4669e1ce37849b6cc1016",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/Grid.test.js",
+      "bytes": 7566,
+      "sha256": "36ec5b3c3ae6b37777146a03ed9c2fd58d7813599850fd88213822a8f0e2cde8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/Grid.tsx",
+      "bytes": 4804,
+      "sha256": "10797d87afe5e77cee1891b931c9e1d8df957ef59ef584aebbf20d2122651a29",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/GridProps.ts",
+      "bytes": 3700,
+      "sha256": "8234e2df8321820cfae7cac91b131bff7954ecd24f8664cd1d75d45332851a29",
+      "generic": 5,
+      "mapped": 1,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/createGrid.tsx",
+      "bytes": 8040,
+      "sha256": "fadf8c0c79c3e197f4815b1b7d65a87f078a51358484456287c3fcff5c202404",
+      "generic": 2,
+      "mapped": 3,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/gridClasses.ts",
+      "bytes": 2009,
+      "sha256": "dce107a66b518485e1bcdc627cf8e71ab31b2a8b5bc9261b3b9f2ebe5b28064c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/gridGenerator.test.js",
+      "bytes": 11822,
+      "sha256": "3d22df801e4ff487a115f09986297d9ad0e9745ba2ca52a9280259b17f587cb8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/gridGenerator.ts",
+      "bytes": 6154,
+      "sha256": "ce83ce925353d82a124e44f7f2367f695dd7ee06ebdb8cb998adfd7ac6b6a6a9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/index.ts",
+      "bytes": 525,
+      "sha256": "7754780df1aa60110a0c0dbd89d98141472444b3982dda7a38eef8c0ff8d55a0",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/traverseBreakpoints.test.ts",
+      "bytes": 5875,
+      "sha256": "700f243f7a2ca537ce4608410e5d9f9f7fa2bc59dcc0426c39483826305bd971",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Grid/traverseBreakpoints.ts",
+      "bytes": 2206,
+      "sha256": "023e7637b0cfcef9cb4dfe7063147ffa2bd4e1db00be36c22568e5957b3655ba",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/InitColorSchemeScript/InitColorSchemeScript.test.js",
+      "bytes": 12518,
+      "sha256": "4f51df13b29c6b229d3ad3cf26e9189febce82c40f2b66d4658c916ea5fa9614",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/InitColorSchemeScript/InitColorSchemeScript.tsx",
+      "bytes": 6782,
+      "sha256": "1038ea63d4b8aefd69c11ef6d42dbf35bac1a1cd30a54977f3e08480c2f3ea85",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/InitColorSchemeScript/index.ts",
+      "bytes": 126,
+      "sha256": "30482110c7b78ed09ba0f6a6059839661a663caf573f377892ccfb8665f2c904",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/RtlProvider/index.tsx",
+      "bytes": 634,
+      "sha256": "8b6705b3f71e80191384134e35dc60073d52e2923c6eb2032d79f0aed04a4785",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/Stack.test.js",
+      "bytes": 13956,
+      "sha256": "5f20ff23f4a4c9e08e99d4843457eb0d8ea83b4f57267bdf072e054a482408fb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/Stack.tsx",
+      "bytes": 2633,
+      "sha256": "b61eb4ecf4e682a36ed67b25d8005dc12efa2af3f555883a4720f86d9882fd21",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/StackProps.ts",
+      "bytes": 1941,
+      "sha256": "56561934a81533f369c038cf224391779b46671f10de07f1d642ad885b7bb9c3",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/createStack.tsx",
+      "bytes": 7065,
+      "sha256": "b7c4cbf36d8805f6381dc6ac02d43b63377627fea94dc4cd7c301bff27263ae3",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/index.ts",
+      "bytes": 212,
+      "sha256": "7881c572a1d0ac53bad678dc9343e87fec25e48ad3c2917bde7dc75586fbc1c6",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/Stack/stackClasses.ts",
+      "bytes": 510,
+      "sha256": "d7307d974635bebd76dca8f9122238990b68e664808913b6cdaafb3c766cac7f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/ThemeProvider/ThemeProvider.test.js",
+      "bytes": 11433,
+      "sha256": "67e021d7caccb28a8f9e649f8826b94c7668bbfb8fbe30600ad12841263cef44",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/ThemeProvider/ThemeProvider.tsx",
+      "bytes": 5096,
+      "sha256": "a14b66827b1a3cd92938ef978227b27d39ccd86bc4d17a18938297212379362e",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/ThemeProvider/index.ts",
+      "bytes": 81,
+      "sha256": "9debbe04bb8bedbe4f6b995c57e8f7ef6b1a3e2f6cd45c6cb60318cd3a1a57ac",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/ThemeProvider/useLayerOrder.test.tsx",
+      "bytes": 2033,
+      "sha256": "b7c8cf104f2975201335f1d1ff7ede38f2ce664c2592a0e6034207c4c7065e18",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/ThemeProvider/useLayerOrder.tsx",
+      "bytes": 1959,
+      "sha256": "3c634f4e9769a4a1e29253ec5d45062767370d730eb4b0433086e9dea8b6d973",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/borders/borders.test.js",
+      "bytes": 1156,
+      "sha256": "da0fc8c69860afaebd2700945ca7ce321833a5b2ac4b5b5a736671396cec996a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/borders/borders.ts",
+      "bytes": 2747,
+      "sha256": "7f6d07c5c306070006ab0233eab455ce59db56c9a8148fc079db6a49038b9e16",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/borders/index.ts",
+      "bytes": 64,
+      "sha256": "136f31e1f63c8facecdf47954a0d22db118e6dca699cf7a2339c5532dedbe913",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/breakpoints/breakpoints.test.js",
+      "bytes": 10437,
+      "sha256": "828b77651f0b08286d0d5680812dc7c50a9fd110ef1ad08afe17cc840a555bee",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/breakpoints/breakpoints.ts",
+      "bytes": 8809,
+      "sha256": "9d2e9542796ae03df1dcd92052809af12569c8ed6e978ff67023da232f3b488a",
+      "generic": 5,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 3,
+      "omit": 2
+    },
+    {
+      "file": "packages/mui-system/src/breakpoints/index.ts",
+      "bytes": 72,
+      "sha256": "d50edf4f1f286a8140da6031b6e0558f90ed75973ac107522455c2b15efa5d6f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/colorManipulator/colorManipulator.spec.ts",
+      "bytes": 1586,
+      "sha256": "74730b043d89e95c68167fa9f63debcd6feaeb9e6599a6d7659625cc1707a236",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 1,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/colorManipulator/colorManipulator.test.js",
+      "bytes": 16898,
+      "sha256": "e6710a34a8f5aa6fa06e7c31701e7949f9567f551a876a02bfed1b2b43417296",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/colorManipulator/colorManipulator.ts",
+      "bytes": 13299,
+      "sha256": "946c52d74b27f8aa78c212f3399ca0ae8452ecb939bea708844412308078973a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/colorManipulator/index.ts",
+      "bytes": 36,
+      "sha256": "4e7598eaf979c9c5eb427b8cd024fabb5a4580ea7c71daced4acb4c0272292d2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/compose/compose.test.js",
+      "bytes": 624,
+      "sha256": "5cc4a52f96b55dde74c448c838c3c192e3139a35c483dac323e16613954ba91b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/compose/compose.ts",
+      "bytes": 1315,
+      "sha256": "d860804c35ce5a6e9dfbc9c0c921add9d57eccd8fff38e1eb1d699e6e4353dda",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 1,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/compose/index.ts",
+      "bytes": 65,
+      "sha256": "2cf3f3a2e91f6ef7d0feb2e316c7897bd2bc8a0955640bac97a923061819a77b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBox/createBox.spec.tsx",
+      "bytes": 1200,
+      "sha256": "d9fd752ef5a71322e05119179e90364d8d85f08b1cfadaf5eedf81d23a62c492",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBox/createBox.test.js",
+      "bytes": 3272,
+      "sha256": "d73c5c6a4a5446ff0187f9ba19187d43e87aed2c3b98830a7193313dba74da8b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBox/createBox.tsx",
+      "bytes": 1599,
+      "sha256": "54605101df538109b12d919ce71e3d9616f63ad61197b5341c80f1afab1db13f",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBox/index.ts",
+      "bytes": 39,
+      "sha256": "bb7631dbe0cbb645507026de2045c9e2d383394e8561112b76e764a0cba6a180",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBreakpoints/createBreakpoints.test.js",
+      "bytes": 4149,
+      "sha256": "aae3c3121f9c7ccba3375abddeb22e5cf6c72b16b861c2271f295ad73e3d7dcb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBreakpoints/createBreakpoints.ts",
+      "bytes": 4275,
+      "sha256": "fdb8f535deece117876292578e965a2cf7b878f783260af86409014027d8ce9f",
+      "generic": 0,
+      "mapped": 1,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createBreakpoints/index.ts",
+      "bytes": 200,
+      "sha256": "26e2efc3d83038541a4c183f16e3908428a88bfebc9a78f632c4c1b3418340e2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createStyled/createStyled.ts",
+      "bytes": 13751,
+      "sha256": "6a7f63216d119709fecca36c3a5984b90d4eb4736beaa59fca0b72d48ea9ae69",
+      "generic": 3,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createStyled/index.ts",
+      "bytes": 74,
+      "sha256": "35ec71c358da093f4afcde60db6a648517e13100bec5cb04ae999eda7a3c080b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/applyStyles.test.ts",
+      "bytes": 2638,
+      "sha256": "4997dce6d580d67247647b9d57116dee7e9e5625055290ef85859c0e37e9ddf4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/applyStyles.ts",
+      "bytes": 2935,
+      "sha256": "032938b4428ad9588f7045d27d7c2714c0888e0ca3ecd7053c2cc545ac69cd65",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/createSpacing.test.ts",
+      "bytes": 2357,
+      "sha256": "5fdc15e55354eed062c2c1ca532f2bbc7c2032de4f5cf18a15ded8ef64a2d5b2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/createSpacing.ts",
+      "bytes": 1942,
+      "sha256": "3e052e45dae2290b4b0e40bb9f025678a3d9271d6fb74b0bbec662ddeb9581c5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/createTheme.test.js",
+      "bytes": 5629,
+      "sha256": "1170288b95d8519a8875a94ad1b3e0b24e20da92223c574493095801ad43758f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/createTheme.ts",
+      "bytes": 3457,
+      "sha256": "3076382fb36b300e953593e3c3756a9bd61e7b177ecec23a9ce5eeff465d1c0f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/index.ts",
+      "bytes": 296,
+      "sha256": "249ddfe375bbcb51772e05483e09efbfbea42ca76b94e97ddfb7d339b475c774",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/createTheme/shape.ts",
+      "bytes": 186,
+      "sha256": "fdba334a0069c1855cfdce1a27c08e9ed0bd11009e060ef8e67b8626b84d48f5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/cssContainerQueries/cssContainerQueries.test.ts",
+      "bytes": 4753,
+      "sha256": "82e82151b618b7400401abbb60acba1d6dd6269ba325fd8a9501e31aefbbce33",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssContainerQueries/cssContainerQueries.ts",
+      "bytes": 4387,
+      "sha256": "fc9b0659422f74721566eb391dd73f652b8af3dc41bc38bee3302fdf1aec91a7",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/cssContainerQueries/index.ts",
+      "bytes": 211,
+      "sha256": "a06ee65fb6b20e9fe4b9fa43ab3943fff7aecf735f44a4b2eddb0d7c695b56ff",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssGrid/cssGrid.test.js",
+      "bytes": 1191,
+      "sha256": "1dc4b4d842c76cc4ac69cb3ffbc97b83bcaa727128e97fa19b8a201741490e8a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssGrid/cssGrid.ts",
+      "bytes": 3634,
+      "sha256": "edd2dd86deefeee0a6b628509881c516262709296308b394ff954f4859bd208e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssGrid/index.ts",
+      "bytes": 64,
+      "sha256": "5e7fd685a34d591b27d855e206e8f5390ac9739ff70de429b81d4d2b374c6413",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createCssVarsProvider.spec.tsx",
+      "bytes": 2288,
+      "sha256": "997e4a36e3dd5cf4b642a0d0ddd890cc394827f6b59d7b5260ca429016bdfaba",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createCssVarsProvider.test.js",
+      "bytes": 28989,
+      "sha256": "3ac8eb8f7bb1f086bc29046ad4b198af9cd0d291b0c85ae4c6fedf08b26ee1ec",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createCssVarsProvider.tsx",
+      "bytes": 20280,
+      "sha256": "b40ffd4ad87c724f446e585ef5dc0ff600971479a8cc7f236a1adfc8e88f98af",
+      "generic": 8,
+      "mapped": 1,
+      "conditional": 1,
+      "intersection": 2,
+      "omit": 2
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createCssVarsTheme.ts",
+      "bytes": 1264,
+      "sha256": "9a6300050623ba797bcd0e5b491629250c849b4dfe2704bde3a8edf22afcc6f8",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createGetCssVar.test.ts",
+      "bytes": 1843,
+      "sha256": "695c9b95f5006922eb2f50c81f8cd26b0836264c12118f3a227d4ee5881c66aa",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/createGetCssVar.ts",
+      "bytes": 1114,
+      "sha256": "5df70abe427fc0f931974e208f83c4c4685334d1ddee29bad5e55caa9c5da170",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/cssVarsParser.test.ts",
+      "bytes": 11705,
+      "sha256": "04782748b53418b6ea49c07d4b9c0b75625cb7f7cf0fc81c4d6dece9ef8f09b8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/cssVarsParser.ts",
+      "bytes": 5714,
+      "sha256": "d2768ea65ce7d3ec2c88738c69f5a585a48fed324fcab039e72bfb830e0e0fb7",
+      "generic": 6,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/getColorSchemeSelector.ts",
+      "bytes": 1007,
+      "sha256": "e46d20bb04aa2b06cd8f2ca59eed350b8b9f7fdf66b1c5ce77bb96a9b0d787df",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/index.ts",
+      "bytes": 597,
+      "sha256": "104b24bb1e96d37e4a5b2fa20be704d46e6ab39767781690248f3d86767eb2b3",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/localStorageManager.ts",
+      "bytes": 2188,
+      "sha256": "8d8a9617181f8e92336b6b61b559b97be7cffe37b0fae2dc351aecaba99e0357",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/prepareCssVars.test.ts",
+      "bytes": 5104,
+      "sha256": "7653811a5814de4685e8775a2ecf045d0a02d75acccbcb17201520c70ae92374",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/prepareCssVars.ts",
+      "bytes": 5417,
+      "sha256": "f980a178922bbdd0dd161c0748fd6d5587ec773890733343ded69b676e2607d8",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/prepareTypographyVars.test.ts",
+      "bytes": 1395,
+      "sha256": "8aed1f492975eec64ef9da9af5a314cd805785087a0297eca924fb26f19e5e1d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/prepareTypographyVars.ts",
+      "bytes": 903,
+      "sha256": "c6ff42b3fafe2fe8650a506a9b23775b8657033b6f01b0b44651deb8287dd8f3",
+      "generic": 3,
+      "mapped": 2,
+      "conditional": 2,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/useCurrentColorScheme.test.js",
+      "bytes": 28642,
+      "sha256": "78964cd814515636a170f6346068dd7ccedd49510775b51c00facf6f18f93208",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/cssVars/useCurrentColorScheme.ts",
+      "bytes": 10765,
+      "sha256": "5d72ebfc9f8c6a44725b575b9f1b4d831b1aa8d16b10d4e3525a75e21dbaecf3",
+      "generic": 6,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/display/display.ts",
+      "bytes": 920,
+      "sha256": "fae88589e9638d7e07098cdda2fcd987bd69e6ee4a3d4b45783e1bc2d006595a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/display/index.ts",
+      "bytes": 64,
+      "sha256": "deb3c8c0011c71070d29e31b1f091f71d22434b35797b3b61baf63da67ec0f74",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/flexbox/flexbox.ts",
+      "bytes": 2043,
+      "sha256": "bba6d47c6e1e9d8bce9a5cb126fb6efa8042f27624abac4e6f4112a21c30c50b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/flexbox/index.ts",
+      "bytes": 64,
+      "sha256": "5b4c2ce11cbd18bf367005e3225533b142963bef758baf7749afa9dc36d7dd0e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/getThemeValue/getThemeValue.ts",
+      "bytes": 1316,
+      "sha256": "dee839bb681dfe7d7efc6a864b545552f67e69382a49ce48a41f9cf563b2aff8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/getThemeValue/index.ts",
+      "bytes": 76,
+      "sha256": "d719a9f6c58a7340dc4c421f9458301ed5056b3552a14e98dd385758bdf14944",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/index.spec.tsx",
+      "bytes": 1785,
+      "sha256": "89bf48d8a43741d7c5682899b18f51e3906ee464f2fff14816adc2fc1af0f52d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/index.ts",
+      "bytes": 4984,
+      "sha256": "a426cf07271e6c699c3b7423ceb665535148bbb839f1a43fd140db367973ac2d",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/memoTheme.ts",
+      "bytes": 956,
+      "sha256": "aff484f8d6d6e4f163b511809c1de8a93df50987234f5e32580d82e73a731de1",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/memoize/index.ts",
+      "bytes": 37,
+      "sha256": "4a15d54bdbc7c26ad17a682e257f0a83edd59ad393aec3585f37a8e5c3bc7d98",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/memoize/memoize.ts",
+      "bytes": 354,
+      "sha256": "c3d86858ad51ad99176b8ba32e1b4f727cf17d72aebbbc3d675d632a3823c074",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/merge/index.ts",
+      "bytes": 35,
+      "sha256": "562c5ac502b7ec6f5d79c867246e0bfebf1341f4f43a26d18eaefc34ade91a57",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/merge/merge.test.js",
+      "bytes": 961,
+      "sha256": "846938c96a90994e43315bdd43f1de515e7b0f105a078172be4058bca8b79424",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/merge/merge.ts",
+      "bytes": 238,
+      "sha256": "b25be951ccb0bf875a51dfebd419f242125de6b0b34c99f498eb7cfdcc86c3b4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/palette/index.ts",
+      "bytes": 64,
+      "sha256": "1161966b4aedbca34694ffdab901ff5d4ff03e79440690b14cc96134cadcbbcb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/palette/palette.test.js",
+      "bytes": 612,
+      "sha256": "189ef0e8951d877d9f9f2af907620cd43419c1f56dc20ea35aff723690a4d643",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/palette/palette.ts",
+      "bytes": 1022,
+      "sha256": "22940e881277b57535b8262c22217c8958e979d6ff3629fd46e1203d742e6bfb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/positions/index.ts",
+      "bytes": 68,
+      "sha256": "c3693112731af4baa341cc9f1327dbb0b919b777bd6cdb5ba78beed6ac35446a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/positions/positions.ts",
+      "bytes": 701,
+      "sha256": "d627ebe6a98b9bcef72cf6c5c165ae706dd149115aae49b4756de91d2cff0061",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/preprocessStyles.ts",
+      "bytes": 582,
+      "sha256": "c116fa918299d71f8a82dce6fbb54995cb2f4bae8d16d39c867eaa048cdf2198",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/propsToClassKey/index.ts",
+      "bytes": 45,
+      "sha256": "55a9a2042c0dbcff06e5306850a11433638d0a847d27071cd4e6f7e00f9a6dff",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/propsToClassKey/propsToClassKey.test.js",
+      "bytes": 1336,
+      "sha256": "2e4981140f93138c2d808350c1d77a44abd81eccd942fa378f13b5fe9d98d43b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/propsToClassKey/propsToClassKey.ts",
+      "bytes": 974,
+      "sha256": "7044c54d1ebcad8e1991a5efd5263e39491c2ab95a461ec03492bfe3319f7750",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/responsivePropType/index.ts",
+      "bytes": 48,
+      "sha256": "8728cc2ffc1263008b6d4a40d91747a1e65ce3e470ce614a4b687f29d3d3520b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/responsivePropType/responsivePropType.ts",
+      "bytes": 257,
+      "sha256": "c9546e05167145d5f3c4b54e9fdd4527d031aa92e290c0aab89166341e73c386",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/shadows/index.ts",
+      "bytes": 37,
+      "sha256": "c48033fe009d386f895eb2481e239a899397043a92066f972d350e33fec468c5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/shadows/shadows.ts",
+      "bytes": 298,
+      "sha256": "60796ca2d9b886a14841fc4a2b548ada527fe0c5463b0e5175493a90535254de",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/sizing/index.ts",
+      "bytes": 62,
+      "sha256": "16fd8df2c3fb6bdb43aecd63efeae3695ee2b96f856d6231a4af689414232ab3",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/sizing/sizing.test.js",
+      "bytes": 867,
+      "sha256": "d6d2c6c98fba58b2fa34a69aa4efd73b678f256f7c0448c38813ea12391c29f2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/sizing/sizing.ts",
+      "bytes": 2683,
+      "sha256": "aae0a0f512ab2c612de2d5609fc63ae2f69b177afd72687ac27b0773ec0b1e01",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/spacing/index.ts",
+      "bytes": 64,
+      "sha256": "34064775aae8ff9c8ed7f390a44cd936fd86975d5d9adfdc431864a160509a8f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/spacing/spacing.test.js",
+      "bytes": 17608,
+      "sha256": "8448b9f760b905e1797141b9d16f3985c81204b044f617155bd23640a6516b8e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/spacing/spacing.ts",
+      "bytes": 9092,
+      "sha256": "3851163e7dd77eb983fa22b6b3a93372c5ed7a5e72310e61781c640d5a97eadd",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 6,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/style/index.ts",
+      "bytes": 104,
+      "sha256": "eba9dc514bebb61ee966c93ab55834635675d7a32afaa9a32abebefeb3479441",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/style/style.test.js",
+      "bytes": 5663,
+      "sha256": "0929467dccb1bd49964d586726b5f70e264e8e57a370350bfb58755dda9943f6",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/style/style.ts",
+      "bytes": 5304,
+      "sha256": "6775075c37e086afbaeb52292187a9ef65d32137396530d694199d8650e4a52c",
+      "generic": 9,
+      "mapped": 1,
+      "conditional": 1,
+      "intersection": 3,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/AliasesCSSProperties.ts",
+      "bytes": 11709,
+      "sha256": "31aa983b93ae0fae44b7f9c1ad0c81c91d93e5c2481d435c48cbf80100655b5f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/OverwriteCSSProperties.ts",
+      "bytes": 2304,
+      "sha256": "901b2e3b2453e8c9cbaafd6cdf37a1549a6a7820c34c86bdf01d0b760ae6a106",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/StandardCssProperties.ts",
+      "bytes": 110,
+      "sha256": "8ea05ab5a1250aa9d98070151c3981a85f5fd05185454f6c871ca2a988feb725",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/defaultSxConfig.ts",
+      "bytes": 5072,
+      "sha256": "fd3b73a5ec383af70474247c1946af5c075925db52ccaa251625cf99fcbf8930",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/extendSxProp.test.js",
+      "bytes": 1763,
+      "sha256": "6d2aa04ff0e200e1c7917c1c24f45c30923360fbcff174ec1752921a6408970f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/extendSxProp.ts",
+      "bytes": 1312,
+      "sha256": "2b9b86a80a74f716de353cd9ff2890bcb321912dbbb3d7f97c90e9ddd6baaa99",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/index.ts",
+      "bytes": 670,
+      "sha256": "bf06a77e8d6477993f2dd19cfcd20e38bf42615c64a2f5051da64f730a592a97",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/styleFunctionSx.spec.tsx",
+      "bytes": 533,
+      "sha256": "339df056ca6fd10e604b5ef0afc926fc030995f796fd8b0bd2651cdf7a1fdfb2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/styleFunctionSx.test.js",
+      "bytes": 19584,
+      "sha256": "bad18ab68ce870adc414874c6b9fe0796aec07e350a5de6eb97edab69f1de286",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styleFunctionSx/styleFunctionSx.ts",
+      "bytes": 6652,
+      "sha256": "dd422e0e079daff4f97fc35476d85a2a01cf1b00a802585818757aa8fec81e23",
+      "generic": 7,
+      "mapped": 2,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styled/index.ts",
+      "bytes": 36,
+      "sha256": "9d9236bc21cfa153b03df2ef9a3670f698980e0e1a212821c4bb30a2c1b0dc26",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styled/styled.spec.ts",
+      "bytes": 1355,
+      "sha256": "eb1a2e5314052fa171c9d0c6e3f3349ea02f2429e2527b9f316a126d73916112",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 3,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styled/styled.test.js",
+      "bytes": 18625,
+      "sha256": "043f850ab13f4121ff32262028b7451c228b9aef03205aa0921e8e833c676757",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/styled/styled.ts",
+      "bytes": 173,
+      "sha256": "ebb0f377dc309a3f8db2a513e276c212831255e52a21e7d10ae34a94886bcfc9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/typography/index.ts",
+      "bytes": 70,
+      "sha256": "a23b3a2bed13ab09bb9cbbd85fff958accc50ccd59a4cbe6aba7c88f24417ee1",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/typography/typography.ts",
+      "bytes": 1717,
+      "sha256": "f2767886e74d887bcd4be294b4aac08fdf935b205107864e09496f7f5cdece06",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useMediaQuery/index.ts",
+      "bytes": 76,
+      "sha256": "d3afb6e0fbb2ff982a1aa1f8192754d1fc26f5b80c9e1b79fd29f60a4c8ee4b9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useMediaQuery/useMediaQuery.ts",
+      "bytes": 6717,
+      "sha256": "7917be377c600045fdec8d0d4127bb4f311342bb9e98f45f47fb20c248e22e91",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useTheme/index.ts",
+      "bytes": 66,
+      "sha256": "3711c896e72680d79cfc4df36cae172b7dbb72e11936e5e9545f5351e6ed0962",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useTheme/useTheme.ts",
+      "bytes": 379,
+      "sha256": "91e337078170f01831c6ffa0ff87e03c1a7e0c1a43e9bd9b515f936303c1dcf4",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeProps/getThemeProps.test.js",
+      "bytes": 1022,
+      "sha256": "e77dd90b3cc24a92d09a8f3945a8eccefb262191d4480eacf9acc101761f2dd1",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeProps/getThemeProps.ts",
+      "bytes": 753,
+      "sha256": "3e149fb13fb37f283555fadc2f16e7fefa041679bda8f856eec30d03864e800c",
+      "generic": 5,
+      "mapped": 0,
+      "conditional": 1,
+      "intersection": 3,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeProps/index.ts",
+      "bytes": 142,
+      "sha256": "7d0fdfc63e70ebbbc44ef1e7870a9e67c21f0f32b982ea39e15ff7bc6215298b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeProps/useThemeProps.spec.ts",
+      "bytes": 598,
+      "sha256": "deb85cd608cfd6fcd3f0bc5fa248b8bad18425cb8b7d8a2db86a26e3e2aa734d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeProps/useThemeProps.ts",
+      "bytes": 805,
+      "sha256": "76bafd6f538aba8f621fda195941fa77c7e436f85cb26c1aada3c4a97cb2edd8",
+      "generic": 5,
+      "mapped": 0,
+      "conditional": 1,
+      "intersection": 2,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeWithoutDefault/index.ts",
+      "bytes": 52,
+      "sha256": "f470b1a23c99378296855bb2c08f9afb85f57127b2968a4e35748d621cce009b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/useThemeWithoutDefault/useThemeWithoutDefault.ts",
+      "bytes": 462,
+      "sha256": "30100a1149e40ed1a55729bc79d80f26f403b864351499fe7e408e2df82ec2c3",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/src/version/index.ts",
+      "bytes": 307,
+      "sha256": "75636605101d0227334c8da180620413912e6c287d6aa591f2de59d2831928b4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/test/describeConformance.ts",
+      "bytes": 513,
+      "sha256": "3e961b1481f702b234f2a7e46b3abf15af9b00f5a94fe07900a649b20ee8e49c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/vitest.config.browser.mts",
+      "bytes": 155,
+      "sha256": "cd2c8dd765859a31c2a6953aae701b445dba38fa5b776c211498a87b393c3a5c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-system/vitest.config.mts",
+      "bytes": 172,
+      "sha256": "53ca442362ec2c755804008bf5b8c5885d5adc44b973b988b7db5b7363dba0e8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-types/src/OverridableComponentAugmentation.ts",
+      "bytes": 1310,
+      "sha256": "9f33990a6b767b5122603e7f3d5c94814d0bfe78dc9a371587018ca521acb905",
+      "generic": 5,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 3,
+      "omit": 2
+    },
+    {
+      "file": "packages/mui-types/src/index.spec.ts",
+      "bytes": 651,
+      "sha256": "68567a7f3149c78badca580a599ab78c637a95f804bf190a9da1ec91cfaa8de8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-types/src/index.ts",
+      "bytes": 4653,
+      "sha256": "71d8451ab70927654b40e462e553b088e733e32cda5c847e31ca54756d59bbb0",
+      "generic": 29,
+      "mapped": 4,
+      "conditional": 8,
+      "intersection": 6,
+      "omit": 6
+    },
+    {
+      "file": "packages/mui-types/vitest.config.mts",
+      "bytes": 172,
+      "sha256": "53ca442362ec2c755804008bf5b8c5885d5adc44b973b988b7db5b7363dba0e8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ClassNameGenerator/ClassNameGenerator.ts",
+      "bytes": 473,
+      "sha256": "0fd1f8ac00b4144d913d2a36e63c229fc5a1a7e9b37692a764df62852513333e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ClassNameGenerator/index.ts",
+      "bytes": 48,
+      "sha256": "1b34b58370cbd65fa5a3a58838c3961079d28867a044a2fa449902fe6a5998d9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/HTMLElementType/HTMLElementType.ts",
+      "bytes": 618,
+      "sha256": "c06fb571d5b42b1cdb00ca2fdbfc9b616bc4d2fdc90665d335257dbc649be6a2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/HTMLElementType/index.ts",
+      "bytes": 45,
+      "sha256": "c34bbec1fc5b38f8dbc4c5168193ded6c3711dff5a2d11476bfcdef7ab912d19",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/appendOwnerState/appendOwnerState.spec.tsx",
+      "bytes": 969,
+      "sha256": "d140a46b50f01e1164ca7e17b4065f77a0b4c6dce3d76b4b17f32a4889741b09",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/appendOwnerState/appendOwnerState.test.ts",
+      "bytes": 1856,
+      "sha256": "af00b70f8d37d23cff1a99b3307185263754487875f362c6559656d972d164f2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/appendOwnerState/appendOwnerState.ts",
+      "bytes": 1841,
+      "sha256": "6fb5dee4727b2aa931192534dbc62ca3b731a0a68605b668e84c8d379272edb3",
+      "generic": 8,
+      "mapped": 0,
+      "conditional": 2,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/appendOwnerState/index.ts",
+      "bytes": 116,
+      "sha256": "a8a84ed2ecf2df9e2941c4c0ce1f6b6fd00ac3e31a69bd014880a2a56ed465a2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/capitalize/capitalize.test.ts",
+      "bytes": 413,
+      "sha256": "bae6046fafb4ec48ab9177eb2ebfd13cf5681558f52c8f5bc4ea87e7ae8514fb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/capitalize/capitalize.ts",
+      "bytes": 481,
+      "sha256": "651eebc07234b66810904a4a55284fcc821b0e468077325e6ea85d1818b9ca52",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/capitalize/index.ts",
+      "bytes": 40,
+      "sha256": "e53812b1443dc6bc4e4a69889e3f2b070e37e2b2e2a8de83f2abca3095713bb4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/chainPropTypes/chainPropTypes.spec.tsx",
+      "bytes": 333,
+      "sha256": "0dac5364c592f15b46351742420571bf3a510191c1bb1d715a7990134f101b99",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/chainPropTypes/chainPropTypes.test.ts",
+      "bytes": 1085,
+      "sha256": "4e1db3051849274a035b9c9efe1792132987686b7c72961cb2f337c997859a5d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/chainPropTypes/chainPropTypes.ts",
+      "bytes": 362,
+      "sha256": "4747ff956c90516a5a7bdaf05165064efd0ad26d8d7bd9e182ecb08b54c5e8ba",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/chainPropTypes/index.ts",
+      "bytes": 44,
+      "sha256": "95a5c5e7219403a0d64058de4786e152e71540e824d22d165062489433f21830",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/clamp/clamp.test.ts",
+      "bytes": 288,
+      "sha256": "42071ab9aa9b3872d9966bdba6ccc764bd5095fec3b09fdf289e5b268ac5cdce",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/clamp/clamp.ts",
+      "bytes": 194,
+      "sha256": "2e2313567afd6ba3fdadae75eafde4c3dbce1289bc1631607fad661b59dd68f8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/clamp/index.ts",
+      "bytes": 35,
+      "sha256": "ba61fb4f0972446e14f39d3408a9549c0023432825f08aa6811dfab24bb636e1",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/composeClasses/composeClasses.test.ts",
+      "bytes": 1398,
+      "sha256": "96b54952aedc6beeab601813de8bd9cf12f26b3024b230d1125d988fefc8cbdf",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/composeClasses/composeClasses.ts",
+      "bytes": 1645,
+      "sha256": "609b600982889f25f2687860aa8e47b0539c3135109007deb5af987d76a66761",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/composeClasses/index.ts",
+      "bytes": 44,
+      "sha256": "6da586222c97b893743b885bb6277102a2a6e5b0f4e8577e3ad18bf43e1227e5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/contains/contains.test.ts",
+      "bytes": 3736,
+      "sha256": "1e1bd0dfd0ed6044a8e8b4ae55e1b4f80f582e9f20ccce18ad7668fcfd47d8bc",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/contains/contains.ts",
+      "bytes": 1126,
+      "sha256": "fff00713d8b117ffcba1074671d1eb2c0998b588e02025b88fa89e58b49ebd85",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/contains/index.ts",
+      "bytes": 38,
+      "sha256": "faad6466872991c0fc6ff1d52481401d50e59bc38fa15f4c9d997d4b2e881d6f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/createChainedFunction/createChainedFunction.ts",
+      "bytes": 555,
+      "sha256": "108c1ae00bc3ffa988b26e7d4c6f248a0dd6ab92a45881e553ef763c2558f241",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/createChainedFunction/index.ts",
+      "bytes": 51,
+      "sha256": "f9d0dc2dfc9674ef8e6a4a95a1b02475737c57d732baf71e66cce854e9943893",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/debounce/debounce.test.ts",
+      "bytes": 1217,
+      "sha256": "2551c8e9ef8593a4d45f4b4965fddec06a714206e823557faf2773a4b3287955",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/debounce/debounce.ts",
+      "bytes": 610,
+      "sha256": "2fac15e2c1de0f3ebd550429570589dcfc595ee2956f77c5759de310ab263535",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/debounce/index.ts",
+      "bytes": 66,
+      "sha256": "ebc21e72f3dac91cad3151ddb0bda00063abf1a33026e9be567bb48d85425afd",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deepmerge/deepmerge.test.ts",
+      "bytes": 4705,
+      "sha256": "b76ae14c2963bb46de11f8df14a8ca3a37212864a4481e3b22d1df556a77c4c4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deepmerge/deepmerge.ts",
+      "bytes": 2676,
+      "sha256": "25539a1ab5385248d868e62ccacc2ab21556ea312d1527abcaf61bac537b2dbf",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deepmerge/index.ts",
+      "bytes": 68,
+      "sha256": "97b99e6c74cc83b37483c1ab81c49ef05067665581f040c17dbf8e9958e1da18",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deprecatedPropType/deprecatedPropType.test.ts",
+      "bytes": 1330,
+      "sha256": "420cb322f3bb4583bae02a8aff69d3abb6a827b7a83b5264ec9f561c683c1fdd",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deprecatedPropType/deprecatedPropType.ts",
+      "bytes": 731,
+      "sha256": "793a5a5acb318611f8285bb71327d7c183b4343ecad2b713b8aaeaf336c21c49",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/deprecatedPropType/index.ts",
+      "bytes": 48,
+      "sha256": "dda0cd5d22a38a21441e1e20044d78d74d8155b536893fc344dcbc527ce53538",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementAcceptingRef/elementAcceptingRef.test.tsx",
+      "bytes": 3762,
+      "sha256": "0288816ef2a0e249418fbde203b6720ab69988edfded5a992e330ecab24bd2bf",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementAcceptingRef/elementAcceptingRef.ts",
+      "bytes": 1989,
+      "sha256": "dd512306eeb9d313610feb7ca39e670fe6ae28aef061de9b595a17c5b4609fd1",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementAcceptingRef/index.ts",
+      "bytes": 49,
+      "sha256": "2d02f2f427a8a6ea162116770b086e14f306f09a8b39ef60b5590373330268c7",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementTypeAcceptingRef/elementTypeAcceptingRef.test.tsx",
+      "bytes": 3702,
+      "sha256": "38ba04807ee9a2bbbc4df67e3c70380dc46d92afe1f6674a267364182648b31c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementTypeAcceptingRef/elementTypeAcceptingRef.ts",
+      "bytes": 1950,
+      "sha256": "c0e64ba1dcb32ad645a2ac47dda1b206adf37b23b472efff1ddd3d1bee36af10",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/elementTypeAcceptingRef/index.ts",
+      "bytes": 53,
+      "sha256": "98b7964d14689b1009f215e67da87569d0a510d08407ff77db9ab80aea65ead6",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/exactProp/exactProp.test.ts",
+      "bytes": 885,
+      "sha256": "c4821ea9284e8c27303346aab4b3b8e32d5b2fa6814521b4b647f2b4108d74f7",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/exactProp/exactProp.ts",
+      "bytes": 927,
+      "sha256": "4d424a5668dc9f97a2f776cd8b432440d39c05ed97d03f8a9b55ac9add243d69",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/exactProp/index.ts",
+      "bytes": 39,
+      "sha256": "abcad16e71ad34d3a084e09d37e18346e815acb6d427d3bf963d24444beca822",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/extractEventHandlers/extractEventHandlers.test.ts",
+      "bytes": 913,
+      "sha256": "cbcbb56f2745864337aa73dadfd6bd0795392141ca58b9de68fd0119208f1780",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/extractEventHandlers/extractEventHandlers.ts",
+      "bytes": 735,
+      "sha256": "2cda02386d62ea47b08308a06bc4b9bf6d0e69576255458bc52eed7514423740",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/extractEventHandlers/index.ts",
+      "bytes": 50,
+      "sha256": "40f334ae81869c1d411823726468ee2419042fdfaaeb8bb08fd978667450e5ba",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastDeepAssign/fastDeepAssign.test.ts",
+      "bytes": 1560,
+      "sha256": "a39b425ba6eca772660b53738077677420aecaa43deda040dd02d471ca1cf4d2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastDeepAssign/fastDeepAssign.ts",
+      "bytes": 2541,
+      "sha256": "eaa24205350597d3c764ee6a266a888cf28aab1d49960a4e52ddf6606f0c501b",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastDeepAssign/index.ts",
+      "bytes": 44,
+      "sha256": "5b5f85cc4f4be0717bc68c9d07f5b3dd35fba4d5436b5f72eb7505f7dc1b7ba5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastObjectShallowCompare/fastObjectShallowCompare.test.ts",
+      "bytes": 940,
+      "sha256": "52531de8023e01e4fe5b814d07935fbfcc5b28d1d7a82a0a98f323abd336a672",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastObjectShallowCompare/fastObjectShallowCompare.ts",
+      "bytes": 998,
+      "sha256": "3e7454eeabeed36baae0ffaf6d41e71d072b9c9d9811ae5a3a41a5f89cbe4f91",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/fastObjectShallowCompare/index.ts",
+      "bytes": 54,
+      "sha256": "4b722b9450aa0ceab12d99ccb4cede8c64193209f7c413124dc7e0cfeadd7503",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/formatMuiErrorMessage/formatMuiErrorMessage.ts",
+      "bytes": 749,
+      "sha256": "4bf111ab6479f2a607fc30c0e92a24aa92a562b8f9fd76be18e68feef9911ee3",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/formatMuiErrorMessage/index.ts",
+      "bytes": 51,
+      "sha256": "914ba1c8e161297da6a6a2dfc220e747dec60d5d7097f9ab5304dbf519649a04",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClass/generateUtilityClass.test.ts",
+      "bytes": 2766,
+      "sha256": "4760dd7b32e07ae81c27516452da0e35fcbd5ef3c7a12ea5e4010a2b4ccbe5f7",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClass/generateUtilityClass.ts",
+      "bytes": 894,
+      "sha256": "120b700a29f75b39b7f0390be583a20874297ec51d155e39d3252cea7c90f446",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClass/index.ts",
+      "bytes": 90,
+      "sha256": "c48e28d82c22f46175446a0a9bfab97d8b4d0448d30d6512356fa726d8613003",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClasses/generateUtilityClasses.test.ts",
+      "bytes": 1049,
+      "sha256": "0890d0c5c60949ce81e85a46e7c2b3603cf2e70d722eb026857750982e73f506",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClasses/generateUtilityClasses.ts",
+      "bytes": 399,
+      "sha256": "bf4b8d6a8f533b6610d8427be1e4e85d5a7900d2f58b1c8cc94757d26c1d9ba8",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/generateUtilityClasses/index.ts",
+      "bytes": 52,
+      "sha256": "e9aa694406c00009f8bb4a8a29235f219b5cb81c34184bb3ee957764918aaacf",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getActiveElement/getActiveElement.test.ts",
+      "bytes": 3922,
+      "sha256": "c1d681a4ea0c7312378372207ea6e17c92203a0e6f5578c7a35d85b6fba3b8e0",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getActiveElement/getActiveElement.ts",
+      "bytes": 971,
+      "sha256": "f499d799187841a2b3d4a677be63b9ed1d34955d08e1a3bb33ccb474b382e27a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getActiveElement/index.ts",
+      "bytes": 46,
+      "sha256": "6e0b383359310692d922dc4ee424605bba719724343cdf81774df382bfe2f582",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getDisplayName/getDisplayName.test.tsx",
+      "bytes": 2930,
+      "sha256": "7584541ff8cb6edcadb07c57990a4b8236bfab994e141f9ce4a89bee3bbd3db9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getDisplayName/getDisplayName.ts",
+      "bytes": 1486,
+      "sha256": "a6dc090f03aef1ba2a529f68429558824328da12ea9efc262f16e9f096db1590",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getDisplayName/index.ts",
+      "bytes": 44,
+      "sha256": "222e1fb8f0adf6b7b785026e3d85ad2c4ecf08ecc46b5834247780711f92a188",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getEventTarget/getEventTarget.test.ts",
+      "bytes": 1481,
+      "sha256": "aec361a10daf25e1402eb40152a13100d10f6588e8b1d5bb10bfa38a9340598a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getEventTarget/getEventTarget.ts",
+      "bytes": 574,
+      "sha256": "1d9d50a1fca57978b28ea2ad90a4a5f0230d55db594ff7cf3f691c17a00c838e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getEventTarget/index.ts",
+      "bytes": 44,
+      "sha256": "764387820b9e7560499266252875b2ca919dd8f0ff6cc95f53d16c145735d5e7",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactElementRef/getReactElementRef.spec.tsx",
+      "bytes": 362,
+      "sha256": "e88dc5099aa7a19c0b4c3aaba6ba8571af8b24bfc49dd76edcef7248d9871272",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactElementRef/getReactElementRef.test.tsx",
+      "bytes": 1212,
+      "sha256": "1120c56a73799a2aaf5510d531003d2da4d02846209be12bf9367bd1bff5f88b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactElementRef/getReactElementRef.ts",
+      "bytes": 769,
+      "sha256": "2c3d6f716603570519e5f6925e32653020d80f89b8ebcea61d5fb21b044e22ea",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactElementRef/index.ts",
+      "bytes": 48,
+      "sha256": "565819c515747bda75357fd8663f53c35a3543e9e1d76af8978227ad9caaf635",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactNodeRef/getReactNodeRef.ts",
+      "bytes": 936,
+      "sha256": "d2ddfa968594185be5e43e23450d8266f188ad4f907835c0e7851c6784e2b0b9",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getReactNodeRef/index.ts",
+      "bytes": 45,
+      "sha256": "40fa057b9b623d300b37d30c01d380f3f1cd4c17dd57697e3a9645f806d01920",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getScrollbarSize/getScrollbarSize.test.ts",
+      "bytes": 1006,
+      "sha256": "2be35ff6fba83606ea070664c6a5241254eed224a389603043b674a64f8c7378",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getScrollbarSize/getScrollbarSize.ts",
+      "bytes": 448,
+      "sha256": "b7f750440c2ad77b88ad7a6df5678c76e2fcb6f23dac702dcd007705d76e9d26",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getScrollbarSize/index.ts",
+      "bytes": 46,
+      "sha256": "04540d97e44121ecd74d48fbdb2f2985219be919b7050ede44a1c147bcfeea2a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getValidReactChildren/getValidReactChildren.ts",
+      "bytes": 375,
+      "sha256": "d913c672242b67c43076b16ecb2f772446121d754c8a99bad1dcb71fe11e6b2f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/getValidReactChildren/index.ts",
+      "bytes": 51,
+      "sha256": "57fd9b484b42783b5526e30aa8c08d85d013d30be9f68bdebf136871a78c329e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/index.ts",
+      "bytes": 4113,
+      "sha256": "79a3363744e66469a1fb03f01d1ac6d4922321b7aca7dd03c22c227c6ef2bc15",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/integerPropType/index.ts",
+      "bytes": 80,
+      "sha256": "a957b7d186f102423c7d39df1bf82ec6b9d7fe77a575e218dd32ef58eb9934b2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/integerPropType/integerPropType.test.tsx",
+      "bytes": 4239,
+      "sha256": "4f517673f6c3e20855998f9b29906ea5777acb9d66bb0e2fb9c271b364e9486b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/integerPropType/integerPropType.ts",
+      "bytes": 1613,
+      "sha256": "885a5122e6ef46db3da6095fadcd51f67317493c8f233e85f3111775b200269c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isEventHandler/index.ts",
+      "bytes": 44,
+      "sha256": "17a6e3f03488f068ceb1b64253df63360cc84dfe25f5d98402e2409f74a8a69b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isEventHandler/isEventHandler.ts",
+      "bytes": 518,
+      "sha256": "7289d4361eec65b02ba2b1c225e2e0325c760fd6c7bc3cb273246a9ad2a01548",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isFocusVisible/index.ts",
+      "bytes": 44,
+      "sha256": "a7ceb41d5d752dfff709cac18014bbda523e027039524a461d728a09eaa72d12",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isFocusVisible/isFocusVisible.ts",
+      "bytes": 740,
+      "sha256": "3b8a268d19e8dce9be2eef6a36a07cb4410dbf875f2935ac4cac55c18a7a7ec4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isHostComponent/index.ts",
+      "bytes": 45,
+      "sha256": "919a400aebc694e7d042651a8378c627f6ad67c2300cad9eece2765701210127",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isHostComponent/isHostComponent.ts",
+      "bytes": 254,
+      "sha256": "ac99d0089cf816b1331ce8140b18e731ba1a0755afc994b2010eeb23fd36d583",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isMuiElement/index.ts",
+      "bytes": 42,
+      "sha256": "7c1bed1bb84a5fc8b959ffc5e5ae57292e08e36a50e382bbdc41c17849a3ba33",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isMuiElement/isMuiElement.ts",
+      "bytes": 588,
+      "sha256": "ebf4b85f4f70a9db1b2c74c14aa95aec2dea3e09462c7a1f282b0eb3de69e4a5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isObjectEmpty/index.ts",
+      "bytes": 43,
+      "sha256": "9f653ea5ec29598d52c60fab7fd9724d0792027fd7d442017fb80651d0b0284d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/isObjectEmpty/isObjectEmpty.ts",
+      "bytes": 204,
+      "sha256": "425c5ed4c1393c6afe9c55b7edf1e2da8cfd37598a1fc0410c39c528998eb126",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/mergeSlotProps/index.ts",
+      "bytes": 157,
+      "sha256": "c57308deff60649a70dec29a41746b6f87f08fed3c77217b6f1d6bbebdddd031",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/mergeSlotProps/mergeSlotProps.test.ts",
+      "bytes": 7531,
+      "sha256": "c438fc42890c6889158074d1b332fd76823a43c63ec4da08059e67c2c515db2a",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/mergeSlotProps/mergeSlotProps.ts",
+      "bytes": 5929,
+      "sha256": "6275b531d8873e21c3a4f5b5a31b4555c0024c8944f8aead1ddba93ae93a0d7b",
+      "generic": 13,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/omitEventHandlers/index.ts",
+      "bytes": 47,
+      "sha256": "874c108213b7d0ca84d3e38213e25d164775a8fee2d2a7d3b0581c2c01bbb5f8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/omitEventHandlers/omitEventHandlers.test.ts",
+      "bytes": 1200,
+      "sha256": "074e4d2b0fa4606cdc2aff7ada9ac88a2eace2563454682b2db7e0db604f5291",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/omitEventHandlers/omitEventHandlers.ts",
+      "bytes": 750,
+      "sha256": "5543dc25b74135c0974cc030970fca0ce5019f5aabe507cecfe1e6a10fed78bf",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-utils/src/ownerDocument/index.ts",
+      "bytes": 43,
+      "sha256": "565f1f221d85fac877f79f93c28fc707c6bbdf7d42fc863aad8225378e4d3d5b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ownerDocument/ownerDocument.ts",
+      "bytes": 134,
+      "sha256": "1d6444a490752301e8b41324496a92b226b57b6be50bf3bec3ec6fe4ddc273e2",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ownerWindow/index.ts",
+      "bytes": 41,
+      "sha256": "ebf38053e880b270a69df4860cb1717c456dfaa319d48c88ff49dc45d7134491",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ownerWindow/ownerWindow.ts",
+      "bytes": 190,
+      "sha256": "6d869221d12c07a297f37ba9fa9cbdfd2c089ec0ad77858f79a68495e0ba1834",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ponyfillGlobal/index.ts",
+      "bytes": 44,
+      "sha256": "ced781fd7ea93eb9aa8849bead6b4fc77de4c65331199f4c5b09602c55433c78",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/ponyfillGlobal/ponyfillGlobal.ts",
+      "bytes": 316,
+      "sha256": "d64fa765bd2824ed7425fca684bf33d8337a1f899c8aeb044e049f1eb31fdfed",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/refType/index.ts",
+      "bytes": 37,
+      "sha256": "04ed8fa1f6d343e29133906505bf9a1357aa1e28cf2951fb10a0071732ebbf1f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/refType/refType.ts",
+      "bytes": 135,
+      "sha256": "c86f51affeb16a3467b4beca8e6f05071788b1270392dd604bb27b3c65fdaa4c",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/requirePropFactory/index.ts",
+      "bytes": 48,
+      "sha256": "b2781da9d5cf5888890a73965a934b499c1ea1c40106e51eddd583c0a9f6215d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/requirePropFactory/requirePropFactory.test.tsx",
+      "bytes": 5252,
+      "sha256": "bd26375ab63723301e6bd095c5c2b7c96dc7c2fcbfa8626cc5433ea10e5f8fd3",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/requirePropFactory/requirePropFactory.ts",
+      "bytes": 1377,
+      "sha256": "29e990fb7805106157c22104f292e90b00ff13412f75e81fa7051b6fa316c9c5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveComponentProps/index.ts",
+      "bytes": 51,
+      "sha256": "325e9320eccca375490903d900de5c4a1dd95e95d7265ebc60191f9082c55335",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveComponentProps/resolveComponentProps.test.ts",
+      "bytes": 1592,
+      "sha256": "59bc386f2289ccdb331027a09ba293ae7902ea5918a93d54f6d27a9755ecb9bb",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveComponentProps/resolveComponentProps.ts",
+      "bytes": 727,
+      "sha256": "1fab53019dca8389baa3802b55dba81cfc967de86b68b49d75056b70781659de",
+      "generic": 3,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveProps/index.ts",
+      "bytes": 42,
+      "sha256": "1b191e984687cb10cc1c649ba28f02983702e1baf8782d641bfb142fab1742e4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveProps/resolveProps.test.ts",
+      "bytes": 8755,
+      "sha256": "75e560a0fdd280bb043a50389d3ce01b533a21262f91b6a7d23927b59025511f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/resolveProps/resolveProps.ts",
+      "bytes": 3820,
+      "sha256": "581ca863f90a3c714f5a2c8a13b20d664cb08c18c48601946942831453b64e49",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/setRef/index.ts",
+      "bytes": 36,
+      "sha256": "63d1a37fd0a3f25362789d9c8f5c7b4e7cea5ef1d7cdf21912cbf71bcc387403",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/setRef/setRef.spec.tsx",
+      "bytes": 270,
+      "sha256": "59438c0665f01fffa35ff283b1726c772d452a02e6357c21cc4e259abee6af19",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/setRef/setRef.test.ts",
+      "bytes": 880,
+      "sha256": "fc542d6d89576be5849a4a8721780ccc0245fbf68275b07d8d14e759abe80c11",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/setRef/setRef.ts",
+      "bytes": 786,
+      "sha256": "019e8c7f23f1b18632c369916febc17459872a85e2c522696ca30ff7706c0d45",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/types/DataAttributes.ts",
+      "bytes": 1878,
+      "sha256": "9d8de7d2cd718daafc169f4db45c1f38c2c61b4aeec4b4de10d39c6a7f0a7543",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/types/index.ts",
+      "bytes": 1348,
+      "sha256": "f4a1a02730e05291e765581cbf74268d79978e750f13519863c74b66b8f09388",
+      "generic": 8,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 5,
+      "omit": 6
+    },
+    {
+      "file": "packages/mui-utils/src/unsupportedProp/index.ts",
+      "bytes": 45,
+      "sha256": "f59600f5278f9d6a8e225ba309698c2f051fc8549c6d334a30f3570a7c83e917",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/unsupportedProp/unsupportedProp.test.ts",
+      "bytes": 959,
+      "sha256": "8ae56ed9a89080951a80a3d978f9dfb717a28f5eb5c68c98aeb4c8df509d0d26",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/unsupportedProp/unsupportedProp.ts",
+      "bytes": 468,
+      "sha256": "b785d273a6c01799017f2fa1b0caa3284cd6aa25670490576abac353439392af",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useControlled/index.ts",
+      "bytes": 76,
+      "sha256": "2a8239b8bee35d3c6793237d428417773ace21b0db27d590e2de4057be8d8d40",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useControlled/useControlled.test.tsx",
+      "bytes": 3854,
+      "sha256": "d0a318ba0b25cd8fc765ba7815cd076df31366edab39af88d9ebfc7fee2f6156",
+      "generic": 4,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useControlled/useControlled.ts",
+      "bytes": 3225,
+      "sha256": "cb61a8b872e05644a95c3ddde35668abc996d485fa8333d686c681e4a9e5ee39",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useEnhancedEffect/index.ts",
+      "bytes": 47,
+      "sha256": "4794c47a68f28eda1d001528fcc5a5fa93f079b3a44d3f97c37d29fa00e93c72",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useEnhancedEffect/useEnhancedEffect.ts",
+      "bytes": 545,
+      "sha256": "cf4730a56a0480fe52bd97c3f7d64f72d79964c304713c7c0be278290e195538",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useEventCallback/index.ts",
+      "bytes": 46,
+      "sha256": "103790c6f7fbc7475796f802b76a9412f2a9d1aec6b3412fbc73ee1ae4928fb4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useEventCallback/useEventCallback.spec.ts",
+      "bytes": 704,
+      "sha256": "ea5010e358bf5cdca4e084551f8ae0dc9cbf442760f4ad24bb50307cadebc1cc",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useEventCallback/useEventCallback.ts",
+      "bytes": 851,
+      "sha256": "1ac73f36eb0d0c83c8eab9e67d2fb4a64b868dd636fdb61929f432a9d6df7b5c",
+      "generic": 5,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useForcedRerendering/index.ts",
+      "bytes": 50,
+      "sha256": "90f6cd6a5396a3d343d378edfad88b110d7dd2dd0e30034d415bad7f1ed97c0f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useForcedRerendering/useForcedRerendering.ts",
+      "bytes": 292,
+      "sha256": "1cb611fe7a5b69299f5b214b3b6a8128b058fe32d636754624a7ea224473060e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useForkRef/index.ts",
+      "bytes": 40,
+      "sha256": "2a8e824199271710a46286173586b543ca0f413aeb526709fc59045cf044c44d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useForkRef/useForkRef.test.tsx",
+      "bytes": 5320,
+      "sha256": "324928d11f4781c809fe2aeb2e49284bd623e089771b3fb5dd608ddecf228e39",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useForkRef/useForkRef.ts",
+      "bytes": 1985,
+      "sha256": "e750fa5f74a40483cea128efdc2bb4df7386d88c18dcdb0b7b661ae40b07c0c1",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useId/index.ts",
+      "bytes": 35,
+      "sha256": "b6633c7eae89dd869110002a5c7709263a0f92d499350db2dd4660d0ea81f661",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useId/useId.test.tsx",
+      "bytes": 2874,
+      "sha256": "8c5817d27bb6d60d7601547ed564037dc15b5fd7b93592a2cf0376311404dbd3",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useId/useId.ts",
+      "bytes": 1590,
+      "sha256": "4cf1237e8a010993edd221cb30ae854a93b57389ceb90c9cec84712eec34ffdc",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useIsFocusVisible/index.ts",
+      "bytes": 84,
+      "sha256": "6834a8a5a3af51d40e5536e8929f9714c5e5dba50aa84d7d64bae9724f2b8d29",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useIsFocusVisible/useIsFocusVisible.test.tsx",
+      "bytes": 3644,
+      "sha256": "cbe5d1133ba5f9eef7fdde3a6d3463700d5edc2f4f728e4b016b33644a629939",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useIsFocusVisible/useIsFocusVisible.ts",
+      "bytes": 5801,
+      "sha256": "16d1b5a520f47791dffc98f4bccd3335e833d7a7f776c48b74e5730c0bd69af7",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useLazyRef/index.ts",
+      "bytes": 40,
+      "sha256": "4a65194d9a21f30cd1893c51b6bdf2750799de1183d7f9136631b7aa3997f83b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useLazyRef/useLazyRef.ts",
+      "bytes": 570,
+      "sha256": "8b5b7cc3adbce1112be2a3f2e5f3e6c9758138680dccd5b88a9d89f9bc90bd37",
+      "generic": 2,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useLocalStorageState/index.ts",
+      "bytes": 50,
+      "sha256": "b50650cf25419739f4a2d680d0c777c966ad621b5fa47a6331f684f4c43c1ae5",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useLocalStorageState/useLocalStorageState.ts",
+      "bytes": 4169,
+      "sha256": "cea3cd2efb4e4b4871c79cd891e213e77b38329bfe008a945d6dcdb1cce1057e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useOnMount/index.ts",
+      "bytes": 40,
+      "sha256": "b268adca56e4c35d2194eb1a06c289180078c5945e5a889ad4ad3a218628901f",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useOnMount/useOnMount.ts",
+      "bytes": 532,
+      "sha256": "08028948b5789c471c4c6a7e262b7dc99baabc7895f881b05fcac3bb4f3a7aa6",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/usePreviousProps/index.ts",
+      "bytes": 46,
+      "sha256": "2a31e762dbe9043386a29a821cde9c166720e37d07718d07b55213db3a581c3b",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/usePreviousProps/usePreviousProps.ts",
+      "bytes": 257,
+      "sha256": "e705a75269b092ac4057cef4d1ef1a20001dc4b2e1c8c6cce015d6970969c6ad",
+      "generic": 1,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-utils/src/useRovingTabIndex/RovingTabIndexContext.tsx",
+      "bytes": 731,
+      "sha256": "0739672a9571e76f9db839103aeb9cfe280627acb5387eabb4d075d1051f1afe",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useRovingTabIndex/index.ts",
+      "bytes": 78,
+      "sha256": "09f3e9d8cf1bf5a2fc4f42c9697990c8dcd1002168ad859acf491786cc4412ad",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useRovingTabIndex/useRovingTabIndex.test.tsx",
+      "bytes": 16268,
+      "sha256": "623f7ec3f2ff007871cd2abc09648410bbabdc8cc14e8acbb4081618727e155e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 2
+    },
+    {
+      "file": "packages/mui-utils/src/useRovingTabIndex/useRovingTabIndex.ts",
+      "bytes": 27612,
+      "sha256": "dabc9a37e48af47755e8f18b38bd98c5ddf75f259e6ab6466060815a4e8c25c7",
+      "generic": 18,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 1,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useSlotProps/index.ts",
+      "bytes": 124,
+      "sha256": "e16e7ec79aba204f9ebf0d4d774bc4d7848a93f038c32f6c4d7c07d4e3a1a4a6",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useSlotProps/useSlotProps.test.tsx",
+      "bytes": 8156,
+      "sha256": "f525607326c4b923678d51b2b9c95ee38352d2910cca5ff7af78f8cf21596f85",
+      "generic": 6,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useSlotProps/useSlotProps.ts",
+      "bytes": 2989,
+      "sha256": "66d4f94fea329bc553c470ce5c0e51999d45ecdbeac993599d4d143eee20f26b",
+      "generic": 14,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 2,
+      "omit": 1
+    },
+    {
+      "file": "packages/mui-utils/src/useTimeout/index.ts",
+      "bytes": 80,
+      "sha256": "879b90e29bf14a36ed7b02576c23d61a54625f13369c98cf1af58b5a96fcbf05",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useTimeout/useTimeout.ts",
+      "bytes": 833,
+      "sha256": "c530acf7b1b3ca3bb0d1c531762196bdd25f317fc4a47f8c675ccb2f0350004d",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useValueAsRef/index.ts",
+      "bytes": 43,
+      "sha256": "7efbfedf2985a66ea35d647c432e7111176ca38b425ea517ceeb112679cd0f2e",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useValueAsRef/useValueAsRef.test.tsx",
+      "bytes": 1759,
+      "sha256": "b1ad732eaef69b9ba952f4aaccc421bddbb72494655ec0ff052886b6c398bdc4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/useValueAsRef/useValueAsRef.ts",
+      "bytes": 970,
+      "sha256": "9bb76b1cd401ad268c575194c264e57fe9f9c6bd6c16e4b745620e24a86162b3",
+      "generic": 3,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/visuallyHidden/index.ts",
+      "bytes": 44,
+      "sha256": "6fb94b8990499c41290557edf0df00b606e9d56f7af65013c50876a948d8faa4",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/src/visuallyHidden/visuallyHidden.ts",
+      "bytes": 293,
+      "sha256": "6edcd189f8b8cfa0b5e6b762c69c9757fddd3236e18e65752e3b1253882513a0",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/vitest.config.browser.mts",
+      "bytes": 220,
+      "sha256": "922b7804b2201e873f1891fd452af30f5820e1f30fcf685bb5b8a1f10e3e6b02",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    },
+    {
+      "file": "packages/mui-utils/vitest.config.mts",
+      "bytes": 172,
+      "sha256": "53ca442362ec2c755804008bf5b8c5885d5adc44b973b988b7db5b7363dba0e8",
+      "generic": 0,
+      "mapped": 0,
+      "conditional": 0,
+      "intersection": 0,
+      "omit": 0
+    }
+  ]
+}

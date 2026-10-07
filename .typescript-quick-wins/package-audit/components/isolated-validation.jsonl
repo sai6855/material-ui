@@ -1,0 +1,4 @@
+{"compiler":"6.0.3","scenario":"existingBadge-isolated","experiment":"baseline","skipLibCheck":false,"exactOptionalPropertyTypes":false,"instantiations":15299,"types":4565,"errors":[]}
+{"compiler":"6.0.3","scenario":"existingBadge-isolated","experiment":"badgeProbe","skipLibCheck":false,"exactOptionalPropertyTypes":false,"instantiations":15293,"types":4559,"errors":[]}
+{"compiler":"6.0.3","scenario":"existingBadge-isolated","experiment":"baseline","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":17446,"types":5049,"errors":[]}
+{"compiler":"6.0.3","scenario":"existingBadge-isolated","experiment":"badgeProbe","skipLibCheck":false,"exactOptionalPropertyTypes":true,"instantiations":17440,"types":5043,"errors":[]}

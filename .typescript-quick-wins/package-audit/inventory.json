@@ -1,0 +1,144 @@
+{
+  "head": "741d96fb78fb3068e88be485ab2e1aa21ada8340",
+  "compiler": "6.0.3",
+  "scope": [
+    "mui-material",
+    "mui-types",
+    "mui-system",
+    "mui-utils"
+  ],
+  "trackedFiles": 1590,
+  "packages": {
+    "mui-material": {
+      "trackedFiles": 1243,
+      "codeFiles": 1211
+    },
+    "mui-types": {
+      "trackedFiles": 8,
+      "codeFiles": 4
+    },
+    "mui-system": {
+      "trackedFiles": 165,
+      "codeFiles": 161
+    },
+    "mui-utils": {
+      "trackedFiles": 174,
+      "codeFiles": 170
+    }
+  },
+  "helpers": {
+    "React.ElementType": 550,
+    "Partial": 228,
+    "Omit": 69,
+    "DistributiveOmit": 17,
+    "Pick": 18,
+    "React.ComponentPropsWithRef": 9,
+    "Required": 2,
+    "React.ComponentPropsWithoutRef": 4,
+    "React.ComponentProps": 4
+  },
+  "signals": [
+    {
+      "file": "packages/mui-material/src/Backdrop/Backdrop.d.ts",
+      "line": 48,
+      "kind": "nested-mapped",
+      "detail": "Partial<Omit<FadeProps, 'children'>>"
+    },
+    {
+      "file": "packages/mui-material/src/styles/createThemeNoVars.d.ts",
+      "line": 102,
+      "kind": "nested-mapped",
+      "detail": "Partial<Pick<CssVarsTheme, 'vars'>>"
+    },
+    {
+      "file": "packages/mui-material/src/transitions/types.ts",
+      "line": 90,
+      "kind": "nested-mapped",
+      "detail": "Partial<Pick<ConsumerTransitionProps & EasingProps, TransitionKeys>>"
+    },
+    {
+      "file": "packages/mui-system/src/spacing/spacing.ts",
+      "line": 107,
+      "kind": "repeated-type-member",
+      "detail": [
+        "number"
+      ]
+    },
+    {
+      "file": "packages/mui-system/src/spacing/spacing.ts",
+      "line": 205,
+      "kind": "repeated-type-member",
+      "detail": [
+        "number"
+      ]
+    },
+    {
+      "file": "packages/mui-utils/src/types/index.ts",
+      "line": 15,
+      "kind": "nested-mapped",
+      "detail": "Partial<Pick<Props, 'ownerState'>>"
+    }
+  ],
+  "initialScan": {
+    "head": "3453eac9836675c2f95e45973de7d49e262757d8",
+    "trackedFiles": 1593,
+    "packages": {
+      "mui-material": {
+        "trackedFiles": 1246,
+        "codeFiles": 1214,
+        "typeFiles": 346,
+        "testFiles": 273,
+        "extensions": {
+          ".md": 16,
+          ".json": 16,
+          ".mjs": 1,
+          ".ts": 620,
+          ".js": 456,
+          ".tsx": 135,
+          ".mts": 2
+        }
+      },
+      "mui-system": {
+        "trackedFiles": 165,
+        "codeFiles": 161,
+        "typeFiles": 62,
+        "testFiles": 46,
+        "extensions": {
+          ".md": 1,
+          ".json": 3,
+          ".tsx": 22,
+          ".js": 27,
+          ".ts": 110,
+          ".mts": 2
+        }
+      },
+      "mui-types": {
+        "trackedFiles": 8,
+        "codeFiles": 4,
+        "typeFiles": 3,
+        "testFiles": 1,
+        "extensions": {
+          ".md": 1,
+          ".json": 3,
+          ".ts": 3,
+          ".mts": 1
+        }
+      },
+      "mui-utils": {
+        "trackedFiles": 174,
+        "codeFiles": 170,
+        "typeFiles": 20,
+        "testFiles": 42,
+        "extensions": {
+          ".md": 1,
+          ".json": 3,
+          ".ts": 150,
+          ".tsx": 18,
+          ".mts": 2
+        }
+      }
+    }
+  },
+  "codeFiles": 1546,
+  "parseErrors": 0
+}

@@ -1,0 +1,8 @@
+{"compiler":"Version 7.0.2","scenario":"family-Button","experiment":"baseline","repeat":0,"status":0,"instantiations":16207,"types":9190,"memory":"81531K","checkTime":"0.031s","wallMs":352,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-Button","experiment":"baseline","repeat":1,"status":0,"instantiations":16207,"types":9190,"memory":"81436K","checkTime":"0.028s","wallMs":311,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-Button","experiment":"probe","repeat":0,"status":0,"instantiations":13516,"types":3083,"memory":"79423K","checkTime":"0.019s","wallMs":502,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-Button","experiment":"probe","repeat":1,"status":0,"instantiations":13516,"types":3083,"memory":"79535K","checkTime":"0.020s","wallMs":404,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-combined","experiment":"baseline","repeat":0,"status":0,"instantiations":45862,"types":11258,"memory":"89224K","checkTime":"0.157s","wallMs":825,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-combined","experiment":"baseline","repeat":1,"status":0,"instantiations":45862,"types":11258,"memory":"89108K","checkTime":"0.122s","wallMs":511,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-combined","experiment":"probe","repeat":0,"status":0,"instantiations":39123,"types":5088,"memory":"86914K","checkTime":"0.103s","wallMs":1039,"errors":[]}
+{"compiler":"Version 7.0.2","scenario":"family-combined","experiment":"probe","repeat":1,"status":0,"instantiations":39123,"types":5088,"memory":"86882K","checkTime":"0.113s","wallMs":471,"errors":[]}

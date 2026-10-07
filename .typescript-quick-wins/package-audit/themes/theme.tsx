@@ -1,0 +1,1 @@
+import {createTheme} from '@mui/material/styles'; export const theme=createTheme({components:{MuiButton:{styleOverrides:{root:({theme,ownerState})=>({color:theme.palette.primary.main,opacity:ownerState.disabled?0.5:1})}},MuiAutocomplete:{styleOverrides:{root:({theme,ownerState})=>({color:theme.palette.primary.main,opacity:ownerState.disabled?0.5:1})}}}});

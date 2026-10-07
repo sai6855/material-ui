@@ -1,0 +1,164 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": [
+      "es2022",
+      "dom",
+      "dom.iterable"
+    ],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "react",
+      "node"
+    ],
+    "paths": {
+      "@mui/material": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-material/src"
+      ],
+      "@mui/material/package.json": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-material/package.json"
+      ],
+      "@mui/material/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-material/src/*"
+      ],
+      "@mui/lab": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-lab/src"
+      ],
+      "@mui/lab/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-lab/src/*"
+      ],
+      "@mui/internal-api-docs-builder": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/api-docs-builder/src/index.ts"
+      ],
+      "@mui/internal-docs-utils": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/docs-utils/src/index.ts"
+      ],
+      "@mui-internal/api-docs-builder-core": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/api-docs-builder-core/index.ts"
+      ],
+      "@mui/internal-markdown": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/markdown"
+      ],
+      "@mui/internal-markdown/prism": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/markdown/prism.mjs"
+      ],
+      "@mui/styled-engine": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-styled-engine/src"
+      ],
+      "@mui/styled-engine/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-styled-engine/src/*"
+      ],
+      "@mui/styled-engine-sc": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-styled-engine-sc/src"
+      ],
+      "@mui/styled-engine-sc/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-styled-engine-sc/src/*"
+      ],
+      "@mui/system": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-system/src"
+      ],
+      "@mui/system/package.json": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-system/package.json"
+      ],
+      "@mui/system/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-system/src/*"
+      ],
+      "@mui/types": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-types/src"
+      ],
+      "@mui/private-theming": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-private-theming/src"
+      ],
+      "@mui/private-theming/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-private-theming/src/*"
+      ],
+      "@mui/utils": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-utils/src"
+      ],
+      "@mui/utils/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-utils/src/*"
+      ],
+      "@mui/internal-core-docs": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/core-docs/src"
+      ],
+      "@mui/internal-core-docs/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/core-docs/src/*"
+      ],
+      "@mui/material-nextjs": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-material-nextjs/src"
+      ],
+      "@mui/material-nextjs/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-material-nextjs/src/*"
+      ],
+      "@mui/icons-material": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-icons-material/lib/index.mjs"
+      ],
+      "@mui/icons-material/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-icons-material/lib/*.mjs"
+      ],
+      "@mui/internal-scripts/typescript-to-proptypes": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/scripts/typescript-to-proptypes/src"
+      ],
+      "@mui/internal-scripts/generate-llms-txt": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages-internal/scripts/generate-llms-txt/src"
+      ],
+      "@mui/stylis-plugin-rtl": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-stylis-plugin-rtl/src"
+      ],
+      "@mui/stylis-plugin-rtl/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/packages/mui-stylis-plugin-rtl/src/*"
+      ],
+      "docs/*": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/all-slots-cases/own/docs/*"
+      ],
+      "react": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react/index.d.ts"
+      ],
+      "prop-types": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@types+prop-types@15.7.15/node_modules/@types/prop-types/index.d.ts"
+      ],
+      "@emotion/react": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@emotion+react@11.14.0_@typ_bda34b45141ae0052f7afbe8b973b6ae/node_modules/@emotion/react/dist/emotion-react.cjs.d.mts"
+      ],
+      "@emotion/cache": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@emotion+cache@11.14.0/node_modules/@emotion/cache/dist/emotion-cache.cjs.d.mts"
+      ],
+      "@emotion/sheet": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@emotion+sheet@1.4.0/node_modules/@emotion/sheet/dist/emotion-sheet.cjs.d.mts"
+      ],
+      "@emotion/styled": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@emotion+styled@11.14.1_@em_df7870854cc736dea39670efb509cfff/node_modules/@emotion/styled/dist/emotion-styled.cjs.d.mts"
+      ],
+      "@emotion/serialize": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@emotion+serialize@1.3.3/node_modules/@emotion/serialize/dist/emotion-serialize.cjs.d.mts"
+      ],
+      "csstype": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/csstype@3.2.3/node_modules/csstype/index.d.ts"
+      ],
+      "react-is": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@types+react-is@19.3.0/node_modules/@types/react-is/index.d.ts"
+      ],
+      "clsx": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/clsx.d.mts"
+      ],
+      "react-dom": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom/index.d.ts"
+      ],
+      "@popperjs/core": [
+        "C:/Users/91830/material-ui-3/material-ui/node_modules/.pnpm/@popperjs+core@2.11.8/node_modules/@popperjs/core/index.d.ts"
+      ],
+      "@mui/icons-material/CloseRounded": [
+        "C:/Users/91830/material-ui-3/material-ui/.typescript-profile/icon-close-rounded.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "./consumer.tsx"
+  ]
+}

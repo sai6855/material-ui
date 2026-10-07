@@ -1,0 +1,9 @@
+{"compiler":"6.0.3","scenario":"theme","experiment":"baseline","instantiations":3197,"errors":[],"changed":[]}
+{"compiler":"6.0.3","scenario":"theme","experiment":"overrides","instantiations":3197,"errors":[],"changed":["packages/mui-material/src/styles/overrides.ts"]}
+{"compiler":"6.0.3","scenario":"theme","experiment":"divider","instantiations":3197,"errors":[],"changed":["packages/mui-material/src/styles/createThemeFoundation.ts"]}
+{"compiler":"6.0.3","scenario":"vars","experiment":"baseline","instantiations":10589,"errors":[],"changed":[]}
+{"compiler":"6.0.3","scenario":"vars","experiment":"overrides","instantiations":10589,"errors":[],"changed":["packages/mui-material/src/styles/overrides.ts"]}
+{"compiler":"6.0.3","scenario":"vars","experiment":"divider","instantiations":10586,"errors":[],"changed":["packages/mui-material/src/styles/createThemeFoundation.ts"]}
+{"compiler":"6.0.3","scenario":"themeRelation","experiment":"baseline","instantiations":23,"errors":[],"changed":[]}
+{"compiler":"6.0.3","scenario":"themeRelation","experiment":"overrides","instantiations":23,"errors":[],"changed":["packages/mui-material/src/styles/overrides.ts"]}
+{"compiler":"6.0.3","scenario":"themeRelation","experiment":"divider","instantiations":23,"errors":[],"changed":["packages/mui-material/src/styles/createThemeFoundation.ts"]}

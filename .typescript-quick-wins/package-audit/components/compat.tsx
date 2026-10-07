@@ -1,0 +1,9 @@
+import * as React from 'react';import Button,{ButtonOwnProps,ButtonTypeMap,ButtonProps} from '@mui/material/Button';import {ExtendButtonBase} from '@mui/material/ButtonBase';import Badge,{BadgeOwnerState,BadgeOwnProps,BadgeProps} from '@mui/material/Badge';import {Simplify,OverridableStringUnion} from '@mui/types';declare const original:ExtendButtonBase<ButtonTypeMap>;const first:typeof Button=original;const second:typeof original=Button;const Custom=React.forwardRef<HTMLDivElement,{required:string}>((p,r)=><div ref={r}/>);const x=<Button component={Custom} required='ok' ref={React.createRef<HTMLDivElement>()}/>;
+// @ts-expect-error required custom prop absent
+const y=<Button component={Custom}/>;
+// @ts-expect-error inappropriate ref
+const z=<Button ref={React.createRef<HTMLAnchorElement>()}/>;
+// @ts-expect-error button native event differs from anchor
+const bad=<Button onClick={(e:React.MouseEvent<HTMLAnchorElement>)=>{}}/>;
+const good=<Button href='/' onClick={e=>{const a:HTMLAnchorElement=e.currentTarget;}}/>;
+declare const a:BadgeOwnerState;const b:Omit<BadgeOwnProps,'slotProps'|'slots'>=a;type Assert<T extends true>=T;type Required<T>={[K in keyof T]-?:T[K]};type OriginalOwner=Simplify<Omit<BadgeOwnProps,'slotProps'|'slots'>&{badgeContent:React.ReactNode;invisible:boolean;max:number;displayValue:React.ReactNode;showZero:boolean;anchorOrigin:import('@mui/material/Badge').BadgeOrigin;color:OverridableStringUnion<'primary'|'secondary'|'default'|'error'|'info'|'success'|'warning',import('@mui/material/Badge').BadgePropsColorOverrides>;overlap:'rectangular'|'circular';variant:OverridableStringUnion<'standard'|'dot',import('@mui/material/Badge').BadgePropsVariantOverrides>}>;type A=Assert<BadgeOwnerState extends OriginalOwner?true:false>;type B=Assert<OriginalOwner extends BadgeOwnerState?true:false>;

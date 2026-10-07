@@ -1,0 +1,1 @@
+import * as React from 'react';import Button from '@mui/material/Button';const x=<Button color="primary" size="small" variant="contained">Go</Button>;

@@ -1,0 +1,10 @@
+{"compiler":"6.0.3","name":"Dialog","variant":"baseline","scenario":"jsx","instantiations":3817,"checkMs":211,"errors":[]}
+{"compiler":"6.0.3","name":"Dialog","variant":"baseline","scenario":"wrapper","instantiations":7677,"checkMs":147,"errors":[]}
+{"compiler":"6.0.3","name":"Menu","variant":"baseline","scenario":"jsx","instantiations":5710,"checkMs":108,"errors":[]}
+{"compiler":"6.0.3","name":"Menu","variant":"baseline","scenario":"wrapper","instantiations":8478,"checkMs":115,"errors":[]}
+{"compiler":"6.0.3","name":"SpeedDialAction","variant":"baseline","scenario":"jsx","instantiations":3744,"checkMs":146,"errors":[]}
+{"compiler":"6.0.3","name":"SpeedDialAction","variant":"baseline","scenario":"wrapper","instantiations":6408,"checkMs":133,"errors":[]}
+{"compiler":"6.0.3","name":"OutlinedInput","variant":"baseline","scenario":"jsx","instantiations":3558,"checkMs":110,"errors":[]}
+{"compiler":"6.0.3","name":"OutlinedInput","variant":"baseline","scenario":"wrapper","instantiations":6282,"checkMs":125,"errors":[]}
+{"compiler":"6.0.3","name":"Popover","variant":"baseline","scenario":"jsx","instantiations":3818,"checkMs":110,"errors":[]}
+{"compiler":"6.0.3","name":"Popover","variant":"baseline","scenario":"wrapper","instantiations":6587,"checkMs":120,"errors":[]}

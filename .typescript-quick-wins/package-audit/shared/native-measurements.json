@@ -1,0 +1,74 @@
+[
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "baseline",
+    "run": 0,
+    "fixture": "button",
+    "instantiations": 16319,
+    "diagnostics": 0,
+    "output": "Files:             762\nLines:          161376\nIdentifiers:    123117\nSymbols:         87340\nTypes:            9105\nInstantiations:  16319\nMemory used:    80841K\nMemory allocs:  350613\nParse time:     0.290s\nBind time:      0.015s\nCheck time:     0.070s\nTotal time:     0.378s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "candidate1",
+    "run": 0,
+    "fixture": "button",
+    "instantiations": 16287,
+    "diagnostics": 0,
+    "output": "Files:             762\nLines:          161374\nIdentifiers:    123118\nSymbols:         87340\nTypes:            9098\nInstantiations:  16287\nMemory used:    80788K\nMemory allocs:  346460\nConfig time:    0.001s\nParse time:     0.124s\nBind time:      0.030s\nCheck time:     0.044s\nTotal time:     0.202s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "baseline",
+    "run": 1,
+    "fixture": "button",
+    "instantiations": 16319,
+    "diagnostics": 0,
+    "output": "Files:             762\nLines:          161376\nIdentifiers:    123117\nSymbols:         87340\nTypes:            9105\nInstantiations:  16319\nMemory used:    80757K\nMemory allocs:  348934\nParse time:     0.130s\nBind time:      0.012s\nCheck time:     0.028s\nTotal time:     0.173s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "candidate1",
+    "run": 1,
+    "fixture": "button",
+    "instantiations": 16287,
+    "diagnostics": 0,
+    "output": "Files:             762\nLines:          161374\nIdentifiers:    123118\nSymbols:         87340\nTypes:            9098\nInstantiations:  16287\nMemory used:    80783K\nMemory allocs:  349357\nConfig time:    0.001s\nParse time:     0.138s\nBind time:      0.024s\nCheck time:     0.028s\nTotal time:     0.194s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "baseline",
+    "run": 0,
+    "fixture": "system",
+    "instantiations": 14253,
+    "diagnostics": 0,
+    "output": "Files:             311\nLines:          140524\nIdentifiers:    106383\nSymbols:         75087\nTypes:            2906\nInstantiations:  14253\nMemory used:    64770K\nMemory allocs:  201472\nConfig time:    0.001s\nParse time:     0.102s\nBind time:      0.013s\nCheck time:     0.022s\nTotal time:     0.140s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "candidate1",
+    "run": 0,
+    "fixture": "system",
+    "instantiations": 14233,
+    "diagnostics": 0,
+    "output": "Files:             311\nLines:          140522\nIdentifiers:    106384\nSymbols:         75087\nTypes:            2899\nInstantiations:  14233\nMemory used:    64812K\nMemory allocs:  201474\nConfig time:    0.001s\nParse time:     0.081s\nBind time:      0.019s\nCheck time:     0.017s\nTotal time:     0.120s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "baseline",
+    "run": 1,
+    "fixture": "system",
+    "instantiations": 14253,
+    "diagnostics": 0,
+    "output": "Files:             311\nLines:          140524\nIdentifiers:    106383\nSymbols:         75087\nTypes:            2906\nInstantiations:  14253\nMemory used:    64723K\nMemory allocs:  201194\nConfig time:    0.001s\nParse time:     0.087s\nBind time:      0.014s\nCheck time:     0.016s\nTotal time:     0.119s\n"
+  },
+  {
+    "compiler": "Version 7.0.2",
+    "variant": "candidate1",
+    "run": 1,
+    "fixture": "system",
+    "instantiations": 14233,
+    "diagnostics": 0,
+    "output": "Files:             311\nLines:          140522\nIdentifiers:    106384\nSymbols:         75087\nTypes:            2899\nInstantiations:  14233\nMemory used:    64815K\nMemory allocs:  201621\nConfig time:    0.001s\nParse time:     0.105s\nBind time:      0.022s\nCheck time:     0.017s\nTotal time:     0.147s\n"
+  }
+]

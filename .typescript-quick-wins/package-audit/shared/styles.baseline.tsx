@@ -1,0 +1,1 @@
+import {compose,spacing,borders,palette,typography, PropsFor} from '@mui/system';const style=compose(spacing,borders,palette,typography);const x:PropsFor<typeof style>={m:2,color:'red',fontSize:16};style(x);

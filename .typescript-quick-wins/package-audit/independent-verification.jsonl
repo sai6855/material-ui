@@ -1,0 +1,2 @@
+{"compiler":"6.0.3","scenario":"family-combined","experiment":"baseline","instantiations":45855,"changed":[],"errors":[]}
+{"compiler":"6.0.3","scenario":"family-combined","experiment":"independent","instantiations":39117,"changed":["Button","IconButton","BottomNavigationAction","CardActionArea","AccordionSummary","Fab","ListItemButton","MenuItem","StepButton","TableSortLabel","Tab","ToggleButton"],"errors":[]}

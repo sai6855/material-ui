@@ -1,0 +1,1 @@
+import {extendTheme,ThemeCssVar} from '@mui/material/styles';export const t=extendTheme({colorSchemes:{light:{palette:{dividerChannel:'20 20 20'}}}});export const key:ThemeCssVar='palette-primary-main';

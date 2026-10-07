@@ -1,0 +1,82 @@
+[
+  {
+    "fixture": "style-compatibility",
+    "variant": "baseline",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 946,
+    "output": "Files:             311\nLines:          140479\nIdentifiers:    106486\nSymbols:         73140\nTypes:             903\nInstantiations:    946\nMemory used:    62875K\nMemory allocs:  172036\nConfig time:    0.001s\nParse time:     0.149s\nBind time:      0.018s\nCheck time:     0.005s\nEmit time:      0.001s\nTotal time:     0.177s\n"
+  },
+  {
+    "fixture": "style-compatibility",
+    "variant": "candidate2",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 872,
+    "output": "Files:             311\nLines:          140479\nIdentifiers:    106485\nSymbols:         73093\nTypes:             893\nInstantiations:    872\nMemory used:    62854K\nMemory allocs:  171383\nConfig time:    0.001s\nParse time:     0.095s\nBind time:      0.016s\nCheck time:     0.004s\nTotal time:     0.119s\n"
+  },
+  {
+    "fixture": "style-consumer",
+    "variant": "baseline",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 245,
+    "output": "Files:             311\nLines:          140471\nIdentifiers:    106394\nSymbols:         73082\nTypes:             701\nInstantiations:    245\nMemory used:    62792K\nMemory allocs:  170027\nConfig time:    0.001s\nParse time:     0.086s\nBind time:      0.014s\nCheck time:     0.004s\nTotal time:     0.107s\n"
+  },
+  {
+    "fixture": "style-consumer",
+    "variant": "candidate2",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 191,
+    "output": "Files:             311\nLines:          140471\nIdentifiers:    106393\nSymbols:         73026\nTypes:             681\nInstantiations:    191\nMemory used:    62726K\nMemory allocs:  169519\nConfig time:    0.004s\nParse time:     0.090s\nBind time:      0.014s\nCheck time:     0.005s\nEmit time:      0.000s\nTotal time:     0.115s\n"
+  },
+  {
+    "fixture": "strings-compatibility",
+    "variant": "baseline",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 7164,
+    "output": "Files:             171\nLines:          137676\nIdentifiers:    102749\nSymbols:         70787\nTypes:            1590\nInstantiations:   7164\nMemory used:    60270K\nMemory allocs:  146455\nParse time:     0.067s\nBind time:      0.013s\nCheck time:     0.010s\nTotal time:     0.096s\n"
+  },
+  {
+    "fixture": "strings-compatibility",
+    "variant": "candidate1",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 6878,
+    "output": "Files:             171\nLines:          137674\nIdentifiers:    102750\nSymbols:         70787\nTypes:            1542\nInstantiations:   6878\nMemory used:    60229K\nMemory allocs:  145512\nConfig time:    0.001s\nParse time:     0.098s\nBind time:      0.023s\nCheck time:     0.014s\nEmit time:      0.001s\nTotal time:     0.139s\n"
+  },
+  {
+    "fixture": "augmentation-ref",
+    "variant": "baseline",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 16165,
+    "output": "Files:             762\nLines:          161378\nIdentifiers:    123124\nSymbols:         87338\nTypes:            9097\nInstantiations:  16165\nMemory used:    80686K\nMemory allocs:  348228\nConfig time:    0.001s\nParse time:     0.137s\nBind time:      0.034s\nCheck time:     0.038s\nTotal time:     0.213s\n"
+  },
+  {
+    "fixture": "augmentation-ref",
+    "variant": "candidate1",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 16145,
+    "output": "Files:             762\nLines:          161376\nIdentifiers:    123125\nSymbols:         87338\nTypes:            9090\nInstantiations:  16145\nMemory used:    80817K\nMemory allocs:  350147\nConfig time:    0.001s\nParse time:     0.132s\nBind time:      0.018s\nCheck time:     0.040s\nTotal time:     0.192s\n"
+  },
+  {
+    "fixture": "declaration-check",
+    "variant": "baseline",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 132300,
+    "output": "Files:               63\nLines:            83117\nIdentifiers:      62883\nSymbols:         129358\nTypes:            63769\nInstantiations:  132300\nMemory used:    118680K\nMemory allocs:   589626\nConfig time:     0.001s\nParse time:      0.082s\nBind time:       0.025s\nCheck time:      0.540s\nEmit time:       0.003s\nTotal time:      0.657s\n"
+  },
+  {
+    "fixture": "declaration-check",
+    "variant": "candidate1",
+    "compiler": "7.0.2",
+    "status": 0,
+    "instantiations": 132291,
+    "output": "Files:               63\nLines:            83115\nIdentifiers:      62884\nSymbols:         129358\nTypes:            63767\nInstantiations:  132291\nMemory used:    118784K\nMemory allocs:   589651\nConfig time:     0.001s\nParse time:      0.048s\nBind time:       0.017s\nCheck time:      0.514s\nTotal time:      0.583s\n"
+  }
+]
